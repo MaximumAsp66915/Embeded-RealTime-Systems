@@ -1,0 +1,9 @@
+sensor_id,sensor_type,sensor_name,location,value,unit,recorded_at
+101,temperature,Floor1_Room101_Temp,Floor1_Room101,24.2,C,2026-06-01 10:00:00
+101,temperature,Floor1_Room101_Temp,Floor1_Room101,24.8,C,2026-06-01 10:15:00
+102,humidity,Floor1_Room101_Humidity,Floor1_Room101,44,%,2026-06-01 10:00:00
+102,humidity,Floor1_Room101_Humidity,Floor1_Room101,45,%,2026-06-01 10:15:00
+103,motion,Floor1_Corridor_Motion,Floor1_Corridor,0,bool,2026-06-01 10:10:00
+103,motion,Floor1_Corridor_Motion,Floor1_Corridor,1,bool,2026-06-01 10:16:00
+104,temperature,Floor1_Lobby_Temp,Floor1_Lobby,23.5,C,2026-06-01 10:05:00
+104,temperature,Floor1_Lobby_Temp,Floor1_Lobby,23.9,C,2026-06-01 10:20:00

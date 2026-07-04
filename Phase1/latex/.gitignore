@@ -1,0 +1,21 @@
+# Latex
+*.tex
+*.aux
+*.png
+*.jpg
+*.fdb_latexmk
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Binaries and executables
+
+
+# IDEs and tools
+.vscode/
+.idea/
+
+# Environment and OS files
+.env
+__pycache__/
