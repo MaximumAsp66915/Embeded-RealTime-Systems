@@ -1,0 +1,101 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="PlNfJlFEuOJi32KcLTxS">
+    <mxGraphModel dx="1414" dy="737" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZcQeI1klD703_UuxaXpo-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="client" vertex="1">
+          <mxGeometry height="60" width="120" x="400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZcQeI1klD703_UuxaXpo-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;verticalAlign=top;" value="&lt;div&gt;&lt;b&gt;Master Node&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;LAN IP: 192.168.56.x&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="220" width="800" x="40" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-1" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#3A5431;fontColor=#ffffff;fillColor=#6d8764;" value="&lt;b&gt;NGINX&lt;/b&gt;" vertex="1">
+          <mxGeometry height="130" width="160" x="380" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#314354;fontColor=#ffffff;fillColor=#647687;" value="&lt;div&gt;Master API&lt;/div&gt;&lt;div&gt;Port: 8080&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="220" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-4" edge="1" parent="1" source="8LPbooBl12cBjcLj2cU2-2" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="8LPbooBl12cBjcLj2cU2-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="320" y="410" as="sourcePoint" />
+            <mxPoint x="370" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#B09500;fontColor=#000000;fillColor=#e3c800;verticalAlign=top;" value="&lt;div&gt;&lt;b&gt;NGINX Config&lt;/b&gt;:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;192.168.56.x:8080 -&amp;gt; 127.0.0.1:8001&lt;/div&gt;&lt;div&gt;192.168.56.y:8080 -&amp;gt; 127.0.0.1:8002&lt;/div&gt;&lt;div&gt;192.168.56.z:8080 -&amp;gt; 127.0.0.1:8003&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="210" x="620" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-7" edge="1" parent="1" source="8LPbooBl12cBjcLj2cU2-1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="8LPbooBl12cBjcLj2cU2-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="400" y="410" as="sourcePoint" />
+            <mxPoint x="450" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;verticalAlign=top;" value="&lt;div&gt;&lt;b&gt;Slave Node 1&lt;/b&gt;&lt;/div&gt;&lt;div&gt;LAN IP: 192.168.56.y&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="330" x="70" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#314354;fontColor=#ffffff;fillColor=#647687;" value="&lt;div&gt;Slave1 API&lt;/div&gt;&lt;div&gt;Port: 8080&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="250" y="472.5" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#432D57;fontColor=#ffffff;fillColor=#76608a;" value="&lt;b&gt;SQLite DB&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="110" x="70" y="247.5" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-12" edge="1" parent="1" source="8LPbooBl12cBjcLj2cU2-11" style="endArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="8LPbooBl12cBjcLj2cU2-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="400" y="410" as="sourcePoint" />
+            <mxPoint x="450" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#432D57;fontColor=#ffffff;fillColor=#76608a;" value="&lt;b&gt;SQLite DB&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="110" x="100" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-14" edge="1" parent="1" source="8LPbooBl12cBjcLj2cU2-13" style="endArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="8LPbooBl12cBjcLj2cU2-10" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="400" y="410" as="sourcePoint" />
+            <mxPoint x="450" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-15" edge="1" parent="1" source="8LPbooBl12cBjcLj2cU2-10" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.967;exitY=0.594;exitDx=0;exitDy=0;exitPerimeter=0;" target="8LPbooBl12cBjcLj2cU2-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="520" />
+            </Array>
+            <mxPoint x="400" y="410" as="sourcePoint" />
+            <mxPoint x="450" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;verticalAlign=top;" value="&lt;div&gt;&lt;b&gt;Slave Node 2&lt;/b&gt;&lt;/div&gt;&lt;div&gt;LAN IP: 192.168.56.z&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="330" x="70" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-17" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#314354;fontColor=#ffffff;fillColor=#647687;" value="&lt;div&gt;Slave2 API&lt;/div&gt;&lt;div&gt;Port: 8080&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="250" y="642.5" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#432D57;fontColor=#ffffff;fillColor=#76608a;" value="&lt;b&gt;SQLite DB&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="110" x="100" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-19" edge="1" parent="1" source="8LPbooBl12cBjcLj2cU2-18" style="endArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="8LPbooBl12cBjcLj2cU2-17" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="400" y="580" as="sourcePoint" />
+            <mxPoint x="450" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-20" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="8LPbooBl12cBjcLj2cU2-17" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="683" />
+            </Array>
+            <mxPoint x="460" y="500" as="sourcePoint" />
+            <mxPoint x="450" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8LPbooBl12cBjcLj2cU2-21" edge="1" parent="1" source="ZcQeI1klD703_UuxaXpo-1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeColor=#788AA3;fontColor=#46495D;fillColor=#B2C9AB;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="8LPbooBl12cBjcLj2cU2-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="400" y="410" as="sourcePoint" />
+            <mxPoint x="450" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

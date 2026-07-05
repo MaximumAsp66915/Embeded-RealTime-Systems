@@ -5,12 +5,34 @@ echo "=================================================="
 echo "          SLAVE NODE RUNTIME INTERFACE            "
 echo "=================================================="
 
-# Automated check for required SQLite3 development header installations
+# Automated check for SQLite3 and Memcached installations
+UPDATED_APT=false
+
 if [ ! -f /usr/include/sqlite3.h ]; then
     echo "[+] System header missing. Installing libsqlite3-dev dynamically..."
     sudo apt update && sudo apt install -y libsqlite3-dev
+    UPDATED_APT=true
 else
     echo "[+] SQLite3 development headers validated."
+fi
+
+if [ ! -f /usr/include/libmemcached/memcached.h ] || ! command -v memcached &> /dev/brk; then
+    echo "[+] Memcached tools or headers missing. Installing ecosystem..."
+    if [ "$UPDATED_APT" = false ]; then
+        sudo apt update
+    fi
+    sudo apt install -y memcached libmemcached-dev
+else
+    echo "[+] Memcached development headers validated."
+fi
+
+# Ensure the Memcached background daemon is running smoothly
+if ! systemctl is-active --quiet memcached; then
+    echo "[+] Starting local Memcached service daemon..."
+    sudo systemctl start memcached
+    sudo systemctl enable memcached
+else
+    echo "[+] Local Memcached service daemon is already running."
 fi
 
 # Dynamic configuration input
