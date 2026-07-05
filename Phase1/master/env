@@ -1,0 +1,5 @@
+# Auto-generated runtime environment for Master Node
+PORT=
+DB_PATH=
+SLAVE1_PORT=
+SLAVE2_PORT=
