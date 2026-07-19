@@ -1,0 +1,3 @@
+# Auto-generated runtime environment for Master Node
+DB_PATH=../master.db
+MQTT_BROKER=tcp://127.0.0.1:1883

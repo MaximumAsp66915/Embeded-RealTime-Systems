@@ -1,0 +1,17 @@
+[Unit]
+Description=Distributed Sensor Cluster - Alert Daemon (Section 6)
+After=network.target
+
+[Service]
+Type=simple
+# Edit these two paths to match where this repo is checked out on THIS
+# node before installing the unit (see ALERTS.md, item 2). They must
+# both point at the same alert_daemon/ directory.
+WorkingDirectory=/opt/sensor-cluster/alert_daemon
+EnvironmentFile=/opt/sensor-cluster/alert_daemon/env
+ExecStart=/opt/sensor-cluster/alert_daemon/alert_daemon
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

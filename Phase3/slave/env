@@ -1,0 +1,3 @@
+# Auto-generated runtime environment for Slave Node
+DB_PATH=../slave1.db
+MQTT_BROKER=tcp://127.0.0.1:1883
