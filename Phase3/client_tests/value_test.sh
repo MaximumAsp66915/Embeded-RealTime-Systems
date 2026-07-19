@@ -4,8 +4,8 @@
 #                      DISTRIBUTED CLUSTER MQTT PERFORMANCE TEST
 # ==============================================================================
 
-read -p "Enter MQTT Broker Host IP [127.0.0.1]: " INPUT_IP
-BROKER_IP=${INPUT_IP:-"127.0.0.1"}
+read -p "Enter MQTT Broker Host IP [192.168.56.101]: " INPUT_IP
+BROKER_IP=${INPUT_IP:-"192.168.56.101"}
 
 # Dynamic local system verification of client tools
 if ! command -v mosquitto_pub &> /dev/null || ! command -v mosquitto_sub &> /dev/null; then

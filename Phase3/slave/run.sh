@@ -34,8 +34,8 @@ fi
 read -p "Enter local SQLite database path [../slave1.db]: " CHOSEN_DB
 CHOSEN_DB=${CHOSEN_DB:-../slave1.db}
 
-read -p "Enter Target MQTT Broker Endpoint [tcp://127.0.0.1:1883]: " CHOSEN_BROKER
-CHOSEN_BROKER=${CHOSEN_BROKER:-"tcp://127.0.0.1:1883"}
+read -p "Enter Target MQTT Broker Endpoint [tcp://192.168.56.101:1883]: " CHOSEN_BROKER
+CHOSEN_BROKER=${CHOSEN_BROKER:-"tcp://192.168.56.101:1883"}
 
 # Auto-correct missing tcp:// prefix instantly
 if [[ ! "$CHOSEN_BROKER" =~ ^tcp:// ]]; then

@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-TARGET_IP="192.168.56.101"
-TARGET_PORT="8001"
+read -p "Enter Master Node IP [192.168.56.101]: " INPUT_IP
+TARGET_IP=${INPUT_IP:-"192.168.56.101"}
+
+read -p "Enter Master Node Port [8001]: " INPUT_PORT
+TARGET_PORT=${INPUT_PORT:-"8001"}
+
 BASE_URL="http://${TARGET_IP}:${TARGET_PORT}/query"
 
 # Test cases array (type, id)
