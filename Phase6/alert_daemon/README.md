@@ -179,4 +179,4 @@ Notes on precedence and edge cases:
   lasted, and this state is in-memory only, so restarting the daemon
   while a condition is still active logs it again as if it were new
   (there is no startup reconciliation against existing `'active'` rows).
-  See `ALERTS_REPORT.md` for the full design writeup.
+  See `../Report.md` for the full design writeup.
