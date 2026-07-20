@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 read -p "Enter Master Node IP [192.168.56.101]: " INPUT_IP
 TARGET_IP=${INPUT_IP:-"192.168.56.101"}
@@ -8,7 +9,7 @@ TARGET_PORT=${INPUT_PORT:-"8001"}
 
 BASE_URL="http://${TARGET_IP}:${TARGET_PORT}/query"
 
-# Test cases array (type, id)
+# Test cases array (type:id)
 declare -a SENSORS=("temperature:101" "temperature:201" "temperature:301" "temperature:401")
 
 run_round() {
@@ -31,9 +32,9 @@ echo "=================================================="
 echo "         TWO-LAYER CACHE PERFORMANCE BENCHMARK    "
 echo "=================================================="
 
-# Dynamic Cache Purge to ensure a valid baseline
-echo "[+] Flushing remote Memcached instance to clear stale states..."
-echo "flush_all" | nc -q 1 127.0.0.1 11211 || echo "[!] Warning: Could not auto-flush cache."
+# FIXED: Now dynamically targets the operator-defined TARGET_IP for the Memcached cache flush
+echo "[+] Flushing remote Memcached instance at ${TARGET_IP} to clear stale states..."
+echo "flush_all" | nc -q 1 "${TARGET_IP}" 11211 || echo "[!] Warning: Could not auto-flush target cache. Ensure port 11211 is reachable."
 
 # Round 1: Will now correctly show "source":"DB" (with higher roundtrip latencies)
 run_round "1 (Cache Misses)"

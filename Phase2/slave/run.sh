@@ -16,7 +16,7 @@ else
     echo "[+] SQLite3 development headers validated."
 fi
 
-if [ ! -f /usr/include/libmemcached/memcached.h ] || ! command -v memcached &> /dev/brk; then
+if [ ! -f /usr/include/libmemcached/memcached.h ] || ! command -v memcached &> /dev/null; then
     echo "[+] Memcached tools or headers missing. Installing ecosystem..."
     if [ "$UPDATED_APT" = false ]; then
         sudo apt update

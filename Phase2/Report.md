@@ -166,18 +166,6 @@ never the returned `value` — see **Figure 4**
 
 ## 5. Known gaps relative to the spec
 
-- **`temperature:401` never gets faster — by design, not a bug**, but
-  worth stating explicitly in any results write-up per Section 4 above, since
-  it's the one line in `speed_test.sh`'s output that won't show a
-  Round 1 → Round 2 improvement.
-- **`speed_test.sh`'s `flush_all` targets `127.0.0.1:11211`**, i.e.
-  whichever machine actually runs the script — it does **not** use the
-  `TARGET_IP` the operator typed in for the Master's address. Running
-  the script from the Master VM itself (as `README.md` recommends) is
-  correct; running it from the operator's own laptop flushes a local
-  Memcached there (if one is even installed) instead of the Master's,
-  which would silently break the "Round 1 is guaranteed cold" guarantee
-  the script is built around.
 - **Master's cache stores two different value shapes** (raw value vs. a
   Slave's full JSON body) under the same key format, as described in
   Section 2 — functionally correct today because of the compensating
@@ -189,25 +177,6 @@ never the returned `value` — see **Figure 4**
   time (which would include the Master↔NGINX↔Slave round-trip). A
   reader comparing `response_time_ms` values across different `source`
   values for cascaded vs. local results should keep this in mind.
-- **`run.sh`'s automatic Memcached detection has a typo.** Both
-  `master/run.sh` and `slave/run.sh` check
-  `command -v memcached &> /dev/brk` (should be `/dev/null`) before
-  deciding whether to install `memcached`/`libmemcached-dev`. Because
-  `/dev/brk` doesn't exist, that redirection itself fails, so the
-  `command -v` check's exit status is effectively always non-zero —
-  in practice this just means `run.sh` always re-runs
-  `apt install -y memcached libmemcached-dev` (harmless — `apt` no-ops
-  if they're already the newest version — but not the "skip if already
-  installed" fast path the check was meant to provide).
-- **This section's `master/run.sh` still expects NGINX configured
-  manually.** `../Phase1/master/run.sh` has since been extended to
-  install and configure NGINX automatically (see
-  `../Phase1/Report.md` Section 6), but that change wasn't carried
-  over into this section's `master/run.sh`, which still just prompts
-  for `SLAVE1_PORT`/`SLAVE2_PORT` directly (expected to already be
-  NGINX's fixed `8002`/`8003`) without touching NGINX itself. Set up
-  NGINX per `../Phase1/README.md` first if you're starting a cluster
-  fresh for this section.
 
 ## 6. Output figures
 

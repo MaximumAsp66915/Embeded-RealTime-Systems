@@ -101,12 +101,13 @@ else
 fi
 
 # 4. Persist environment asset configuration context
+# FIXED: Save NGINX local route proxy ports into env so the master_node dials loopback routes correctly
 echo "PORT=$M_PORT" > env
 echo "DB_PATH=$M_DB" >> env
-echo "SLAVE1_IP=$S1_IP" >> env
-echo "SLAVE1_PORT=$S1_PORT" >> env
-echo "SLAVE2_IP=$S2_IP" >> env
-echo "SLAVE2_PORT=$S2_PORT" >> env
+echo "SLAVE1_IP=127.0.0.1" >> env
+echo "SLAVE1_PORT=8002" >> env
+echo "SLAVE2_IP=127.0.0.1" >> env
+echo "SLAVE2_PORT=8003" >> env
 
 # 5. Directory layout consistency mapping
 mkdir -p src headers
@@ -117,13 +118,13 @@ if [ ! -f src/mongoose.c ] || [ ! -f src/mongoose.h ]; then
     curl -s https://raw.githubusercontent.com/cesanta/mongoose/master/mongoose.h -o src/mongoose.h
 fi
 
-# Apply running environment context states into process memory namespace
+# Apply fixed environment context states into process memory namespace
 export PORT=$M_PORT
 export DB_PATH=$M_DB
-export SLAVE1_IP=$S1_IP
-export SLAVE1_PORT=$S1_PORT
-export SLAVE2_IP=$S2_IP
-export SLAVE2_PORT=$S2_PORT
+export SLAVE1_IP="127.0.0.1"
+export SLAVE1_PORT="8002"
+export SLAVE2_IP="127.0.0.1"
+export SLAVE2_PORT="8003"
 
 echo "[+] Initiating compilation engine via Makefile..."
 make clean && make

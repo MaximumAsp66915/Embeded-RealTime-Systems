@@ -18,3 +18,4 @@
 # Environment and OS files
 .env
 __pycache__/
+gitignore/

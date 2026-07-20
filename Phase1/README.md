@@ -38,32 +38,6 @@ Phase1/
 > `slave_init_db.sh` / `config.example` files in this bundle — see
 > **"Known gaps"** in `Report.md` for what that means in practice.
 
-## ⚠️ Before you run this: a config mismatch to know about
-
-`master/run.sh` now asks for each slave's **real IP and real port** and
-uses them to write a correct NGINX config — that part works. But it then
-also saves that same raw slave port into `env` as `SLAVE1_PORT`/
-`SLAVE2_PORT`, which is what `master_node` itself dials on
-**its own loopback** (`127.0.0.1:<SLAVE1_PORT>`). Those need to be
-NGINX's fixed local ports, `8002`/`8003` — not the slave's own bind port
-(typically `8080` on both slaves, same as the Master's own gateway
-port). Left as the script currently writes it, `master_node`'s cascade
-will try to dial `127.0.0.1:8080` for *both* slaves, which is the
-Master's own gateway, not NGINX's slave routes — see **"Known gaps"** in
-`Report.md` for the full explanation and the one-line fix. Until that's
-patched, after running `master/run.sh` once, open `master/env` and
-correct it by hand before starting `master_node`:
-
-```bash
-# in master/env, after running master/run.sh:
-SLAVE1_PORT=8002   # NGINX's fixed local route to Slave 1, not Slave 1's own port
-SLAVE2_PORT=8003   # NGINX's fixed local route to Slave 2, not Slave 2's own port
-```
-then re-export and re-run `./master_node` (or just re-run `master/run.sh`
-and enter `8002`/`8003` when it re-prompts — the NGINX config it
-generates from your slave IP/port answers stays correct either way,
-since that part uses `S1_IP`/`S1_PORT` directly, independent of what
-ends up in `env`).
 
 ## Architecture / network diagram
 
