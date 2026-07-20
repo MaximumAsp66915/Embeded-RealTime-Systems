@@ -1,11 +1,9 @@
 <p align="center">
-  <a href="https://github.com/MaximumAsp66915/Embeded-RealTime-Systems/tree/Distributed-Database-System">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v10/icons/github.svg" width="20" height="20" alt="GitHub" style="filter: invert(1);" />
-    <strong>&nbsp;View this project on GitHub</strong>
-  </a>
   <br/>
   <sub><code>MaximumAsp66915/Embeded-RealTime-Systems</code> — branch <code>Distributed-Database-System</code></sub>
 </p>
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_Repository-blue?logo=GitHub)](https://github.com/MaximumAsp66915/Embeded-RealTime-Systems/tree/Distributed-Database-System)
 
 ---
 
