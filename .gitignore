@@ -1,8 +1,6 @@
 # Latex
 *.tex
 *.aux
-*.png
-*.jpg
 *.fdb_latexmk
 *.log
 *.fls
