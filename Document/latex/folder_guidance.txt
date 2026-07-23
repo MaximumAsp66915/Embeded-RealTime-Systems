@@ -1,0 +1,14 @@
+project_root/
+├── main.tex                 # The "brain" file
+├── preamble/
+│   ├── packages.tex         # All \usepackage calls
+│   ├── styles.tex           # Listings, colors, and page geometry
+│   └── commands.tex         # Custom environments (questionsection, etc.)
+├── sections/
+│   ├── titlepage.tex        # Clean title page logic
+│   ├── 01_network_servers.tex
+│   ├── 02_system_modeling.tex
+│   └── 03_optimization.tex
+├── appendix/
+│   └── code_listings.tex    # Appendix and code imports
+└── fig/                     # (Your existing image folder)

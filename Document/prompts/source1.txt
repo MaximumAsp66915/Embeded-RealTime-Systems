@@ -1,0 +1,249 @@
+================================================================================
+                      SMART SURVEILLANCE SYSTEM
+                       REAL-TIME EMBEDDED SYSTEMS
+================================================================================
+
+PROJECT OVERVIEW AND OBJECTIVES
+-------------------------------
+The objective of this project is the complete design and implementation of an
+embedded system that receives a live camera feed, detects human presence, and
+reports it via Web, Email, and the MQTT protocol. Upon power-up, the board must
+operate autonomously without manual intervention, and all defined functions must
+be active.
+
+  * Required Hardware: Orange Pi board or a Linux Virtual Machine on a PC if the
+    board is unavailable.
+  * Mandatory Programming Language: C language for all sections (except Image
+    Processing and Swagger, as explained later). FAILURE TO USE C IN ANY SECTION
+    RESULTS IN A 25% SCORE DEDUCTION FOR THAT SECTION.
+
+--------------------------------------------------------------------------------
+OVERALL SYSTEM ARCHITECTURE
+---------------------------
+The system consists of three main components:
+  1. Orange Pi Board: Hosts the Web Server, reads system sensors (temperature &
+     memory), acts as an MQTT Client, sends emails, and enforces security
+     measures in C.
+  2. Image Processing Module: Detects the number of individuals.
+  3. Personal Computer (PC): Runs the MQTT Broker and observes received messages
+     on the relevant topics.
+
+--------------------------------------------------------------------------------
+OVERALL SECURITY REQUIREMENTS FOR THE PROJECT
+---------------------------------------------
+The following security measures must be strictly implemented throughout the
+project; non-compliance will result in grade deductions:
+  1. SSH Login: Restricted to public/private key or password. root login MUST be
+     disabled.
+  2. MQTT Login: Unauthenticated access must be disabled; a dedicated user with a
+     password must be created.
+  3. Hardcoding: No passwords or API keys may be hardcoded into the device.
+
+  [Note on Swagger]: Since Swagger UI natively uses FastAPI (Python), you are
+  allowed to use a thin FastAPI layer strictly as a documentation tool and API
+  gateway, provided all core business logic (reading temperature/memory, counting
+  people, executing commands) is implemented in C.
+
+================================================================================
+PART 1: WEB SERVER, AUTOMATED SERVICE, AND SSL (25 POINTS)
+================================================================================
+
+A) WEB SERVER SETUP
+-------------------
+  * Write an HTTP Web Server hosting an HTML page that displays:
+    - Your name and student ID in the page title.
+    - Live camera stream (If the board lacks a camera, use a webcam or stream a
+      sample video/image from the laptop to the board).
+    - Real-time count of detected individuals.
+    - Processor temperature, free memory, and CPU utilization percentage live
+      (updating every 2 seconds).
+
+B) ADDING SSL WITH SELF-SIGNED CERTIFICATE
+-------------------------------------------
+  * Generate a self-signed certificate using OpenSSL. The CN field of the
+    certificate must be your student ID.
+  * The page must be accessible ONLY via HTTPS, and standard HTTP requests must
+    automatically redirect to HTTPS (301 redirect).
+
+C) SYSTEMD SERVICE
+------------------
+  * Write systemd service files so that upon board boot, all programs (Web
+    Server, Image Processing, MQTT Client) start automatically without manual
+    intervention.
+  * Services must automatically restart upon crashing.
+  * Service dependency order (e.g., Image Processing starting after camera
+    initialization) must be managed using "After" and "Requires" directives, and
+    explained with rationale using a flow chart in the report.
+
+MANDATORY EXPERIMENTS FOR PART 1
+--------------------------------
+  No.   Experiment                              Expected Output in Report
+  ---   ----------                              -------------------------
+  1-1   Reboot the board and measure boot time  Overall boot time chart and
+        using "systemd-analyze blame".          critical services log (terminal
+                                                screenshot).
+
+  1-2   Terminate the Web Server process using  Journalctl log screenshot
+        "kill -9".                              showing automatic restart.
+
+  1-3   Power off the board and turn it back    Video showing automated boot of
+        on.                                     system without keyboard
+                                                interaction.
+
+  1-4   Access the system address via HTTP.     Screenshot of browser inspect
+                                                tool showing HTTP 301 Redirect.
+
+  1-5   Open the self-signed HTTPS page.        Screenshot of the certificate
+                                                overview showing the CN field
+                                                with your student ID.
+
+  1-6   Open the HTML page.                     Screenshot of the HTML page
+                                                displaying the student ID.
+
+================================================================================
+PART 2: RESTFUL API AND LIVE MONITORING (25 POINTS)
+================================================================================
+
+A) API DESIGN (Logic in C, Documented via Swagger/FastAPI)
+----------------------------------------------------------
+Implement at least the following endpoints:
+
+  Endpoint           Method  Functionality
+  --------           ------  -------------
+  /API/V1/STREAM     GET     Live video stream (MJPEG)
+  /API/V1/PERSONS    GET     Current person count + timestamp
+  /API/V1/TELEMETRY  GET     CPU temperature, free memory, CPU load %
+  /API/V1/COMMAND    POST    Executable reboot command formatted as {"cmd": "reboot"}
+  /API/V1/HISTORY    GET     Detection history (last 5 records)
+
+  * CPU temperature and memory must be read directly within the C code (without
+    using system Linux commands).
+  * The command execution endpoint must support extending new commands in the
+    future.
+
+B) SWAGGER UI
+-------------
+All endpoints must be testable via Swagger UI. In the report, include live
+execution screenshots of each endpoint inside Swagger returning actual responses.
+
+MANDATORY EXPERIMENTS FOR PART 2
+--------------------------------
+  No.   Experiment                              Expected Output in Report
+  ---   ----------                              -------------------------
+  2-1   Sample processor temp every 30s over    Temp-time graph with 3 curves +
+        5 minutes under 3 conditions:           table of min/max temps + screenshot
+        (a) Idle, (b) Streaming only,           from final state.
+        (c) Streaming + active detection.
+
+  2-2   Monitor memory usage of the C program   Memory usage over time graph +
+        during continuous 5-minute streaming    memory leak analysis.
+        (sampled every 5s).
+
+  2-3   Send 50 concurrent requests in a loop   Graph of changes in temp, CPU, and
+        using curl to /api/v1/telemetry.        memory; analyze response latency
+                                                increase.
+
+  2-4   Disconnect network cable/Wi-Fi during   Explanation of system behavior,
+        streaming and reconnect after 2 mins.   logs screenshot, and recovery
+                                                mechanism.
+
+================================================================================
+PART 3: IMAGE PROCESSING, EMAIL, AND MQTT (25 POINTS)
+================================================================================
+
+A) HUMAN DETECTION (Python allowed, C/C++ preferred)
+----------------------------------------------------
+  * Use a lightweight model to count people in the frame.
+  * Frame output: bounding boxes + real-time person counter.
+  * Overlay text on each frame: Student ID, Live System Date & Time.
+  * Display actual FPS measurement on the video frame.
+
+B) EMAIL NOTIFICATIONS
+----------------------
+  * Upon detecting 1 or more humans, send an email containing: person count,
+    timestamp, CPU temp, and the attached frame screenshot.
+  * Email sending logic must be written in C.
+  * Implement a debounce mechanism: Maximum 1 email every 30 seconds. Explain
+    this mechanism in the report.
+
+C) MQTT
+-------
+  * Launch MQTT Broker (Mosquitto) on the PC.
+  * MQTT Client running on the board must be written in C.
+  * Mandatory Topic Structure:
+      - home/persons/<student_id>
+      - home/telemetry/<student_id>
+  * Messages: JSON format containing person count, temp, and timestamp.
+  * QoS = 1 and configure LWT (Last Will and Testament) to notify the PC upon
+    sudden board disconnection.
+
+MANDATORY EXPERIMENTS FOR PART 3
+--------------------------------
+  No.   Experiment                              Expected Output in Report
+  ---   ----------                              -------------------------
+  3-1   Test detection accuracy under 3         Accuracy table (Correct/Total
+        lighting conditions: daylight, low      detections) + sample image per
+        light, backlight.                       state.
+
+  3-2   Test system with a printed photo /      Does it fool the system? Provide
+        mobile screen photo of a human.         analysis and solution proposal.
+
+  3-3   Change input resolution to 3 custom     Table of FPS, CPU temp after 5 mins,
+        levels.                                 memory usage, and accuracy per
+                                                resolution + conclusion on
+                                                optimal settings.
+
+  3-4   Stop the Broker while running, restart  Display LWT message reception.
+        after 3 minutes.
+
+  3-5   Measure end-to-end delay from human     Mean and standard deviation of
+        entry to MQTT message reception on PC   latency (comparing timestamps).
+        (10 samples).
+
+  3-6   Attempt unauthorized MQTT login.        Screenshot of failed connection
+                                                attempt.
+
+  3-7   Attempt unauthorized SSH login.         Screenshot of failed connection
+                                                attempt.
+
+================================================================================
+PART 4: ADVANCED FEATURES (25 POINTS)
+================================================================================
+
+  1. Anti-Theft System: A "Guard Mode" toggled via API or HTML page. When active,
+     human detection triggers immediate email with attachment and emergency MQTT
+     message on topic "home/<student_id>/alarm".
+  2. History Logging (Black Box): Save detection history into SQLite using
+     circular buffering via C API. Include overall detection count queries.
+  3. Software Watchdog: If the image processing thread fails to produce new
+     frames for >30 seconds (e.g., camera disconnected), system alerts, logs,
+     sends email, and restarts the service.
+  4. Adaptive Thermal Management: If CPU temp exceeds threshold, lower FPS/
+     resolution automatically to reduce load and send an event alert email.
+
+MANDATORY EXPERIMENTS FOR PART 4
+--------------------------------
+  No.   Experiment                              Expected Output in Report
+  ---   ----------                              -------------------------
+  4-1   Test Guard Mode functionality.          Video of performance + report
+                                                images.
+
+  4-2   Test Black Box logging.                 Screenshot of stored events inside
+                                                database.
+
+  4-3   Test Software Watchdog by               Video + screenshots showing
+        disconnecting camera.                   watchdog response.
+
+  4-4   Simulate high CPU temp using Linux      Demonstrate adaptive power
+        tools.                                  management and produce
+                                                screenshot/logs.
+
+================================================================================
+DELIVERABLES
+================================================================================
+  1. All Source Code
+  2. PDF Report: Architecture explanation, all tables and experiment graphs,
+     results analysis, encountered issues, and resolutions.
+  3. Requested Test Videos
+  4. Configuration Files: Service files, Mosquitto config, SSL certificates, etc.
+================================================================================

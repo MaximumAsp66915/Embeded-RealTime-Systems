@@ -1,0 +1,5 @@
+\contentsline {section}{smartsection}{2}{section*.1}%
+\contentsline {subsection}{smartsubsection}{2}{section*.2}%
+\contentsline {subsubsection}{smartsubsubsection}{2}{section*.3}%
+\contentsline {subsection}{Question~questionsection's name}{2}{section.1}%
+\contentsfinish 
