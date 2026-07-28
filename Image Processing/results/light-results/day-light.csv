@@ -1,0 +1,12 @@
+timestamp,label,detected_count,actual_count,notes
+2026-07-28T09:26:29,daylight,1,1,Me sitting close to webcam
+2026-07-28T09:27:50,daylight,1,1,Me sitting farther from webcam
+2026-07-28T09:29:05,daylight,1,1,Me standing close to webcam
+2026-07-28T09:29:40,daylight,1,1,Me standing farther from webcam
+2026-07-28T09:33:32,daylight,1,1,Me standing close - simple back ground
+2026-07-28T09:34:22,daylight,1,1,Me standing close - complex background
+2026-07-28T09:35:12,daylight,0,0,Simple background
+2026-07-28T09:35:45,daylight,1,0,Complex background
+2026-07-28T09:37:08,daylight,1,1,Me standing above the webcam
+2026-07-28T09:38:10,daylight,1,1,My arm only
+2026-07-28T09:39:15,daylight,2,2,Two people sitting close to webcam

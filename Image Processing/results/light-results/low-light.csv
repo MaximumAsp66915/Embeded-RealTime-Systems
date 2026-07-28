@@ -1,0 +1,12 @@
+timestamp,label,detected_count,actual_count,notes
+2026-07-28T09:41:29,low_light,1,1,Me sitting close to webcam
+2026-07-28T09:42:50,low_light,1,1,Me sitting farther from webcam
+2026-07-28T09:44:05,low_light,0,1,Me standing close to webcam
+2026-07-28T09:44:40,low_light,2,1,Me standing farther from webcam
+2026-07-28T09:48:32,low_light,1,1,Me standing close - simple back ground
+2026-07-28T09:49:22,low_light,1,1,Me standing close - complex background
+2026-07-28T09:50:12,low_light,1,0,Simple background
+2026-07-28T09:50:45,low_light,3,0,Complex background
+2026-07-28T09:52:08,low_light,1,1,Me standing above the webcam
+2026-07-28T09:53:10,low_light,0,1,My arm only
+2026-07-28T09:34:45,low_light,2,2,Two people sitting close to webcam

@@ -1,0 +1,11 @@
+timestamp,label,detected_count,actual_count,notes
+2026-07-28T09:56:29,artificial_light,1,1,Me sitting close to webcam
+2026-07-28T09:57:50,artificial_light,1,1,Me sitting farther from webcam
+2026-07-28T09:59:05,artificial_light,1,1,Me standing close to webcam
+2026-07-28T09:59:40,artificial_light,1,1,Me standing farther from webcam
+2026-07-28T10:03:32,artificial_light,1,1,Me standing close - simple back ground
+2026-07-28T10:04:22,artificial_light,1,1,Me standing close - complex background
+2026-07-28T10:05:12,artificial_light,1,0,Simple background
+2026-07-28T10:05:45,artificial_light,1,0,Complex background
+2026-07-28T10:07:08,artificial_light,1,1,Me standing above the webcam
+2026-07-28T10:08:10,artificial_light,1,1,My arm only

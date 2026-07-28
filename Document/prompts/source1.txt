@@ -1,3 +1,30 @@
+Welcome to Orange Pi Focal with Linux 5.4.65-sunxi64
+
+System load:   0.08 0.02 0.01   Up time:       23:32
+Memory usage:  34 % of 477MB    Zram usage:    21 % of 238Mb    IP:            192.168.0.170
+CPU temp:      46°C           
+Usage of /:    17% of 15G    
+
+root@orangepizeroplus2h5:~# btop
+root@orangepizeroplus2h5:~# ls
+camera.py  mqtt_subscriber  mqtt_subscriber.cpp  snap
+root@orangepizeroplus2h5:~# cat /etc/os-release
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+root@orangepizeroplus2h5:~# 
+
+STUDENT_ID = 402101906
+
 ================================================================================
                       SMART SURVEILLANCE SYSTEM
                        REAL-TIME EMBEDDED SYSTEMS
