@@ -2,3 +2,6 @@ secrets.env
 .env
 **/figs-gitignore/
 **/fig-gitignore/
+**/video-gitignore/
+**/vidoes-gitignore/
+server.conf

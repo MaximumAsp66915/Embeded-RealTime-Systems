@@ -69,27 +69,27 @@ Building in grading order (Part 1 → 4) means you build the web server before y
 ## Step 3 — Web Server, SSL, systemd (Part 1 — 25 pts)
 
 **Web server (C):**
-- [ ] HTML page, title includes name + student ID
-- [ ] Embeds the live camera stream
-- [ ] Shows live person count
-- [ ] Shows CPU temp, free memory, CPU usage — updating every 2 seconds
+- [x] HTML page, title includes name + student ID
+- [x] Embeds the live camera stream
+- [x] Shows live person count
+- [x] Shows CPU temp, free memory, CPU usage — updating every 2 seconds
 
 **SSL:**
-- [ ] Serve HTTPS only using the cert from Step 1
-- [ ] Plain HTTP requests get a 301 redirect to HTTPS
+- [x] Serve HTTPS only using the cert from Step 1
+- [x] Plain HTTP requests get a 301 redirect to HTTPS
 
 **systemd:**
-- [ ] Service files for: web server, image processing, MQTT client
-- [ ] `Restart=on-failure` (or similar) on each
-- [ ] Use `After=` / `Requires=` to enforce startup order (e.g. image processing after camera init) — draw this as a flowchart for the report
+- [x] Service files for: web server, image processing, MQTT client
+- [x] `Restart=on-failure` (or similar) on each
+- [x] Use `After=` / `Requires=` to enforce startup order (e.g. image processing after camera init) — draw this as a flowchart for the report
 
 **Experiments:**
-- [ ] 1-1: `systemd-analyze blame` after reboot → boot time chart + critical services log
-- [ ] 1-2: `kill -9` the web server → journalctl screenshot showing auto-restart
-- [ ] 1-3: Full power cycle → video of unattended boot
-- [ ] 1-4: Hit the site over HTTP → screenshot of the 301 in browser devtools
-- [ ] 1-5: Open HTTPS page → screenshot of cert overview showing CN = student ID
-- [ ] 1-6: Open the HTML page → screenshot showing the student ID
+- [x] 1-1: `systemd-analyze blame` after reboot → boot time chart + critical services log
+- [x] 1-2: `kill -9` the web server → journalctl screenshot showing auto-restart
+- [x] 1-3: Full power cycle → video of unattended boot
+- [x] 1-4: Hit the site over HTTP → screenshot of the 301 in browser devtools
+- [x] 1-5: Open HTTPS page → screenshot of cert overview showing CN = student ID
+- [x] 1-6: Open the HTML page → screenshot showing the student ID
 
 ---
 
