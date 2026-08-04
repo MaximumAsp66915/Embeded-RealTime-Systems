@@ -1,0 +1,33 @@
+[Unit]
+Description=Smart Surveillance System - Image Processing (person detection)
+# Camera/network needs to be ready before we try to open a video source
+# (whether that's a local camera device or the laptop's http_poll feed).
+After=network-online.target
+Wants=network-online.target
+# By default systemd gives up restarting a service if it fails too many
+# times in too short a window (default: 5 restarts / 10s). We want this
+# service to keep retrying indefinitely — e.g. if the laptop's
+# laptop_stream_webcam.sh hasn't been started yet, or the webcam isn't
+# plugged in — rather than settle into "failed" and stay down until
+# someone manually runs `systemctl reset-failed`. StartLimitIntervalSec=0
+# disables that rate limit entirely for this unit.
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/surveillance/imgproc
+# Adjust the venv path if you set one up differently — see
+# Image Processing/code/README.md for setup instructions.
+ExecStart=/opt/surveillance/imgproc/venv/bin/python3 /opt/surveillance/imgproc/person_detector.py --config /opt/surveillance/imgproc/config.ini
+# person_detector.py's HttpPollCapture (source_type = http_poll) already
+# calls sys.exit(...) — a non-zero exit — if it can't reach the laptop's
+# /latest.jpg at startup (see open_capture() in person_detector.py). That
+# non-zero exit is what Restart=on-failure below reacts to: systemd waits
+# RestartSec, then tries again, indefinitely (see StartLimitIntervalSec
+# above), until the laptop side is actually up and reachable.
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

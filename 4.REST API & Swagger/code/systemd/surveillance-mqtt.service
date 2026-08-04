@@ -1,0 +1,23 @@
+[Unit]
+Description=Smart Surveillance System - MQTT Client
+# The MQTT client publishes person-count/telemetry data, so it depends on
+# the same shared frame/persons data image processing produces, and it
+# needs the network up to reach the broker on the PC.
+After=network-online.target surveillance-imgproc.service
+Wants=network-online.target
+Requires=surveillance-imgproc.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/surveillance/mqtt
+# TODO (Step 5): this binary doesn't exist yet — this unit is a placeholder
+# so the three-service dependency chain (imgproc -> web, imgproc -> mqtt)
+# is already in place and documented for the systemd-analyze / flowchart
+# parts of the Part 1 report. Update ExecStart once the MQTT C client is built.
+ExecStart=/opt/surveillance/mqtt/surveillance_mqtt /opt/surveillance/mqtt/mqtt.conf
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

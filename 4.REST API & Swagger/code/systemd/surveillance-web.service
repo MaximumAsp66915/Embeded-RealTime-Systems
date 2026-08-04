@@ -1,0 +1,22 @@
+[Unit]
+Description=Smart Surveillance System - Web Server (HTTP redirect + HTTPS dashboard)
+# Needs the network up (binds to all interfaces) and, more importantly,
+# needs the image-processing service already producing frame.jpg /
+# persons.json in /dev/shm before it has anything meaningful to show.
+After=network-online.target surveillance-imgproc.service
+Wants=network-online.target
+Requires=surveillance-imgproc.service
+
+[Service]
+Type=simple
+User=root
+# Binds to ports 80/443, hence root. If you'd rather not run as root,
+# use `setcap cap_net_bind_service=+ep` on the binary and switch User=
+# to an unprivileged account instead.
+WorkingDirectory=/opt/surveillance/web
+ExecStart=/opt/surveillance/web/surveillance_web /opt/surveillance/web/server.conf
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

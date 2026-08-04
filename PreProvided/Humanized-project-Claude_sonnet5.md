@@ -97,36 +97,36 @@ Building in grading order (Part 1 → 4) means you build the web server before y
 
 Core logic in C; FastAPI is allowed **only** as a thin documentation/gateway layer on top.
 
-- [ ] `GET /api/v1/stream` — MJPEG live video
-- [ ] `GET /api/v1/persons` — current count + timestamp
-- [ ] `GET /api/v1/telemetry` — CPU temp, free memory, CPU load % (read directly in C — **no shelling out to Linux commands**)
-- [ ] `POST /api/v1/command` — e.g. `{"cmd": "reboot"}`, designed so new commands can be added later without a rewrite
-- [ ] `GET /api/v1/history` — last 5 detection records
-- [ ] Wire all endpoints into Swagger UI, confirm each one actually executes and returns real data
+- [x] `GET /api/v1/stream` — MJPEG live video
+- [x] `GET /api/v1/persons` — current count + timestamp
+- [x] `GET /api/v1/telemetry` — CPU temp, free memory, CPU load % (read directly in C — **no shelling out to Linux commands**)
+- [x] `POST /api/v1/command` — e.g. `{"cmd": "reboot"}`, designed so new commands can be added later without a rewrite
+- [x] `GET /api/v1/history` — last 5 detection records
+- [x] Wire all endpoints into Swagger UI, confirm each one actually executes and returns real data
 
 **Experiments:**
-- [ ] 2-1: Sample temp every 30s for 5 min under idle / streaming-only / streaming+detection → 3-curve graph + min/max table + screenshot
-- [ ] 2-2: Memory usage over 5 min of continuous streaming, sampled every 5s → graph + leak analysis
-- [ ] 2-3: 50 concurrent curl requests to `/api/v1/telemetry` → graph temp/CPU/memory changes + latency analysis
-- [ ] 2-4: Kill network mid-stream, reconnect after 2 min → explain behavior, show logs, describe recovery
+- [x] 2-1: Sample temp every 30s for 5 min under idle / streaming-only / streaming+detection → 3-curve graph + min/max table + screenshot
+- [x] 2-2: Memory usage over 5 min of continuous streaming, sampled every 5s → graph + leak analysis
+- [x] 2-3: 50 concurrent curl requests to `/api/v1/telemetry` → graph temp/CPU/memory changes + latency analysis
+- [x] 2-4: Kill network mid-stream, reconnect after 2 min → explain behavior, show logs, describe recovery
 
 ---
 
 ## Step 5 — MQTT + Email (Part 3-B/C — shares the 25 pts with Step 2's detection work)
 
 **Email (C):**
-- [ ] On detecting ≥1 person, send email with: count, timestamp, CPU temp, attached frame
-- [ ] Debounce: max 1 email per 30 seconds — document the mechanism in the report
+- [x] On detecting ≥1 person, send email with: count, timestamp, CPU temp, attached frame
+- [x] Debounce: max 1 email per 30 seconds — document the mechanism in the report
 
 **MQTT (C client):**
-- [ ] Publish to `home/persons/<student_id>` and `home/telemetry/<student_id>`
-- [ ] JSON payloads: count/temp/timestamp as applicable
-- [ ] QoS = 1
-- [ ] Configure LWT so the PC is notified if the board drops suddenly
+- [x] Publish to `home/persons/<student_id>` and `home/telemetry/<student_id>`
+- [x] JSON payloads: count/temp/timestamp as applicable
+- [x] QoS = 1
+- [x] Configure LWT so the PC is notified if the board drops suddenly
 
 **Experiments:**
-- [ ] 3-4: Stop the broker, restart after 3 min → show the LWT message
-- [ ] 3-5: 10 samples of entry-to-MQTT-receipt latency → mean + standard deviation
+- [x] 3-4: Stop the broker, restart after 3 min → show the LWT message
+- [x] 3-5: 10 samples of entry-to-MQTT-receipt latency → mean + standard deviation
 
 ---
 

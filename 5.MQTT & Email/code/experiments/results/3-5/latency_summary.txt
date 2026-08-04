@@ -1,0 +1,6 @@
+Samples: 10 (10 valid)
+Mean latency:  1.008s
+Std deviation: 0.020s
+Min: 0.990s   Max: 1.033s
+
+Caveat: persons.json timestamps have 1-second resolution, so this measurement includes up to ~1s of quantization noise on top of the real pipeline latency.

@@ -1,0 +1,4 @@
+elapsed_s,cpu_temp_c,cpu_percent,mem_free_mb,mem_total_mb,ok
+0.53,34.1,57.1,209.8,477.6,True
+0.62,41.3,85.4,208.7,477.6,True
+0.63,37.8,42.6,209.4,477.6,True

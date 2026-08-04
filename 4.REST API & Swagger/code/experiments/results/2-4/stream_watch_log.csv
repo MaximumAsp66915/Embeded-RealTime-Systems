@@ -1,0 +1,109 @@
+elapsed_s,event
+0.0,attempting_connect
+0.06,connected
+228.92,connection_lost (ConnectionError)
+231.92,retrying_connect
+233.48,connection_lost (ConnectionError)
+236.48,retrying_connect
+241.48,connection_lost (ConnectTimeout)
+244.48,retrying_connect
+244.48,connection_lost (ConnectionError)
+247.48,retrying_connect
+247.49,connection_lost (ConnectionError)
+250.49,retrying_connect
+250.49,connection_lost (ConnectionError)
+253.49,retrying_connect
+253.49,connection_lost (ConnectionError)
+256.49,retrying_connect
+256.49,connection_lost (ConnectionError)
+259.49,retrying_connect
+259.5,connection_lost (ConnectionError)
+262.5,retrying_connect
+262.5,connection_lost (ConnectionError)
+265.5,retrying_connect
+265.5,connection_lost (ConnectionError)
+268.5,retrying_connect
+268.5,connection_lost (ConnectionError)
+271.51,retrying_connect
+271.51,connection_lost (ConnectionError)
+274.51,retrying_connect
+274.51,connection_lost (ConnectionError)
+277.51,retrying_connect
+277.51,connection_lost (ConnectionError)
+280.51,retrying_connect
+280.51,connection_lost (ConnectionError)
+283.51,retrying_connect
+283.51,connection_lost (ConnectionError)
+286.51,retrying_connect
+286.52,connection_lost (ConnectionError)
+289.52,retrying_connect
+289.52,connection_lost (ConnectionError)
+292.52,retrying_connect
+292.52,connection_lost (ConnectionError)
+295.52,retrying_connect
+295.52,connection_lost (ConnectionError)
+298.52,retrying_connect
+298.52,connection_lost (ConnectionError)
+301.52,retrying_connect
+301.53,connection_lost (ConnectionError)
+304.53,retrying_connect
+304.53,connection_lost (ConnectionError)
+307.53,retrying_connect
+307.53,connection_lost (ConnectionError)
+310.53,retrying_connect
+310.53,connection_lost (ConnectionError)
+313.53,retrying_connect
+313.53,connection_lost (ConnectionError)
+316.53,retrying_connect
+316.53,connection_lost (ConnectionError)
+319.53,retrying_connect
+319.54,connection_lost (ConnectionError)
+322.54,retrying_connect
+322.54,connection_lost (ConnectionError)
+325.54,retrying_connect
+325.54,connection_lost (ConnectionError)
+328.54,retrying_connect
+328.54,connection_lost (ConnectionError)
+331.54,retrying_connect
+331.54,connection_lost (ConnectionError)
+334.54,retrying_connect
+334.54,connection_lost (ConnectionError)
+337.54,retrying_connect
+337.55,connection_lost (ConnectionError)
+340.55,retrying_connect
+340.55,connection_lost (ConnectionError)
+343.55,retrying_connect
+343.55,connection_lost (ConnectionError)
+346.55,retrying_connect
+346.55,connection_lost (ConnectionError)
+349.55,retrying_connect
+349.6,connection_lost (ConnectionError)
+352.6,retrying_connect
+352.6,connection_lost (ConnectionError)
+355.6,retrying_connect
+355.61,connection_lost (ConnectionError)
+358.61,retrying_connect
+358.61,connection_lost (ConnectionError)
+361.61,retrying_connect
+361.61,connection_lost (ConnectionError)
+364.61,retrying_connect
+364.61,connection_lost (ConnectionError)
+367.61,retrying_connect
+367.61,connection_lost (ConnectionError)
+370.61,retrying_connect
+370.62,connection_lost (ConnectionError)
+373.62,retrying_connect
+373.62,connection_lost (ConnectionError)
+376.62,retrying_connect
+376.63,connection_lost (ConnectionError)
+379.63,retrying_connect
+379.63,connection_lost (ConnectionError)
+382.63,retrying_connect
+382.74,connection_lost (ConnectionError)
+385.74,retrying_connect
+385.74,connection_lost (ConnectionError)
+388.74,retrying_connect
+388.75,connection_lost (ConnectionError)
+391.75,retrying_connect
+391.84,connected
+400.11,stream_ended_after_512000_bytes

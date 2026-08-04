@@ -1,0 +1,6 @@
+First sample used:  262.4 MB
+Last sample used:   263.1 MB
+Peak used:          263.5 MB
+Net change:         +0.7 MB
+Linear trend slope: +0.137 MB/min
+Verdict: No meaningful upward trend — consistent with no leak over this window.

@@ -1,0 +1,24 @@
+[Unit]
+Description=Smart Surveillance System - REST API Gateway (FastAPI/Swagger)
+# The gateway is a pure proxy in front of the C web server's /api/v1
+# routes (see gateway/main.py) — there's nothing for it to serve until
+# that server is up and answering.
+After=network-online.target surveillance-web.service
+Wants=network-online.target
+Requires=surveillance-web.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/surveillance/gateway
+# Adjust the venv path if you set one up differently. C_SERVER_HOST/PORT
+# default to 127.0.0.1:443 (same board) — see gateway/main.py's top
+# comment if the C server runs elsewhere.
+Environment=C_SERVER_HOST=127.0.0.1
+Environment=C_SERVER_PORT=443
+ExecStart=/opt/surveillance/gateway/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --app-dir /opt/surveillance/gateway
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
