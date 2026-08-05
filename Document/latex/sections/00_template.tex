@@ -56,3 +56,31 @@ $\vectorvar{vectorvar}$
     % \includegraphics[width=0.9\textwidth]{fig/file_name}
     \caption{caption}\label{fig:file_name}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \adjustbox{max width=\textwidth}{%
+    \begin{tabular}{lcc}
+        \toprule
+        row1col1 & row1col2 & row1col3 \\
+        \midrule
+        row2col1 & row2col2 & row2col3 \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \caption{caption}\label{tab:label}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Your Table Caption}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lll}
+\toprule
+\textbf{Header 1} & \textbf{Header 2} & \textbf{Header 3} \\
+\midrule
+Long text content & Long text content & Long text content \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

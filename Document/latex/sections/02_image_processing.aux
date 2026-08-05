@@ -1,0 +1,118 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {section}{Image Processing}{11}{section*.20}\protected@file@percent }
+\newlabel{sec:Image-Processing}{{}{11}{}{section*.20}{}}
+\newlabel{sec:Image-Processing@cref}{{}{[1][11][]11}}
+\newlabel{sec:image-processing}{{}{11}{}{section*.20}{}}
+\newlabel{sec:image-processing@cref}{{}{[1][11][]11}}
+\@writefile{toc}{\contentsline {subsection}{Overview \& Architecture}{11}{section*.21}\protected@file@percent }
+\newlabel{subsec:Overview-and-Architecture}{{}{11}{}{section*.21}{}}
+\newlabel{subsec:Overview-and-Architecture@cref}{{}{[1][11][]11}}
+\@writefile{toc}{\contentsline {subsubsection}{Detector}{11}{section*.22}\protected@file@percent }
+\newlabel{subsubsec:Detector}{{}{11}{}{section*.22}{}}
+\newlabel{subsubsec:Detector@cref}{{}{[1][11][]11}}
+\@writefile{toc}{\contentsline {subsubsection}{No-Camera Workaround: HTTP Polling}{11}{section*.23}\protected@file@percent }
+\newlabel{subsubsec:No-Camera-Workaround:-HTTP-Polling}{{}{11}{}{section*.23}{}}
+\newlabel{subsubsec:No-Camera-Workaround:-HTTP-Polling@cref}{{}{[1][11][]11}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The four-process capture pipeline, spanning both machines.}}{12}{table.caption.24}\protected@file@percent }
+\newlabel{tab:capture-pipeline}{{2}{12}{The four-process capture pipeline, spanning both machines}{table.caption.24}{}}
+\newlabel{tab:capture-pipeline@cref}{{[table][2][]2}{[1][11][]12}}
+\@writefile{toc}{\contentsline {subsubsection}{Overlays and Shared Output}{12}{section*.25}\protected@file@percent }
+\newlabel{subsubsec:Overlays-and-Shared-Output}{{}{12}{}{section*.25}{}}
+\newlabel{subsubsec:Overlays-and-Shared-Output@cref}{{}{[1][12][]12}}
+\newlabel{code:persons-json}{{2}{12}{Person-count and telemetry payload written on every processed frame}{lstlisting.2}{}}
+\newlabel{code:persons-json@cref}{{[listing][2][]2}{[1][12][]12}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Person-count and telemetry payload written on every processed frame.}}{12}{lstlisting.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Experiment 3-1: Detection Accuracy Under Varying Lighting}{12}{section*.26}\protected@file@percent }
+\newlabel{subsec:Experiment-3-1:-Detection-Accuracy-Under-Varying-Lighting}{{}{12}{}{section*.26}{}}
+\newlabel{subsec:Experiment-3-1:-Detection-Accuracy-Under-Varying-Lighting@cref}{{}{[1][12][]12}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Detection accuracy by lighting condition (correct = detected count exactly matches ground truth).}}{12}{table.caption.27}\protected@file@percent }
+\newlabel{tab:lighting-accuracy}{{3}{12}{Detection accuracy by lighting condition (correct = detected count exactly matches ground truth)}{table.caption.27}{}}
+\newlabel{tab:lighting-accuracy@cref}{{[table][3][]3}{[1][12][]12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces A low-light frame where the detector produced no bounding box despite a clear, close frontal view — one of the accuracy failures in Table~\ref {tab:lighting-accuracy}.}}{13}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:low-light-miss}{{8}{13}{A low-light frame where the detector produced no bounding box despite a clear, close frontal view — one of the accuracy failures in Table~\ref {tab:lighting-accuracy}}{figure.caption.28}{}}
+\newlabel{fig:low-light-miss@cref}{{[figure][8][]8}{[1][13][]13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A strongly backlit frame in which the subject is reduced to a silhouette; the detector nonetheless produced a (loosely aligned) bounding box, illustrating both the difficulty of this condition and the detector's partial robustness to it.}}{13}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:back-light-hit}{{9}{13}{A strongly backlit frame in which the subject is reduced to a silhouette; the detector nonetheless produced a (loosely aligned) bounding box, illustrating both the difficulty of this condition and the detector's partial robustness to it}{figure.caption.29}{}}
+\newlabel{fig:back-light-hit@cref}{{[figure][9][]9}{[1][13][]13}}
+\@writefile{toc}{\contentsline {subsection}{Experiment 3-2: Spoof Test}{13}{section*.30}\protected@file@percent }
+\newlabel{subsec:Experiment-3-2:-Spoof-Test}{{}{13}{}{section*.30}{}}
+\newlabel{subsec:Experiment-3-2:-Spoof-Test@cref}{{}{[1][13][]13}}
+\newlabel{q:Can-a-printed-photo-or-phone/tablet-screen-fool-the-detector?}{{1}{13}{}{section.1}{}}
+\newlabel{q:Can-a-printed-photo-or-phone/tablet-screen-fool-the-detector?@cref}{{[section][1][]1}{[1][13][]13}}
+\@writefile{toc}{\contentsline {subsection}{Question~Can a printed photo or phone/tablet screen fool the detector?}{13}{section.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Tablet held facing the camera, straight-on: the detector correctly reports zero persons.}}{14}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:spoof-miss}{{10}{14}{Tablet held facing the camera, straight-on: the detector correctly reports zero persons}{figure.caption.31}{}}
+\newlabel{fig:spoof-miss@cref}{{[figure][10][]10}{[1][13][]14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Same tablet, slightly different angle/framing: the detector now reports one person and draws a bounding box over the displayed photo.}}{14}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:spoof-hit}{{11}{14}{Same tablet, slightly different angle/framing: the detector now reports one person and draws a bounding box over the displayed photo}{figure.caption.32}{}}
+\newlabel{fig:spoof-hit@cref}{{[figure][11][]11}{[1][14][]14}}
+\newlabel{a:Findings-and-proposed-mitigation}{{}{14}{}{figure.caption.32}{}}
+\newlabel{a:Findings-and-proposed-mitigation@cref}{{}{[1][14][]14}}
+\@writefile{toc}{\contentsline {subsection}{Experiment 3-3: Resolution Sweep}{15}{section*.33}\protected@file@percent }
+\newlabel{subsec:Experiment-3-3:-Resolution-Sweep}{{}{15}{}{section*.33}{}}
+\newlabel{subsec:Experiment-3-3:-Resolution-Sweep@cref}{{}{[1][15][]15}}
+\newlabel{sec:resolution-experiment}{{}{15}{}{section*.33}{}}
+\newlabel{sec:resolution-experiment@cref}{{}{[1][15][]15}}
+\@writefile{toc}{\contentsline {subsubsection}{An unintentional first result: parameters do not scale for free}{15}{section*.34}\protected@file@percent }
+\newlabel{subsubsec:An-unintentional-first-result:-parameters-do-not-scale-for-free}{{}{15}{}{section*.34}{}}
+\newlabel{subsubsec:An-unintentional-first-result:-parameters-do-not-scale-for-free@cref}{{}{[1][15][]15}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Resolution sweep results, averaged over a 5-minute run (60 samples, 5s interval) per configuration.}}{15}{table.caption.35}\protected@file@percent }
+\newlabel{tab:resolution-sweep}{{4}{15}{Resolution sweep results, averaged over a 5-minute run (60 samples, 5s interval) per configuration}{table.caption.35}{}}
+\newlabel{tab:resolution-sweep@cref}{{[table][4][]4}{[1][15][]15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces $1280\times 720$, optimized configuration: annotated frame (left) alongside the live \texttt  {resolution\_bench.py} output (right), FPS climbing toward and stabilizing around 1.0.}}{16}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:720p-result}{{12}{16}{$1280\times 720$, optimized configuration: annotated frame (left) alongside the live \texttt {resolution\_bench.py} output (right), FPS climbing toward and stabilizing around 1.0}{figure.caption.36}{}}
+\newlabel{fig:720p-result@cref}{{[figure][12][]12}{[1][15][]16}}
+\@writefile{toc}{\contentsline {subsubsection}{Optimization Parameters}{16}{section*.37}\protected@file@percent }
+\newlabel{subsubsec:Optimization-Parameters}{{}{16}{}{section*.37}{}}
+\newlabel{subsubsec:Optimization-Parameters@cref}{{}{[1][16][]16}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Detection parameters changed between the unoptimized and optimized runs at each resolution.}}{16}{table.caption.38}\protected@file@percent }
+\newlabel{tab:optimization-params}{{5}{16}{Detection parameters changed between the unoptimized and optimized runs at each resolution}{table.caption.38}{}}
+\newlabel{tab:optimization-params@cref}{{[table][5][]5}{[1][16][]16}}
+\@writefile{toc}{\contentsline {subsubsection}{Conclusion: Optimal Setting}{16}{section*.39}\protected@file@percent }
+\newlabel{subsubsec:Conclusion:-Optimal-Setting}{{}{16}{}{section*.39}{}}
+\newlabel{subsubsec:Conclusion:-Optimal-Setting@cref}{{}{[1][16][]16}}
+\@writefile{toc}{\contentsline {subsection}{Section Summary}{17}{section*.40}\protected@file@percent }
+\newlabel{subsec:Section-Summary}{{}{17}{}{section*.40}{}}
+\newlabel{subsec:Section-Summary@cref}{{}{[1][17][]17}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Image Processing deliverables completed in this section.}}{17}{table.caption.41}\protected@file@percent }
+\newlabel{tab:imgproc-summary}{{6}{17}{Image Processing deliverables completed in this section}{table.caption.41}{}}
+\newlabel{tab:imgproc-summary@cref}{{[table][6][]6}{[1][17][]17}}
+\@setckpt{sections/02_image_processing}{
+\setcounter{page}{18}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{12}
+\setcounter{table}{6}
+\setcounter{tcbbreakpart}{2}
+\setcounter{tcblayer}{0}
+\setcounter{tcolorbox@number}{6}
+\setcounter{parentequation}{0}
+\setcounter{section@level}{0}
+\setcounter{Item}{0}
+\setcounter{Hfootnote}{0}
+\setcounter{bookmark@seq@number}{24}
+\setcounter{lstnumber}{8}
+\setcounter{float@type}{16}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{tikztiming@nrows}{0}
+\setcounter{tikztimingrows}{0}
+\setcounter{tikztimingtrans}{0}
+\setcounter{tikztimingtranspos}{0}
+\setcounter{tcblisting}{0}
+\setcounter{lstlisting}{2}
+}

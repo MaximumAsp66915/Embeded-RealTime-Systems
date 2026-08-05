@@ -1,5 +1,65 @@
-\contentsline {section}{smartsection}{2}{section*.1}%
-\contentsline {subsection}{smartsubsection}{2}{section*.2}%
-\contentsline {subsubsection}{smartsubsubsection}{2}{section*.3}%
-\contentsline {subsection}{Question~questionsection's name}{2}{section.1}%
+\contentsline {section}{Foundation \& Security}{4}{section*.1}%
+\contentsline {subsection}{Overview}{4}{section*.2}%
+\contentsline {subsection}{Automated Setup Script}{4}{section*.3}%
+\contentsline {subsubsection}{Deployment on the Orange Pi board}{5}{section*.4}%
+\contentsline {subsubsection}{Deployment on the laptop (MQTT broker host)}{6}{section*.6}%
+\contentsline {subsection}{Secrets Management}{6}{section*.8}%
+\contentsline {subsection}{Experiment 3-6: Unauthorized MQTT Login}{7}{section*.11}%
+\contentsline {subsection}{Experiment 3-7: Unauthorized SSH Login}{8}{section*.13}%
+\contentsline {subsection}{Certificate Overview}{8}{section*.15}%
+\contentsline {subsection}{Notes on This Section's Figures}{10}{section*.17}%
+\contentsline {subsection}{Section Summary}{10}{section*.18}%
+\contentsline {section}{Image Processing}{11}{section*.20}%
+\contentsline {subsection}{Overview \& Architecture}{11}{section*.21}%
+\contentsline {subsubsection}{Detector}{11}{section*.22}%
+\contentsline {subsubsection}{No-Camera Workaround: HTTP Polling}{11}{section*.23}%
+\contentsline {subsubsection}{Overlays and Shared Output}{12}{section*.25}%
+\contentsline {subsection}{Experiment 3-1: Detection Accuracy Under Varying Lighting}{12}{section*.26}%
+\contentsline {subsection}{Experiment 3-2: Spoof Test}{13}{section*.30}%
+\contentsline {subsection}{Question~Can a printed photo or phone/tablet screen fool the detector?}{13}{section.1}%
+\contentsline {subsection}{Experiment 3-3: Resolution Sweep}{15}{section*.33}%
+\contentsline {subsubsection}{An unintentional first result: parameters do not scale for free}{15}{section*.34}%
+\contentsline {subsubsection}{Optimization Parameters}{16}{section*.37}%
+\contentsline {subsubsection}{Conclusion: Optimal Setting}{16}{section*.39}%
+\contentsline {subsection}{Section Summary}{17}{section*.40}%
+\contentsline {section}{Web Server, SSL \& systemd}{18}{section*.42}%
+\contentsline {subsection}{Overview}{18}{section*.43}%
+\contentsline {subsection}{Web Server Architecture}{18}{section*.44}%
+\contentsline {subsection}{systemd Deployment}{19}{section*.47}%
+\contentsline {subsection}{Question~Why does image processing have to start before the web server?}{20}{section.2}%
+\contentsline {subsection}{Experiment 1-1: Boot Time}{20}{section*.48}%
+\contentsline {subsection}{Experiment 1-2: kill -9}{22}{section*.53}%
+\contentsline {subsection}{Experiment 1-3: Full Power Cycle}{23}{section*.55}%
+\contentsline {subsection}{Experiment 1-4: HTTP to HTTPS Redirect}{23}{section*.56}%
+\contentsline {subsection}{Experiment 1-5: Certificate CN}{23}{section*.58}%
+\contentsline {subsection}{Experiment 1-6: HTML Page Shows Student ID}{24}{section*.60}%
+\contentsline {subsection}{Section Summary}{24}{section*.61}%
+\contentsline {section}{REST API \& Swagger}{25}{section*.63}%
+\contentsline {subsection}{Overview}{25}{section*.64}%
+\contentsline {subsection}{API Surface}{25}{section*.65}%
+\contentsline {subsubsection}{Extensible Command Dispatch}{25}{section*.67}%
+\contentsline {subsubsection}{History (Last 5 Records)}{26}{section*.68}%
+\contentsline {subsection}{Live Demonstration}{26}{section*.69}%
+\contentsline {subsubsection}{Verifying the Dangerous-Command Gate Actually Executes}{27}{section*.71}%
+\contentsline {subsection}{Swagger UI}{27}{section*.74}%
+\contentsline {subsection}{Experiment 2-1: Temperature Under Three Conditions}{28}{section*.75}%
+\contentsline {subsection}{Experiment 2-2: Memory Usage Over 5 Minutes of Streaming}{28}{section*.76}%
+\contentsline {subsection}{Experiment 2-3: 50 Concurrent Requests}{28}{section*.77}%
+\contentsline {subsection}{Question~What happens to latency and system load under 50 concurrent requests?}{29}{section.3}%
+\contentsline {subsection}{Experiment 2-4: Network Disconnect / Reconnect}{29}{section*.80}%
+\contentsline {subsection}{Section Summary}{30}{section*.81}%
+\contentsline {section}{MQTT \& Email}{31}{section*.83}%
+\contentsline {subsection}{Overview}{31}{section*.84}%
+\contentsline {subsection}{Question~Why a separate daemon rather than folding this into the existing web server?}{31}{section.4}%
+\contentsline {subsection}{MQTT Publishing}{31}{section*.85}%
+\contentsline {subsubsection}{Last Will and Testament}{32}{section*.87}%
+\contentsline {subsection}{E-mail Notification and the Debounce Mechanism}{32}{section*.88}%
+\contentsline {subsection}{Issues Found and Fixed}{33}{section*.90}%
+\contentsline {subsubsection}{MQTT's first connection attempt was a permanent failure}{33}{section*.91}%
+\contentsline {subsubsection}{E-mail attachment corruption --- two separate causes}{33}{section*.92}%
+\contentsline {subsubsection}{Other documented, intentional behaviors}{34}{section*.93}%
+\contentsline {subsection}{Experiment 3-4: Broker Outage, LWT Reception}{34}{section*.94}%
+\contentsline {subsection}{Experiment 3-5: Entry-to-Receipt Latency}{36}{section*.98}%
+\contentsline {subsection}{Question~What does this latency measurement actually capture?}{36}{section.5}%
+\contentsline {subsection}{Section Summary}{37}{section*.100}%
 \contentsfinish 
