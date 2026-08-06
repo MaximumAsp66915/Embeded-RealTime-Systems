@@ -132,16 +132,16 @@ Core logic in C; FastAPI is allowed **only** as a thin documentation/gateway lay
 
 ## Step 6 — Advanced Features (Part 4 — 25 pts)
 
-- [ ] **Guard Mode** — toggle via API or page; while active, detection triggers immediate email + MQTT alert on `home/<student_id>/alarm`
-- [ ] **Black box logging** — SQLite, circular buffer, written via C API, queryable total-detection-count
-- [ ] **Software watchdog** — if no new frames for >30s, alert + log + email + restart the service
-- [ ] **Adaptive thermal management** — over-threshold CPU temp triggers automatic FPS/resolution reduction + alert email
+- [x] **Guard Mode** — toggle via API or page; while active, detection triggers immediate email + MQTT alert on `home/<student_id>/alarm`
+- [x] **Black box logging** — SQLite, circular buffer, written via C API, queryable total-detection-count
+- [x] **Software watchdog** — if no new frames for >30s, alert + log + email + restart the service
+- [x] **Adaptive thermal management** — over-threshold CPU temp triggers automatic FPS/resolution reduction + alert email
 
 **Experiments:**
-- [ ] 4-1: Guard Mode demo → video + report images
-- [ ] 4-2: Black box → screenshot of stored DB events
-- [ ] 4-3: Disconnect camera → video + screenshots of watchdog reacting
-- [ ] 4-4: Simulate high temp with Linux tools → screenshots/logs of adaptive response
+- [x] 4-1: Guard Mode demo → video + report images
+- [x] 4-2: Black box → screenshot of stored DB events
+- [x] 4-3: Disconnect camera → video + screenshots of watchdog reacting
+- [x] 4-4: Simulate high temp with Linux tools → screenshots/logs of adaptive response
 
 ---
 

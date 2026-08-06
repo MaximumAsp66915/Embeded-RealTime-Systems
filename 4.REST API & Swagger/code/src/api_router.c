@@ -11,6 +11,8 @@
 #include "history_log.h"
 #include "command_dispatch.h"
 #include "service_ctl.h"
+#include "guard_mode.h"
+#include "blackbox_reader.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -287,6 +289,67 @@ static void handle_command(SSL *ssl, const server_config_t *cfg, const http_requ
     send_json(ssl, http_status, http_status_text, body, body_len);
 }
 
+/* --- /api/v1/guard --- */
+
+static void handle_guard_get(SSL *ssl, const server_config_t *cfg) {
+    int enabled = guard_mode_get(cfg->guard_state_path);
+    char body[64];
+    int body_len = snprintf(body, sizeof(body), "{\"enabled\": %s}", enabled ? "true" : "false");
+    send_json(ssl, 200, "OK", body, body_len);
+}
+
+static void handle_guard_post(SSL *ssl, const server_config_t *cfg, const http_request_t *req) {
+    /* Scoped specifically to right after the "enabled" key (not "does
+     * the word true appear anywhere in the body") — same tightened
+     * pattern as the notifier daemon's guard_state.c uses when reading
+     * this same file back. Body is always exactly
+     * {"enabled": true/false}. */
+    int enabled = 0;
+    const char *key = strstr(req->body, "\"enabled\"");
+    if (key) {
+        const char *colon = strchr(key, ':');
+        if (colon) {
+            enabled = (strncmp(colon + 1, " true", 5) == 0 || strncmp(colon + 1, "true", 4) == 0);
+        }
+    }
+
+    if (guard_mode_set(cfg->guard_state_path, enabled) != 0) {
+        const char *err = "{\"error\": \"could not write guard state\"}";
+        send_json(ssl, 500, "Internal Server Error", err, (int)strlen(err));
+        return;
+    }
+
+    char body[64];
+    int body_len = snprintf(body, sizeof(body), "{\"enabled\": %s}", enabled ? "true" : "false");
+    send_json(ssl, 200, "OK", body, body_len);
+}
+
+/* --- /api/v1/blackbox --- */
+
+static void handle_blackbox_count(SSL *ssl, const server_config_t *cfg) {
+    long total = 0;
+    if (blackbox_reader_get_total(cfg->blackbox_db_path, &total) != 0) {
+        const char *err = "{\"error\": \"black box DB not available yet — has the notifier daemon run?\"}";
+        send_json(ssl, 503, "Service Unavailable", err, (int)strlen(err));
+        return;
+    }
+
+    char body[64];
+    int body_len = snprintf(body, sizeof(body), "{\"total_events\": %ld}", total);
+    send_json(ssl, 200, "OK", body, body_len);
+}
+
+static void handle_blackbox_events(SSL *ssl, const server_config_t *cfg, int limit) {
+    char body[8192];
+    int body_len = blackbox_reader_get_recent_events_json(cfg->blackbox_db_path, limit, body, sizeof(body));
+    if (body_len < 0) {
+        const char *err = "{\"error\": \"black box DB not available yet — has the notifier daemon run?\"}";
+        send_json(ssl, 503, "Service Unavailable", err, (int)strlen(err));
+        return;
+    }
+    send_json(ssl, 200, "OK", body, body_len);
+}
+
 static void handle_unknown_api_route(SSL *ssl) {
     const char *body = "{\"error\": \"unknown API route\"}";
     send_json(ssl, 404, "Not Found", body, (int)strlen(body));
@@ -388,15 +451,22 @@ static int parse_service_path(const char *path, char *name_out, size_t name_out_
 /* Extracts an integer "lines" query parameter from a path like
  * ".../logs?lines=100". Returns the parsed value, or default_value if
  * absent/malformed. */
-static int parse_lines_query_param(const char *path, int default_value) {
+static int parse_int_query_param(const char *path, const char *param_name, int default_value) {
     const char *q = strchr(path, '?');
     if (!q) return default_value;
 
-    const char *key = strstr(q, "lines=");
+    char needle[32];
+    snprintf(needle, sizeof(needle), "%s=", param_name);
+
+    const char *key = strstr(q, needle);
     if (!key) return default_value;
 
-    int value = atoi(key + strlen("lines="));
+    int value = atoi(key + strlen(needle));
     return (value > 0) ? value : default_value;
+}
+
+static int parse_lines_query_param(const char *path, int default_value) {
+    return parse_int_query_param(path, "lines", default_value);
 }
 
 void api_router_init(const server_config_t *cfg) {
@@ -436,6 +506,15 @@ int api_router_dispatch(SSL *ssl, const server_config_t *cfg, const http_request
         } else {
             handle_unknown_api_route(ssl);
         }
+    } else if (strcmp(req->path, "/api/v1/guard") == 0 && strcmp(req->method, "GET") == 0) {
+        handle_guard_get(ssl, cfg);
+    } else if (strcmp(req->path, "/api/v1/guard") == 0 && strcmp(req->method, "POST") == 0) {
+        handle_guard_post(ssl, cfg, req);
+    } else if (strcmp(req->method, "GET") == 0 && strcmp(req->path, "/api/v1/blackbox/count") == 0) {
+        handle_blackbox_count(ssl, cfg);
+    } else if (strcmp(req->method, "GET") == 0 && strncmp(req->path, "/api/v1/blackbox/events", 23) == 0) {
+        int limit = parse_int_query_param(req->path, "limit", 20);
+        handle_blackbox_events(ssl, cfg, limit);
     } else {
         handle_unknown_api_route(ssl);
     }

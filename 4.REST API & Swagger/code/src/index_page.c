@@ -4,7 +4,10 @@
  * The page itself does very little: it embeds the MJPEG stream via a plain
  * <img> tag (browsers handle multipart/x-mixed-replace natively, no JS
  * needed for the video itself) and polls /stats.json on a timer to update
- * the numeric readouts.
+ * the numeric readouts. Step 6 adds a Guard Mode toggle card, polling
+ * GET /api/v1/guard and POSTing to the same endpoint on click — this is
+ * the "page" half of "toggle via API or page" (the REST endpoint itself
+ * is the "API" half, see api_router.c's handle_guard_get/handle_guard_post).
  */
 
 #include "index_page.h"
@@ -48,6 +51,11 @@ static const char *PAGE_TEMPLATE =
 "      <div class=\"card\"><div class=\"label\">CPU Usage</div><div class=\"value\" id=\"cpu\">--</div></div>\n"
 "      <div class=\"card\"><div class=\"label\">Detector FPS</div><div class=\"value\" id=\"fps\">--</div></div>\n"
 "      <div class=\"card\"><div class=\"label\">Last Update</div><div class=\"value\" id=\"updated\" style=\"font-size:0.95rem;\">--</div></div>\n"
+"      <div class=\"card\" id=\"guard-card\">\n"
+"        <div class=\"label\">Guard Mode</div>\n"
+"        <div class=\"value\" id=\"guard-status\">--</div>\n"
+"        <button id=\"guard-toggle\" style=\"margin-top:8px; padding:6px 14px; border-radius:6px; border:1px solid #444; background:#2a2a2a; color:#eee; cursor:pointer;\">Toggle</button>\n"
+"      </div>\n"
 "    </div>\n"
 "  </div>\n"
 "  <footer>Stats refresh every %d ms. Video updates as fast as the detector publishes frames.</footer>\n"
@@ -80,8 +88,38 @@ static const char *PAGE_TEMPLATE =
 "  }\n"
 "}\n"
 "\n"
+"async function pollGuard() {\n"
+"  try {\n"
+"    const res = await fetch('/api/v1/guard', { cache: 'no-store' });\n"
+"    if (!res.ok) throw new Error('bad status ' + res.status);\n"
+"    const data = await res.json();\n"
+"    const el = document.getElementById('guard-status');\n"
+"    el.textContent = data.enabled ? 'ARMED' : 'OFF';\n"
+"    el.style.color = data.enabled ? '#e05555' : '#eee';\n"
+"  } catch (err) {\n"
+"    console.error('guard poll failed:', err);\n"
+"  }\n"
+"}\n"
+"\n"
+"document.getElementById('guard-toggle').addEventListener('click', async () => {\n"
+"  try {\n"
+"    const current = document.getElementById('guard-status').textContent === 'ARMED';\n"
+"    const res = await fetch('/api/v1/guard', {\n"
+"      method: 'POST',\n"
+"      headers: { 'Content-Type': 'application/json' },\n"
+"      body: JSON.stringify({ enabled: !current })\n"
+"    });\n"
+"    if (!res.ok) throw new Error('bad status ' + res.status);\n"
+"    await pollGuard();\n"
+"  } catch (err) {\n"
+"    console.error('guard toggle failed:', err);\n"
+"  }\n"
+"});\n"
+"\n"
 "pollStats();\n"
 "setInterval(pollStats, REFRESH_MS);\n"
+"pollGuard();\n"
+"setInterval(pollGuard, REFRESH_MS);\n"
 "</script>\n"
 "</body>\n"
 "</html>\n";

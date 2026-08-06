@@ -1,0 +1,20 @@
+[Unit]
+Description=Smart Surveillance System - MQTT + Email Notifier + Advanced Features (Guard Mode, Black Box, Watchdog, Thermal)
+# Needs the network for both the MQTT broker and SMTP, and reads frame.jpg
+# / persons.json that Step 2's person_detector.py writes — start after
+# those are plausibly up, though this process tolerates either being
+# briefly unavailable (persons_reader_read failing just skips that poll
+# cycle; MQTT publish failures are logged, not fatal).
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/surveillance/notifier
+ExecStart=/opt/surveillance/notifier/surveillance_notifier /opt/surveillance/notifier/notifier.conf
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

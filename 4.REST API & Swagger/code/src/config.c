@@ -36,6 +36,10 @@ static void set_defaults(server_config_t *cfg) {
     cfg->stats_poll_interval_ms = 2000;
     cfg->allow_dangerous_commands = 0;
     cfg->history_poll_interval_ms = 2000;
+    snprintf(cfg->blackbox_db_path, sizeof(cfg->blackbox_db_path), "/opt/surveillance/notifier/blackbox.db");
+    /* guard_state_path defaults to <shared_dir>/guard_state.json, built
+     * in build_derived_paths() below once shared_dir is finalized —
+     * left blank here, same pattern as frame_path/persons_path. */
 }
 
 static void build_derived_paths(server_config_t *cfg) {
@@ -43,6 +47,10 @@ static void build_derived_paths(server_config_t *cfg) {
              cfg->shared_dir, cfg->frame_filename);
     snprintf(cfg->persons_path, sizeof(cfg->persons_path), "%s/%s",
              cfg->shared_dir, cfg->persons_filename);
+    if (cfg->guard_state_path[0] == '\0') {
+        snprintf(cfg->guard_state_path, sizeof(cfg->guard_state_path),
+                 "%s/guard_state.json", cfg->shared_dir);
+    }
 }
 
 int config_load(const char *path, server_config_t *out) {
@@ -79,6 +87,8 @@ int config_load(const char *path, server_config_t *out) {
         else if (strcmp(key, "stats_poll_interval_ms") == 0)  out->stats_poll_interval_ms = atoi(value);
         else if (strcmp(key, "allow_dangerous_commands") == 0) out->allow_dangerous_commands = (strcmp(value, "true") == 0 || strcmp(value, "1") == 0);
         else if (strcmp(key, "history_poll_interval_ms") == 0) out->history_poll_interval_ms = atoi(value);
+        else if (strcmp(key, "guard_state_path") == 0) snprintf(out->guard_state_path, sizeof(out->guard_state_path), "%s", value);
+        else if (strcmp(key, "blackbox_db_path") == 0) snprintf(out->blackbox_db_path, sizeof(out->blackbox_db_path), "%s", value);
         /* Unknown keys are ignored on purpose — forward compatible with a
          * conf file that has extra lines for other parts of the project. */
     }

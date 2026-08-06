@@ -13,8 +13,15 @@ IPC mechanism:
     <shared_dir>/frame.jpg     -> latest annotated JPEG frame
     <shared_dir>/persons.json  -> {"count": int, "timestamp": str, "fps": float}
 
-Both files are written atomically (write to a temp file, then os.rename)
-so the C side never reads a half-written file.
+Step 6 adds one more, read (not written) by this script:
+    <thermal control_path>/control.json -> {"target_fps": float,
+        "processing_scale": float, "throttled": bool}, written by the C
+        thermal manager (see 6.Advanced Features/code/src/thermal.c).
+        This script only ever reads and mechanically applies it — all
+        thermal decision-making happens in that C code.
+
+Both frame.jpg/persons.json are written atomically (write to a temp
+file, then os.rename) so the C side never reads a half-written file.
 
 Usage:
     python3 person_detector.py [--config config.ini]
@@ -251,6 +258,33 @@ def open_capture(cfg: configparser.ConfigParser):
     return cap
 
 
+def read_thermal_control(control_path):
+    """
+    Reads the throttle signal written by Step 6's C thermal manager
+    (thermal.c) — {"target_fps": float, "processing_scale": float,
+    "throttled": bool}. ALL the thermal decision-making (when to
+    throttle, by how much, when to recover) happens over there in C;
+    this function just mechanically reads whatever numbers it's told to
+    use, no thermal logic of its own.
+
+    Returns (target_fps_or_None, processing_scale) with safe defaults
+    (None, 1.0 — i.e. "no FPS cap, full resolution") if the file is
+    missing, unreadable, or malformed. Step 6 is optional infrastructure
+    — this detector should run normally at full settings if it isn't
+    deployed, not degrade or error out.
+    """
+    try:
+        with open(control_path, "r") as f:
+            data = json.load(f)
+        target_fps = float(data.get("target_fps", 0)) or None
+        processing_scale = float(data.get("processing_scale", 1.0))
+        if processing_scale <= 0 or processing_scale > 1.0:
+            processing_scale = 1.0
+        return target_fps, processing_scale
+    except (FileNotFoundError, json.JSONDecodeError, ValueError, TypeError, OSError):
+        return None, 1.0
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="config.ini")
@@ -273,6 +307,13 @@ def main():
           f"backend={cfg.get('detector', 'backend')}, "
           f"shared_dir={cfg.get('output', 'shared_dir')}")
 
+    # --- Step 6: adaptive thermal throttle (optional — see read_thermal_control) ---
+    thermal_control_path = cfg.get("thermal", "control_path",
+                                    fallback="/dev/shm/surveillance/control.json")
+    thermal_check_interval_s = cfg.getfloat("thermal", "check_interval_s", fallback=2.0)
+    last_thermal_check = 0.0
+    target_fps, processing_scale = None, 1.0
+
     prev_time = time.time()
     fps = 0.0
     fps_alpha = 0.9
@@ -290,11 +331,32 @@ def main():
 
     try:
         while True:
+            loop_start = time.time()
+
             ret, frame = cap.read()
             if not ret:
                 print("[person_detector] Frame read failed / stream interrupted. Retrying...")
                 time.sleep(0.05)
                 continue
+
+            # --- Step 6: re-check the thermal throttle signal periodically ---
+            # Not every frame — a plain file read is cheap, but there's no
+            # reason to do it more often than the C thermal manager could
+            # possibly have written a new value (it polls on its own
+            # ~2s-ish interval too).
+            if loop_start - last_thermal_check >= thermal_check_interval_s:
+                target_fps, processing_scale = read_thermal_control(thermal_control_path)
+                last_thermal_check = loop_start
+
+            # Apply resolution reduction (if throttled) to BOTH detection
+            # and the frame that gets written out — smaller frame means
+            # less CPU for detection AND less CPU for JPEG encoding, and
+            # it's directly visible in the served/emailed image during
+            # the 4-4 experiment, which is the point.
+            if processing_scale < 1.0:
+                new_w = max(1, int(frame.shape[1] * processing_scale))
+                new_h = max(1, int(frame.shape[0] * processing_scale))
+                frame = cv2.resize(frame, (new_w, new_h), interpolation=cv2.INTER_AREA)
 
             boxes = detector.detect(frame)
 
@@ -344,6 +406,17 @@ def main():
                 cv2.imshow("Smart Surveillance - Person Detection", frame)
                 if cv2.waitKey(1) & 0xFF == ord("q"):
                     break
+
+            # --- Step 6: FPS cap while throttled ---
+            # target_fps is None when not throttled (no cap — run as fast
+            # as the capture/detection pipeline naturally allows, same as
+            # before Step 6 existed). While throttled, sleep out the
+            # remainder of this frame's budget if we finished early.
+            if target_fps:
+                min_frame_time = 1.0 / target_fps
+                elapsed = time.time() - loop_start
+                if elapsed < min_frame_time:
+                    time.sleep(min_frame_time - elapsed)
 
     except KeyboardInterrupt:
         print("\n[person_detector] Interrupted, shutting down.")

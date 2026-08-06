@@ -37,6 +37,14 @@ typedef struct {
      * for a new record, in milliseconds. */
     int history_poll_interval_ms;
 
+    /* --- Step 6: Advanced Features --- */
+    /* This server WRITES guard_state.json (POST /api/v1/guard) — the
+     * Step 5/6 notifier daemon only reads it. */
+    char guard_state_path[CFG_MAXLEN * 2];
+    /* This server only READS the black box DB (the notifier daemon
+     * writes it) — for GET /api/v1/blackbox routes below. */
+    char blackbox_db_path[CFG_MAXLEN * 2];
+
     /* Convenience fields, built once at load time from the pieces above */
     char frame_path[CFG_MAXLEN * 2];
     char persons_path[CFG_MAXLEN * 2];

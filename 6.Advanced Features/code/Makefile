@@ -1,20 +1,20 @@
-# Makefile — Smart Surveillance System, Step 3/4/6 (Web Server, REST API, Advanced Features)
+# Makefile — Smart Surveillance System, Step 5/6 (MQTT + Email, Advanced Features)
 #
 # Build:   make
-# Run:     ./surveillance_web server.conf
+# Run:     ./surveillance_notifier notifier.conf
 # Clean:   make clean
 #
-# Requires: gcc, libssl-dev (OpenSSL headers), libsqlite3-dev (Step 6's
-#   black box query endpoints), pthread (part of glibc)
-#   Debian/Ubuntu: sudo apt install build-essential libssl-dev libsqlite3-dev
+# Requires: gcc, libmosquitto-dev, libcurl4-openssl-dev (or any libcurl4-*-dev),
+#   libsqlite3-dev (Step 6's black box), pthread
+#   Debian/Ubuntu: sudo apt install build-essential libmosquitto-dev libcurl4-openssl-dev libsqlite3-dev
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -O2 -std=c11 -Isrc
-LDFLAGS = -lssl -lcrypto -lpthread -lsqlite3
+LDFLAGS = -lmosquitto -lcurl -lsqlite3 -lpthread
 
 SRC_DIR = src
 BUILD_DIR = build
-TARGET = surveillance_web
+TARGET = surveillance_notifier
 
 SOURCES = $(wildcard $(SRC_DIR)/*.c)
 OBJECTS = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SOURCES))
@@ -36,4 +36,4 @@ clean:
 	rm -rf $(BUILD_DIR) $(TARGET)
 
 run: all
-	sudo ./$(TARGET) server.conf
+	./$(TARGET) notifier.conf

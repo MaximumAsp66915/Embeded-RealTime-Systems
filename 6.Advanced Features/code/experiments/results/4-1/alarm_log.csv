@@ -1,0 +1,4 @@
+elapsed_s,topic,payload
+8.8,home/402101906/alarm,"{""count"": 1, ""timestamp"": ""2026-08-06T12:30:33"", ""student_id"": ""402101906"", ""alarm"": true}"
+10.77,home/402101906/alarm,"{""count"": 1, ""timestamp"": ""2026-08-06T12:30:35"", ""student_id"": ""402101906"", ""alarm"": true}"
+12.79,home/402101906/alarm,"{""count"": 1, ""timestamp"": ""2026-08-06T12:30:37"", ""student_id"": ""402101906"", ""alarm"": true}"
