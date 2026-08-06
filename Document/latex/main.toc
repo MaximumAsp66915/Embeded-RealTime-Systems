@@ -62,4 +62,19 @@
 \contentsline {subsection}{Experiment 3-5: Entry-to-Receipt Latency}{36}{section*.98}%
 \contentsline {subsection}{Question~What does this latency measurement actually capture?}{36}{section.5}%
 \contentsline {subsection}{Section Summary}{37}{section*.100}%
+\contentsline {section}{Advanced Features}{38}{section*.102}%
+\contentsline {subsection}{Overview}{38}{section*.103}%
+\contentsline {subsection}{Question~Why route all four features through one existing daemon instead of building them as separate processes?}{38}{section.6}%
+\contentsline {subsubsection}{Cross-process state}{38}{section*.105}%
+\contentsline {subsection}{Guard Mode}{39}{section*.106}%
+\contentsline {subsection}{Black Box (SQLite)}{39}{section*.109}%
+\contentsline {subsection}{Watchdog}{40}{section*.111}%
+\contentsline {subsection}{Adaptive Thermal Management}{41}{section*.112}%
+\contentsline {subsection}{Question~Why use two different thresholds instead of one?}{41}{section.7}%
+\contentsline {subsection}{Experiment 4-1: Guard Mode Demo}{41}{section*.113}%
+\contentsline {subsection}{Experiment 4-2: Black Box Contents}{42}{section*.115}%
+\contentsline {subsection}{Experiment 4-3: Watchdog Reaction to a Disconnected Camera}{42}{section*.117}%
+\contentsline {subsection}{Experiment 4-4: Simulated High Temperature}{44}{section*.120}%
+\contentsline {subsection}{Question~Does the adaptive thermal response actually behave as designed under real, sustained load?}{46}{section.8}%
+\contentsline {subsection}{Section Summary}{47}{section*.126}%
 \contentsfinish 

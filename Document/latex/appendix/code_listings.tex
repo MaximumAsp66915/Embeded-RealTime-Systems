@@ -68,3 +68,17 @@ verbatim from these same files.
 \lstinputlisting[style=cstyle_bright_2026, caption={\texttt{email\_notifier.c} --- SMTP send with MIME attachment.}, label={code:app-email-notifier}]{../../5.MQTT & Email/code/src/email_notifier.c}
 
 \lstinputlisting[caption={\texttt{surveillance-notifier.service} --- systemd unit.}, label={code:app-notifier-service}]{../../5.MQTT & Email/code/systemd/surveillance-notifier.service}
+
+\smartsubsection{Part 6: Advanced Features}
+
+\lstinputlisting[style=cstyle_bright_2026, caption={\texttt{main.c} --- shared debounce across all four alert triggers.}, label={code:app-adv-main}]{../../6.Advanced Features/code/src/main.c}
+
+\lstinputlisting[style=cstyle_bright_2026, caption={\texttt{guard\_state.c} --- Guard Mode state.}, label={code:app-guard-state}]{../../6.Advanced Features/code/src/guard_state.c}
+
+\lstinputlisting[style=cstyle_bright_2026, caption={\texttt{black\_box.c} --- SQLite circular-buffer event log.}, label={code:app-black-box}]{../../6.Advanced Features/code/src/black_box.c}
+
+\lstinputlisting[style=cstyle_bright_2026, caption={\texttt{watchdog.c} --- stale-frame detection.}, label={code:app-watchdog}]{../../6.Advanced Features/code/src/watchdog.c}
+
+\lstinputlisting[style=cstyle_bright_2026, caption={\texttt{thermal.c} --- hysteresis-based throttle control.}, label={code:app-thermal}]{../../6.Advanced Features/code/src/thermal.c}
+
+\lstinputlisting[style=cstyle_bright_2026, caption={\texttt{service\_ctl.c} --- safe \texttt{systemctl} invocation via \texttt{execvp}.}, label={code:app-service-ctl-adv}]{../../6.Advanced Features/code/src/service_ctl.c}
