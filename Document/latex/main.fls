@@ -530,44 +530,14 @@ INPUT sections/02_image_processing.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png
-INPUT ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm
-INPUT ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png
-INPUT ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png
-INPUT ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png
-INPUT ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png
-INPUT ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png
 INPUT ./sections/03_web_server_ssl_systemd.tex
 INPUT ./sections/03_web_server_ssl_systemd.tex
 OUTPUT sections/03_web_server_ssl_systemd.aux
 INPUT ./sections/03_web_server_ssl_systemd.tex
 INPUT ./sections/03_web_server_ssl_systemd.tex
 INPUT sections/03_web_server_ssl_systemd.tex
-INPUT ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png
-INPUT ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png
-INPUT ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png
-INPUT ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png
-INPUT ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png
 INPUT ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png
 INPUT ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png
 INPUT ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png
@@ -619,22 +589,32 @@ INPUT ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png
 INPUT ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png
 INPUT ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png
 INPUT ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png
 INPUT ../../4.REST API & Swagger/results/fig/50-concurrency-test.png
 INPUT ../../4.REST API & Swagger/results/fig/50-concurrency-test.png
 INPUT ../../4.REST API & Swagger/results/fig/50-concurrency-test.png
 INPUT ../../4.REST API & Swagger/results/fig/50-concurrency-test.png
 INPUT ../../4.REST API & Swagger/results/fig/50-concurrency-test.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png
+INPUT ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png
 INPUT ./sections/05_mqtt_email.tex
 INPUT ./sections/05_mqtt_email.tex
 OUTPUT sections/05_mqtt_email.aux
 INPUT ./sections/05_mqtt_email.tex
 INPUT ./sections/05_mqtt_email.tex
 INPUT sections/05_mqtt_email.tex
-INPUT ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png
-INPUT ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png
-INPUT ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png
-INPUT ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png
-INPUT ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -674,11 +654,31 @@ INPUT ../../6.Advanced Features/results/fig/GuardMode-Blockbox.png
 INPUT ../../6.Advanced Features/results/fig/GuardMode-Blockbox.png
 INPUT ../../6.Advanced Features/results/fig/GuardMode-Blockbox.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tctt1200.tfm
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png
 INPUT ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png
 INPUT ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png
 INPUT ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png
 INPUT ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png
 INPUT ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png
 INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png
 INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png
 INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png
@@ -689,6 +689,31 @@ INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png
 INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png
 INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png
 INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png
+INPUT ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png
+INPUT ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png
 INPUT ../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png
 INPUT ../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png
 INPUT ../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png

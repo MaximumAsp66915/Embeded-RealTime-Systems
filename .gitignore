@@ -7,3 +7,4 @@ secrets.env
 server.conf
 **/venv/
 *.conf
+Document/latex/*

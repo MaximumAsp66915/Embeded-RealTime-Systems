@@ -1,121 +1,173 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {section}{Advanced Features}{38}{section*.102}\protected@file@percent }
-\newlabel{sec:Advanced-Features}{{}{38}{}{section*.102}{}}
-\newlabel{sec:Advanced-Features@cref}{{}{[1][38][]38}}
-\newlabel{sec:advanced-features}{{}{38}{}{section*.102}{}}
-\newlabel{sec:advanced-features@cref}{{}{[1][38][]38}}
-\@writefile{toc}{\contentsline {subsection}{Overview}{38}{section*.103}\protected@file@percent }
-\newlabel{subsec:Overview}{{}{38}{}{section*.103}{}}
-\newlabel{subsec:Overview@cref}{{}{[1][38][]38}}
-\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Where each feature lives.}}{38}{table.caption.104}\protected@file@percent }
-\newlabel{tab:advanced-locations}{{17}{38}{Where each feature lives}{table.caption.104}{}}
-\newlabel{tab:advanced-locations@cref}{{[table][17][]17}{[1][38][]38}}
-\newlabel{q:Why-route-all-four-features-through-one-existing-daemon-instead-of-building-them-as-separate-processes?}{{6}{38}{}{section.6}{}}
-\newlabel{q:Why-route-all-four-features-through-one-existing-daemon-instead-of-building-them-as-separate-processes?@cref}{{[section][6][]6}{[1][38][]38}}
-\@writefile{toc}{\contentsline {subsection}{Question~Why route all four features through one existing daemon instead of building them as separate processes?}{38}{section.6}\protected@file@percent }
-\newlabel{a:One-shared-debounce,-one-honest-guarantee}{{}{38}{}{section.6}{}}
-\newlabel{a:One-shared-debounce,-one-honest-guarantee@cref}{{}{[1][38][]38}}
-\@writefile{toc}{\contentsline {subsubsection}{Cross-process state}{38}{section*.105}\protected@file@percent }
-\newlabel{subsubsec:Cross-process-state}{{}{38}{}{section*.105}{}}
-\newlabel{subsubsec:Cross-process-state@cref}{{}{[1][38][]38}}
-\@writefile{toc}{\contentsline {subsection}{Guard Mode}{39}{section*.106}\protected@file@percent }
-\newlabel{subsec:Guard-Mode}{{}{39}{}{section*.106}{}}
-\newlabel{subsec:Guard-Mode@cref}{{}{[1][39][]39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Toggling Guard Mode via the REST API: initial state \texttt  {false}, armed with a \texttt  {POST}, confirmed \texttt  {true} on the next \texttt  {GET}.}}{39}{figure.caption.107}\protected@file@percent }
-\newlabel{fig:guard-toggle-api}{{27}{39}{Toggling Guard Mode via the REST API: initial state \texttt {false}, armed with a \texttt {POST}, confirmed \texttt {true} on the next \texttt {GET}}{figure.caption.107}{}}
-\newlabel{fig:guard-toggle-api@cref}{{[figure][27][]27}{[1][39][]39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces \texttt  {guard\_state.json} on disk before and after the toggle above, including the \texttt  {changed\_at} timestamp the daemon reads.}}{39}{figure.caption.108}\protected@file@percent }
-\newlabel{fig:guard-toggle-result}{{28}{39}{\texttt {guard\_state.json} on disk before and after the toggle above, including the \texttt {changed\_at} timestamp the daemon reads}{figure.caption.108}{}}
-\newlabel{fig:guard-toggle-result@cref}{{[figure][28][]28}{[1][39][]39}}
-\@writefile{toc}{\contentsline {subsection}{Black Box (SQLite)}{39}{section*.109}\protected@file@percent }
-\newlabel{subsec:Black-Box-(SQLite)}{{}{39}{}{section*.109}{}}
-\newlabel{subsec:Black-Box-(SQLite)@cref}{{}{[1][39][]39}}
-\newlabel{code:blackbox-schema}{{9}{39}{\texttt {black\_box.c} --- schema. WAL mode is used specifically because this process writes every poll cycle while a report screenshot might query the same file concurrently}{lstlisting.9}{}}
-\newlabel{code:blackbox-schema@cref}{{[listing][9][]9}{[1][39][]39}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}{\ignorespaces \texttt  {black\_box.c} --- schema. WAL mode is used specifically because this process writes every poll cycle while a report screenshot might query the same file concurrently.}}{39}{lstlisting.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces \texttt  {exp4\_2\_blackbox.py} pretty-printing the black box during a Guard Mode session: 363 total events ever recorded, most-recent rows showing a mix of \texttt  {guard\_alarm} and one \texttt  {watchdog\_timeout} entry.}}{40}{figure.caption.110}\protected@file@percent }
-\newlabel{fig:blackbox-query}{{29}{40}{\texttt {exp4\_2\_blackbox.py} pretty-printing the black box during a Guard Mode session: 363 total events ever recorded, most-recent rows showing a mix of \texttt {guard\_alarm} and one \texttt {watchdog\_timeout} entry}{figure.caption.110}{}}
-\newlabel{fig:blackbox-query@cref}{{[figure][29][]29}{[1][40][]40}}
-\@writefile{toc}{\contentsline {subsection}{Watchdog}{40}{section*.111}\protected@file@percent }
-\newlabel{subsec:Watchdog}{{}{40}{}{section*.111}{}}
-\newlabel{subsec:Watchdog@cref}{{}{[1][40][]40}}
-\newlabel{code:watchdog-check}{{10}{40}{\texttt {watchdog\_check()} --- fires once per stale period, not on every poll cycle while already stale}{lstlisting.10}{}}
-\newlabel{code:watchdog-check@cref}{{[listing][10][]10}{[1][40][]40}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}{\ignorespaces \texttt  {watchdog\_check()} --- fires once per stale period, not on every poll cycle while already stale.}}{40}{lstlisting.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{Adaptive Thermal Management}{41}{section*.112}\protected@file@percent }
-\newlabel{subsec:Adaptive-Thermal-Management}{{}{41}{}{section*.112}{}}
-\newlabel{subsec:Adaptive-Thermal-Management@cref}{{}{[1][40][]41}}
-\newlabel{code:thermal-hysteresis}{{11}{41}{\texttt {thermal.c} --- hysteresis check. The recover threshold is deliberately lower than the trigger threshold}{lstlisting.11}{}}
-\newlabel{code:thermal-hysteresis@cref}{{[listing][11][]11}{[1][41][]41}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {11}{\ignorespaces \texttt  {thermal.c} --- hysteresis check. The recover threshold is deliberately lower than the trigger threshold.}}{41}{lstlisting.11}\protected@file@percent }
-\newlabel{q:Why-use-two-different-thresholds-instead-of-one?}{{7}{41}{}{section.7}{}}
-\newlabel{q:Why-use-two-different-thresholds-instead-of-one?@cref}{{[section][7][]7}{[1][41][]41}}
-\@writefile{toc}{\contentsline {subsection}{Question~Why use two different thresholds instead of one?}{41}{section.7}\protected@file@percent }
-\newlabel{a:Hysteresis-prevents-boundary-chatter}{{}{41}{}{section.7}{}}
-\newlabel{a:Hysteresis-prevents-boundary-chatter@cref}{{}{[1][41][]41}}
-\@writefile{toc}{\contentsline {subsection}{Experiment 4-1: Guard Mode Demo}{41}{section*.113}\protected@file@percent }
-\newlabel{subsec:Experiment-4-1:-Guard-Mode-Demo}{{}{41}{}{section*.113}{}}
-\newlabel{subsec:Experiment-4-1:-Guard-Mode-Demo@cref}{{}{[1][41][]41}}
-\newlabel{sec:exp-4-1}{{}{41}{}{section*.113}{}}
-\newlabel{sec:exp-4-1@cref}{{}{[1][41][]41}}
-\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Alarm messages received on \texttt  {home/402101906/alarm} (from \texttt  {alarm\_log.csv}).}}{41}{table.caption.114}\protected@file@percent }
-\newlabel{tab:guard-alarm-log}{{18}{41}{Alarm messages received on \texttt {home/402101906/alarm} (from \texttt {alarm\_log.csv})}{table.caption.114}{}}
-\newlabel{tab:guard-alarm-log@cref}{{[table][18][]18}{[1][41][]41}}
-\@writefile{toc}{\contentsline {subsection}{Experiment 4-2: Black Box Contents}{42}{section*.115}\protected@file@percent }
-\newlabel{subsec:Experiment-4-2:-Black-Box-Contents}{{}{42}{}{section*.115}{}}
-\newlabel{subsec:Experiment-4-2:-Black-Box-Contents@cref}{{}{[1][42][]42}}
-\newlabel{sec:exp-4-2}{{}{42}{}{section*.115}{}}
-\newlabel{sec:exp-4-2@cref}{{}{[1][42][]42}}
-\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Most recent black-box events at query time (\texttt  {summary.json}: 1111 total events ever).}}{42}{table.caption.116}\protected@file@percent }
-\newlabel{tab:blackbox-events}{{19}{42}{Most recent black-box events at query time (\texttt {summary.json}: 1111 total events ever)}{table.caption.116}{}}
-\newlabel{tab:blackbox-events@cref}{{[table][19][]19}{[1][42][]42}}
-\@writefile{toc}{\contentsline {subsection}{Experiment 4-3: Watchdog Reaction to a Disconnected Camera}{42}{section*.117}\protected@file@percent }
-\newlabel{subsec:Experiment-4-3:-Watchdog-Reaction-to-a-Disconnected-Camera}{{}{42}{}{section*.117}{}}
-\newlabel{subsec:Experiment-4-3:-Watchdog-Reaction-to-a-Disconnected-Camera@cref}{{}{[1][42][]42}}
-\newlabel{sec:exp-4-3}{{}{42}{}{section*.117}{}}
-\newlabel{sec:exp-4-3@cref}{{}{[1][42][]42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces \texttt  {journalctl -u surveillance-notifier -f}: the watchdog firing (\texttt  {no new frame for >30s}), a genuine transient e-mail-send timeout logged \emph  {without} blocking the restart, and \texttt  {restart OK} confirmations for \texttt  {surveillance-imgproc}.}}{43}{figure.caption.118}\protected@file@percent }
-\newlabel{fig:watchdog-journalctl}{{30}{43}{\texttt {journalctl -u surveillance-notifier -f}: the watchdog firing (\texttt {no new frame for >30s}), a genuine transient e-mail-send timeout logged \emph {without} blocking the restart, and \texttt {restart OK} confirmations for \texttt {surveillance-imgproc}}{figure.caption.118}{}}
-\newlabel{fig:watchdog-journalctl@cref}{{[figure][30][]30}{[1][42][]43}}
-\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Client-observed staleness/recovery pattern (\texttt  {watchdog\_log.csv}, elapsed seconds from monitor start).}}{43}{table.caption.119}\protected@file@percent }
-\newlabel{tab:watchdog-timeline}{{20}{43}{Client-observed staleness/recovery pattern (\texttt {watchdog\_log.csv}, elapsed seconds from monitor start)}{table.caption.119}{}}
-\newlabel{tab:watchdog-timeline@cref}{{[table][20][]20}{[1][43][]43}}
-\newlabel{a:Reading-the-intermittent-recovery-pattern}{{}{43}{}{table.caption.119}{}}
-\newlabel{a:Reading-the-intermittent-recovery-pattern@cref}{{}{[1][43][]43}}
-\@writefile{toc}{\contentsline {subsection}{Experiment 4-4: Simulated High Temperature}{44}{section*.120}\protected@file@percent }
-\newlabel{subsec:Experiment-4-4:-Simulated-High-Temperature}{{}{44}{}{section*.120}{}}
-\newlabel{subsec:Experiment-4-4:-Simulated-High-Temperature@cref}{{}{[1][44][]44}}
-\newlabel{sec:exp-4-4}{{}{44}{}{section*.120}{}}
-\newlabel{sec:exp-4-4@cref}{{}{[1][44][]44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces No fan: local \texttt  {btop} confirming genuine hardware load (CPU 61\%, 68\,°C) while \texttt  {control.json} visibly toggles \texttt  {throttled} between \texttt  {true} and \texttt  {false} in real time.}}{44}{figure.caption.121}\protected@file@percent }
-\newlabel{fig:nofan-board}{{31}{44}{No fan: local \texttt {btop} confirming genuine hardware load (CPU 61\%, 68\,°C) while \texttt {control.json} visibly toggles \texttt {throttled} between \texttt {true} and \texttt {false} in real time}{figure.caption.121}{}}
-\newlabel{fig:nofan-board@cref}{{[figure][31][]31}{[1][44][]44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces No fan: black-box query showing alternating \texttt  {thermal\_throttle}/\texttt  {thermal\_recover} events during the stress window.}}{45}{figure.caption.122}\protected@file@percent }
-\newlabel{fig:nofan-blackbox}{{32}{45}{No fan: black-box query showing alternating \texttt {thermal\_throttle}/\texttt {thermal\_recover} events during the stress window}{figure.caption.122}{}}
-\newlabel{fig:nofan-blackbox@cref}{{[figure][32][]32}{[1][44][]45}}
-\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Experiment 4-4 summary: 300\,s run, \texttt  {stress} active for 180\,s of it (t$\approx $20--200\,s).}}{45}{table.caption.123}\protected@file@percent }
-\newlabel{tab:thermal-summary}{{21}{45}{Experiment 4-4 summary: 300\,s run, \texttt {stress} active for 180\,s of it (t$\approx $20--200\,s)}{table.caption.123}{}}
-\newlabel{tab:thermal-summary@cref}{{[table][21][]21}{[1][45][]45}}
-\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces No fan: temperature (red) vs.\ throttled state (blue) over the full run. The board is continuously throttled through nearly the entire stress window (shaded), then oscillates across the hysteresis band during cooldown as temperature settles near the 65--70\,°C boundary.}}{45}{figure.caption.124}\protected@file@percent }
-\newlabel{fig:nofan-thermal-graph}{{33}{45}{No fan: temperature (red) vs.\ throttled state (blue) over the full run. The board is continuously throttled through nearly the entire stress window (shaded), then oscillates across the hysteresis band during cooldown as temperature settles near the 65--70\,°C boundary}{figure.caption.124}{}}
-\newlabel{fig:nofan-thermal-graph@cref}{{[figure][33][]33}{[1][45][]45}}
-\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces With fan: temperature stays flat in the 38--46\,°C range throughout, well clear of the 70\,°C trigger --- throttling never engages.}}{46}{figure.caption.125}\protected@file@percent }
-\newlabel{fig:fan-thermal-graph}{{34}{46}{With fan: temperature stays flat in the 38--46\,°C range throughout, well clear of the 70\,°C trigger --- throttling never engages}{figure.caption.125}{}}
-\newlabel{fig:fan-thermal-graph@cref}{{[figure][34][]34}{[1][45][]46}}
-\newlabel{q:Does-the-adaptive-thermal-response-actually-behave-as-designed-under-real,-sustained-load?}{{8}{46}{}{section.8}{}}
-\newlabel{q:Does-the-adaptive-thermal-response-actually-behave-as-designed-under-real,-sustained-load?@cref}{{[section][8][]8}{[1][46][]46}}
-\@writefile{toc}{\contentsline {subsection}{Question~Does the adaptive thermal response actually behave as designed under real, sustained load?}{46}{section.8}\protected@file@percent }
-\newlabel{a:Yes,-with-one-honest-observation-about-the-cooldown-phase}{{}{46}{}{section.8}{}}
-\newlabel{a:Yes,-with-one-honest-observation-about-the-cooldown-phase@cref}{{}{[1][46][]46}}
-\@writefile{toc}{\contentsline {subsection}{Section Summary}{47}{section*.126}\protected@file@percent }
-\newlabel{subsec:Section-Summary}{{}{47}{}{section*.126}{}}
-\newlabel{subsec:Section-Summary@cref}{{}{[1][46][]47}}
-\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Advanced Features deliverables completed in this section.}}{47}{table.caption.127}\protected@file@percent }
-\newlabel{tab:advanced-summary}{{22}{47}{Advanced Features deliverables completed in this section}{table.caption.127}{}}
-\newlabel{tab:advanced-summary@cref}{{[table][22][]22}{[1][46][]47}}
+\@writefile{toc}{\contentsline {section}{Advanced Features}{41}{section*.116}\protected@file@percent }
+\newlabel{sec:Advanced-Features}{{}{41}{}{section*.116}{}}
+\newlabel{sec:Advanced-Features@cref}{{}{[1][41][]41}}
+\newlabel{sec:advanced-features}{{}{41}{}{section*.116}{}}
+\newlabel{sec:advanced-features@cref}{{}{[1][41][]41}}
+\@writefile{toc}{\contentsline {subsection}{Overview}{41}{section*.117}\protected@file@percent }
+\newlabel{subsec:Overview}{{}{41}{}{section*.117}{}}
+\newlabel{subsec:Overview@cref}{{}{[1][41][]41}}
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Where each feature lives.}}{41}{table.caption.118}\protected@file@percent }
+\newlabel{tab:advanced-locations}{{20}{41}{Where each feature lives}{table.caption.118}{}}
+\newlabel{tab:advanced-locations@cref}{{[table][20][]20}{[1][41][]41}}
+\newlabel{q:Why-route-all-four-features-through-one-existing-daemon-instead-of-building-them-as-separate-processes?}{{9}{41}{}{section.9}{}}
+\newlabel{q:Why-route-all-four-features-through-one-existing-daemon-instead-of-building-them-as-separate-processes?@cref}{{[section][9][]9}{[1][41][]41}}
+\@writefile{toc}{\contentsline {subsection}{Question~Why route all four features through one existing daemon instead of building them as separate processes?}{41}{section.9}\protected@file@percent }
+\newlabel{a:One-shared-debounce,-one-honest-guarantee}{{}{41}{}{section.9}{}}
+\newlabel{a:One-shared-debounce,-one-honest-guarantee@cref}{{}{[1][41][]41}}
+\@writefile{toc}{\contentsline {subsubsection}{Cross-process state}{41}{section*.119}\protected@file@percent }
+\newlabel{subsubsec:Cross-process-state}{{}{41}{}{section*.119}{}}
+\newlabel{subsubsec:Cross-process-state@cref}{{}{[1][41][]41}}
+\@writefile{toc}{\contentsline {subsection}{Guard Mode}{42}{section*.120}\protected@file@percent }
+\newlabel{subsec:Guard-Mode}{{}{42}{}{section*.120}{}}
+\newlabel{subsec:Guard-Mode@cref}{{}{[1][42][]42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces Toggling Guard Mode via the REST API: initial state \texttt  {false}, armed with a \texttt  {POST}, confirmed \texttt  {true} on the next \texttt  {GET}.}}{42}{figure.caption.121}\protected@file@percent }
+\newlabel{fig:guard-toggle-api}{{38}{42}{Toggling Guard Mode via the REST API: initial state \texttt {false}, armed with a \texttt {POST}, confirmed \texttt {true} on the next \texttt {GET}}{figure.caption.121}{}}
+\newlabel{fig:guard-toggle-api@cref}{{[figure][38][]38}{[1][42][]42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces \texttt  {guard\_state.json} on disk before and after the toggle above, including the \texttt  {changed\_at} timestamp the daemon reads.}}{42}{figure.caption.122}\protected@file@percent }
+\newlabel{fig:guard-toggle-result}{{39}{42}{\texttt {guard\_state.json} on disk before and after the toggle above, including the \texttt {changed\_at} timestamp the daemon reads}{figure.caption.122}{}}
+\newlabel{fig:guard-toggle-result@cref}{{[figure][39][]39}{[1][42][]42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {40}{\ignorespaces The dashboard reflecting the same armed/disarmed state as the API call --- confirming "toggle via API or page" is one code path, not two.}}{42}{figure.caption.123}\protected@file@percent }
+\newlabel{fig:guard-toggle-web}{{40}{42}{The dashboard reflecting the same armed/disarmed state as the API call --- confirming "toggle via API or page" is one code path, not two}{figure.caption.123}{}}
+\newlabel{fig:guard-toggle-web@cref}{{[figure][40][]40}{[1][42][]42}}
+\@writefile{toc}{\contentsline {subsubsection}{Cross-Channel Confirmation: One Alarm, Three Channels}{43}{section*.124}\protected@file@percent }
+\newlabel{subsubsec:Cross-Channel-Confirmation:-One-Alarm,-Three-Channels}{{}{43}{}{section*.124}{}}
+\newlabel{subsubsec:Cross-Channel-Confirmation:-One-Alarm,-Three-Channels@cref}{{}{[1][42][]43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {41}{\ignorespaces MQTT subscriber: alarm on \texttt  {home/402101906/alarm} at \texttt  {10:47:49}.}}{43}{figure.caption.125}\protected@file@percent }
+\newlabel{fig:guard-crosscheck-mqtt}{{41}{43}{MQTT subscriber: alarm on \texttt {home/402101906/alarm} at \texttt {10:47:49}}{figure.caption.125}{}}
+\newlabel{fig:guard-crosscheck-mqtt@cref}{{[figure][41][]41}{[1][42][]43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {42}{\ignorespaces E-mail for the same \texttt  {10:47:49} detection, attaching the triggering frame.}}{43}{figure.caption.126}\protected@file@percent }
+\newlabel{fig:guard-crosscheck-email}{{42}{43}{E-mail for the same \texttt {10:47:49} detection, attaching the triggering frame}{figure.caption.126}{}}
+\newlabel{fig:guard-crosscheck-email@cref}{{[figure][42][]42}{[1][43][]43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {43}{\ignorespaces Dashboard at the same moment (\texttt  {10:47:48}--\texttt  {49}), Guard Mode shown \texttt  {ARMED}.}}{43}{figure.caption.127}\protected@file@percent }
+\newlabel{fig:guard-crosscheck-web}{{43}{43}{Dashboard at the same moment (\texttt {10:47:48}--\texttt {49}), Guard Mode shown \texttt {ARMED}}{figure.caption.127}{}}
+\newlabel{fig:guard-crosscheck-web@cref}{{[figure][43][]43}{[1][43][]43}}
+\@writefile{toc}{\contentsline {subsection}{Black Box (SQLite)}{43}{section*.128}\protected@file@percent }
+\newlabel{subsec:Black-Box-(SQLite)}{{}{43}{}{section*.128}{}}
+\newlabel{subsec:Black-Box-(SQLite)@cref}{{}{[1][43][]43}}
+\newlabel{code:blackbox-schema}{{9}{43}{\texttt {black\_box.c} --- schema. WAL mode is used specifically because this process writes every poll cycle while a report screenshot might query the same file concurrently}{lstlisting.9}{}}
+\newlabel{code:blackbox-schema@cref}{{[listing][9][]9}{[1][43][]43}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}{\ignorespaces \texttt  {black\_box.c} --- schema. WAL mode is used specifically because this process writes every poll cycle while a report screenshot might query the same file concurrently.}}{43}{lstlisting.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {44}{\ignorespaces \texttt  {exp4\_2\_blackbox.py} pretty-printing the black box during a Guard Mode session: 363 total events ever recorded, most-recent rows showing a mix of \texttt  {guard\_alarm} and one \texttt  {watchdog\_timeout} entry.}}{44}{figure.caption.129}\protected@file@percent }
+\newlabel{fig:blackbox-query}{{44}{44}{\texttt {exp4\_2\_blackbox.py} pretty-printing the black box during a Guard Mode session: 363 total events ever recorded, most-recent rows showing a mix of \texttt {guard\_alarm} and one \texttt {watchdog\_timeout} entry}{figure.caption.129}{}}
+\newlabel{fig:blackbox-query@cref}{{[figure][44][]44}{[1][43][]44}}
+\@writefile{toc}{\contentsline {subsection}{Watchdog}{44}{section*.130}\protected@file@percent }
+\newlabel{subsec:Watchdog}{{}{44}{}{section*.130}{}}
+\newlabel{subsec:Watchdog@cref}{{}{[1][44][]44}}
+\newlabel{code:watchdog-check}{{10}{44}{\texttt {watchdog\_check()} --- fires once per stale period, not on every poll cycle while already stale}{lstlisting.10}{}}
+\newlabel{code:watchdog-check@cref}{{[listing][10][]10}{[1][44][]44}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}{\ignorespaces \texttt  {watchdog\_check()} --- fires once per stale period, not on every poll cycle while already stale.}}{44}{lstlisting.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Adaptive Thermal Management}{44}{section*.131}\protected@file@percent }
+\newlabel{subsec:Adaptive-Thermal-Management}{{}{44}{}{section*.131}{}}
+\newlabel{subsec:Adaptive-Thermal-Management@cref}{{}{[1][44][]44}}
+\newlabel{code:thermal-hysteresis}{{11}{44}{\texttt {thermal.c} --- hysteresis check. The recover threshold is deliberately lower than the trigger threshold}{lstlisting.11}{}}
+\newlabel{code:thermal-hysteresis@cref}{{[listing][11][]11}{[1][44][]44}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {11}{\ignorespaces \texttt  {thermal.c} --- hysteresis check. The recover threshold is deliberately lower than the trigger threshold.}}{44}{lstlisting.11}\protected@file@percent }
+\newlabel{q:Why-use-two-different-thresholds-instead-of-one?}{{10}{44}{}{section.10}{}}
+\newlabel{q:Why-use-two-different-thresholds-instead-of-one?@cref}{{[section][10][]10}{[1][44][]44}}
+\@writefile{toc}{\contentsline {subsection}{Question~Why use two different thresholds instead of one?}{44}{section.10}\protected@file@percent }
+\newlabel{a:Hysteresis-prevents-boundary-chatter}{{}{45}{}{section.10}{}}
+\newlabel{a:Hysteresis-prevents-boundary-chatter@cref}{{}{[1][45][]45}}
+\@writefile{toc}{\contentsline {subsection}{Experiment 4-1: Guard Mode Demo}{45}{section*.132}\protected@file@percent }
+\newlabel{subsec:Experiment-4-1:-Guard-Mode-Demo}{{}{45}{}{section*.132}{}}
+\newlabel{subsec:Experiment-4-1:-Guard-Mode-Demo@cref}{{}{[1][45][]45}}
+\newlabel{sec:exp-4-1}{{}{45}{}{section*.132}{}}
+\newlabel{sec:exp-4-1@cref}{{}{[1][45][]45}}
+\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Alarm messages received on \texttt  {home/402101906/alarm} (from \texttt  {alarm\_log.csv}).}}{45}{table.caption.133}\protected@file@percent }
+\newlabel{tab:guard-alarm-log}{{21}{45}{Alarm messages received on \texttt {home/402101906/alarm} (from \texttt {alarm\_log.csv})}{table.caption.133}{}}
+\newlabel{tab:guard-alarm-log@cref}{{[table][21][]21}{[1][45][]45}}
+\@writefile{toc}{\contentsline {subsection}{Experiment 4-2: Black Box Contents}{45}{section*.134}\protected@file@percent }
+\newlabel{subsec:Experiment-4-2:-Black-Box-Contents}{{}{45}{}{section*.134}{}}
+\newlabel{subsec:Experiment-4-2:-Black-Box-Contents@cref}{{}{[1][45][]45}}
+\newlabel{sec:exp-4-2}{{}{45}{}{section*.134}{}}
+\newlabel{sec:exp-4-2@cref}{{}{[1][45][]45}}
+\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Full set of most recent black-box events at query time (\texttt  {summary.json}: 1000 total events ever, 20 of 1000 shown).}}{46}{table.caption.135}\protected@file@percent }
+\newlabel{tab:blackbox-events}{{22}{46}{Full set of most recent black-box events at query time (\texttt {summary.json}: 1000 total events ever, 20 of 1000 shown)}{table.caption.135}{}}
+\newlabel{tab:blackbox-events@cref}{{[table][22][]22}{[1][46][]46}}
+\@writefile{toc}{\contentsline {subsection}{Experiment 4-3: Watchdog Reaction to a Disconnected Camera}{46}{section*.136}\protected@file@percent }
+\newlabel{subsec:Experiment-4-3:-Watchdog-Reaction-to-a-Disconnected-Camera}{{}{46}{}{section*.136}{}}
+\newlabel{subsec:Experiment-4-3:-Watchdog-Reaction-to-a-Disconnected-Camera@cref}{{}{[1][46][]46}}
+\newlabel{sec:exp-4-3}{{}{46}{}{section*.136}{}}
+\newlabel{sec:exp-4-3@cref}{{}{[1][46][]46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {45}{\ignorespaces Setup: \texttt  {laptop\_stream\_webcam.sh} serving normally on the left, \texttt  {exp4\_3\_watchdog.py} attached and watching \texttt  {persons.json} on the right, just before the feed is cut.}}{47}{figure.caption.137}\protected@file@percent }
+\newlabel{fig:watchdog-before}{{45}{47}{Setup: \texttt {laptop\_stream\_webcam.sh} serving normally on the left, \texttt {exp4\_3\_watchdog.py} attached and watching \texttt {persons.json} on the right, just before the feed is cut}{figure.caption.137}{}}
+\newlabel{fig:watchdog-before@cref}{{[figure][45][]45}{[1][46][]47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {46}{\ignorespaces \texttt  {journalctl -u surveillance-notifier -f}: the watchdog firing (\texttt  {no new frame for >30s}), a genuine transient e-mail-send timeout logged \emph  {without} blocking the restart, and \texttt  {restart OK} confirmations for \texttt  {surveillance-imgproc}.}}{47}{figure.caption.138}\protected@file@percent }
+\newlabel{fig:watchdog-journalctl}{{46}{47}{\texttt {journalctl -u surveillance-notifier -f}: the watchdog firing (\texttt {no new frame for >30s}), a genuine transient e-mail-send timeout logged \emph {without} blocking the restart, and \texttt {restart OK} confirmations for \texttt {surveillance-imgproc}}{figure.caption.138}{}}
+\newlabel{fig:watchdog-journalctl@cref}{{[figure][46][]46}{[1][47][]47}}
+\newlabel{code:imgproc-journalctl}{{12}{48}{\texttt {journalctl -u surveillance-imgproc} (excerpt): 15 consecutive \texttt {Connection refused} entries while the laptop-side server was down, followed by 17 \texttt {HTTP Error 503} entries once the server was back up but the webcam device itself was still reopening}{lstlisting.12}{}}
+\newlabel{code:imgproc-journalctl@cref}{{[listing][12][]12}{[1][48][]48}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {12}{\ignorespaces \texttt  {journalctl -u surveillance-imgproc} (excerpt): 15 consecutive \texttt  {Connection refused} entries while the laptop-side server was down, followed by 17 \texttt  {HTTP Error 503} entries once the server was back up but the webcam device itself was still reopening.}}{48}{lstlisting.12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {23}{\ignorespaces Client-observed staleness/recovery pattern (\texttt  {watchdog\_log.csv}, elapsed seconds from monitor start).}}{48}{table.caption.139}\protected@file@percent }
+\newlabel{tab:watchdog-timeline}{{23}{48}{Client-observed staleness/recovery pattern (\texttt {watchdog\_log.csv}, elapsed seconds from monitor start)}{table.caption.139}{}}
+\newlabel{tab:watchdog-timeline@cref}{{[table][23][]23}{[1][48][]48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {47}{\ignorespaces The disconnect procedure itself: \texttt  {Ctrl+C} on \texttt  {laptop\_stream\_webcam.sh} triggers \texttt  {Aborted (core dumped)} rather than a clean exit, so the script had to be manually relaunched --- visible next to the monitor's first \texttt  {RECOVERED} line at 55.5\,s.}}{49}{figure.caption.140}\protected@file@percent }
+\newlabel{fig:watchdog-first-reconnect}{{47}{49}{The disconnect procedure itself: \texttt {Ctrl+C} on \texttt {laptop\_stream\_webcam.sh} triggers \texttt {Aborted (core dumped)} rather than a clean exit, so the script had to be manually relaunched --- visible next to the monitor's first \texttt {RECOVERED} line at 55.5\,s}{figure.caption.140}{}}
+\newlabel{fig:watchdog-first-reconnect@cref}{{[figure][47][]47}{[1][48][]49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {48}{\ignorespaces A second manual relaunch of the same script, with the monitor logging RECOVERED at 55.5\,s, 61.8\,s, and 67.1\,s in quick succession.}}{49}{figure.caption.141}\protected@file@percent }
+\newlabel{fig:watchdog-second-reconnect}{{48}{49}{A second manual relaunch of the same script, with the monitor logging RECOVERED at 55.5\,s, 61.8\,s, and 67.1\,s in quick succession}{figure.caption.141}{}}
+\newlabel{fig:watchdog-second-reconnect@cref}{{[figure][48][]48}{[1][49][]49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {49}{\ignorespaces Black box mid-test: 448 total events ever, with a \texttt  {watchdog\_timeout} entry (id 447, 32.4\,°C) logged alongside ordinary \texttt  {guard\_alarm} entries --- confirming the watchdog's own timeout is recorded, not just the restart.}}{50}{figure.caption.142}\protected@file@percent }
+\newlabel{fig:watchdog-blackbox}{{49}{50}{Black box mid-test: 448 total events ever, with a \texttt {watchdog\_timeout} entry (id 447, 32.4\,°C) logged alongside ordinary \texttt {guard\_alarm} entries --- confirming the watchdog's own timeout is recorded, not just the restart}{figure.caption.142}{}}
+\newlabel{fig:watchdog-blackbox@cref}{{[figure][49][]49}{[1][49][]50}}
+\newlabel{q:Does-the-watchdog's-alert-e-mail-actually-work,-separately-from-the-timeout-robustness-claim-above?}{{11}{50}{}{section.11}{}}
+\newlabel{q:Does-the-watchdog's-alert-e-mail-actually-work,-separately-from-the-timeout-robustness-claim-above?@cref}{{[section][11][]11}{[1][50][]50}}
+\@writefile{toc}{\contentsline {subsection}{Question~Does the watchdog's alert e-mail actually work, separately from the timeout-robustness claim above?}{50}{section.11}\protected@file@percent }
+\newlabel{a:Yes-----captured-in-an-earlier,-unremarkable-run}{{}{50}{}{section.11}{}}
+\newlabel{a:Yes-----captured-in-an-earlier,-unremarkable-run@cref}{{}{[1][50][]50}}
+\newlabel{a:Reading-the-intermittent-recovery-pattern}{{}{50}{}{section.11}{}}
+\newlabel{a:Reading-the-intermittent-recovery-pattern@cref}{{}{[1][50][]50}}
+\@writefile{toc}{\contentsline {subsection}{Experiment 4-4: Simulated High Temperature}{51}{section*.143}\protected@file@percent }
+\newlabel{subsec:Experiment-4-4:-Simulated-High-Temperature}{{}{51}{}{section*.143}{}}
+\newlabel{subsec:Experiment-4-4:-Simulated-High-Temperature@cref}{{}{[1][50][]51}}
+\newlabel{sec:exp-4-4}{{}{51}{}{section*.143}{}}
+\newlabel{sec:exp-4-4@cref}{{}{[1][50][]51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {50}{\ignorespaces No fan: local \texttt  {btop} confirming genuine hardware load (CPU 61\%, 68\,°C) while \texttt  {control.json} visibly toggles \texttt  {throttled} between \texttt  {true} and \texttt  {false} in real time.}}{51}{figure.caption.144}\protected@file@percent }
+\newlabel{fig:nofan-board}{{50}{51}{No fan: local \texttt {btop} confirming genuine hardware load (CPU 61\%, 68\,°C) while \texttt {control.json} visibly toggles \texttt {throttled} between \texttt {true} and \texttt {false} in real time}{figure.caption.144}{}}
+\newlabel{fig:nofan-board@cref}{{[figure][50][]50}{[1][51][]51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {51}{\ignorespaces No fan:  black-box query showing alternating \texttt  {thermal\_throttle}/\texttt  {thermal\_recover} events during the stress window.}}{51}{figure.caption.145}\protected@file@percent }
+\newlabel{fig:nofan-blackbox}{{51}{51}{No fan:\\ black-box query showing alternating \texttt {thermal\_throttle}/\texttt {thermal\_recover} events during the stress window}{figure.caption.145}{}}
+\newlabel{fig:nofan-blackbox@cref}{{[figure][51][]51}{[1][51][]51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {52}{\ignorespaces Same REST endpoint, same CPU load (both pegged at 100\%) --- the only variable that differs is temperature, isolating the fan as the cause of the throttle difference rather than anything CPU-load-related.}}{52}{figure.caption.146}\protected@file@percent }
+\newlabel{fig:thermal-telemetry-both}{{52}{52}{Same REST endpoint, same CPU load (both pegged at 100\%) --- the only variable that differs is temperature, isolating the fan as the cause of the throttle difference rather than anything CPU-load-related}{figure.caption.146}{}}
+\newlabel{fig:thermal-telemetry-both@cref}{{[figure][52][]52}{[1][51][]52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {53}{\ignorespaces With fan: black box at \texttt  {total\_events\_ever = 1036}, all 20 most recent rows \texttt  {guard\_alarm} (39.5--44.9\,°C) --- zero \texttt  {thermal\_throttle} events anywhere in this run, the counter-example to the no-fan run's 15/15.}}{52}{figure.caption.147}\protected@file@percent }
+\newlabel{fig:fan-blackbox}{{53}{52}{With fan: black box at \texttt {total\_events\_ever = 1036}, all 20 most recent rows \texttt {guard\_alarm} (39.5--44.9\,°C) --- zero \texttt {thermal\_throttle} events anywhere in this run, the counter-example to the no-fan run's 15/15}{figure.caption.147}{}}
+\newlabel{fig:fan-blackbox@cref}{{[figure][53][]53}{[1][52][]52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {54}{\ignorespaces No fan: the MQTT alarm subscriber left running through the same stress window, still firing \texttt  {guard\_alarm} messages on schedule --- confirming detection alarms and thermal management coexist in the daemon without one starving the other.}}{52}{figure.caption.148}\protected@file@percent }
+\newlabel{fig:nofan-broker}{{54}{52}{No fan: the MQTT alarm subscriber left running through the same stress window, still firing \texttt {guard\_alarm} messages on schedule --- confirming detection alarms and thermal management coexist in the daemon without one starving the other}{figure.caption.148}{}}
+\newlabel{fig:nofan-broker@cref}{{[figure][54][]54}{[1][52][]52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {55}{\ignorespaces With fan: local \texttt  {btop} showing all four cores genuinely saturated by \texttt  {stress}, alongside \texttt  {cat control.json} confirming \texttt  {"throttled": false, "target\_fps": 15.0, "processing\_scale": 1.0} despite the full load.}}{53}{figure.caption.149}\protected@file@percent }
+\newlabel{fig:fan-board}{{55}{53}{With fan: local \texttt {btop} showing all four cores genuinely saturated by \texttt {stress}, alongside \texttt {cat control.json} confirming \texttt {"throttled": false, "target\_fps": 15.0, "processing\_scale": 1.0} despite the full load}{figure.caption.149}{}}
+\newlabel{fig:fan-board@cref}{{[figure][55][]55}{[1][52][]53}}
+\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces Experiment 4-4 summary: 300\,s run, \texttt  {stress} active for 180\,s of it (t$\approx $20--200\,s).}}{53}{table.caption.150}\protected@file@percent }
+\newlabel{tab:thermal-summary}{{24}{53}{Experiment 4-4 summary: 300\,s run, \texttt {stress} active for 180\,s of it (t$\approx $20--200\,s)}{table.caption.150}{}}
+\newlabel{tab:thermal-summary@cref}{{[table][24][]24}{[1][53][]53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {56}{\ignorespaces No fan: temperature (red) vs.\ throttled state (blue) over the full run. The board is continuously throttled through nearly the entire stress window (shaded), then oscillates across the hysteresis band during cooldown as temperature settles near the 65--70\,°C boundary.}}{53}{figure.caption.151}\protected@file@percent }
+\newlabel{fig:nofan-thermal-graph}{{56}{53}{No fan: temperature (red) vs.\ throttled state (blue) over the full run. The board is continuously throttled through nearly the entire stress window (shaded), then oscillates across the hysteresis band during cooldown as temperature settles near the 65--70\,°C boundary}{figure.caption.151}{}}
+\newlabel{fig:nofan-thermal-graph@cref}{{[figure][56][]56}{[1][53][]53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {57}{\ignorespaces With fan: temperature stays flat in the 38--46\,°C range throughout, well clear of the 70\,°C trigger --- throttling never engages.}}{54}{figure.caption.152}\protected@file@percent }
+\newlabel{fig:fan-thermal-graph}{{57}{54}{With fan: temperature stays flat in the 38--46\,°C range throughout, well clear of the 70\,°C trigger --- throttling never engages}{figure.caption.152}{}}
+\newlabel{fig:fan-thermal-graph@cref}{{[figure][57][]57}{[1][53][]54}}
+\newlabel{q:Does-the-adaptive-thermal-response-actually-behave-as-designed-under-real,-sustained-load?}{{12}{54}{}{section.12}{}}
+\newlabel{q:Does-the-adaptive-thermal-response-actually-behave-as-designed-under-real,-sustained-load?@cref}{{[section][12][]12}{[1][54][]54}}
+\@writefile{toc}{\contentsline {subsection}{Question~Does the adaptive thermal response actually behave as designed under real, sustained load?}{54}{section.12}\protected@file@percent }
+\newlabel{a:Yes,-with-one-honest-observation-about-the-cooldown-phase}{{}{54}{}{section.12}{}}
+\newlabel{a:Yes,-with-one-honest-observation-about-the-cooldown-phase@cref}{{}{[1][54][]54}}
+\newlabel{q:Does-the-throttle-setting-actually-change-what-the-detector-does,-not-just-what-control-json-says?}{{13}{54}{}{section.13}{}}
+\newlabel{q:Does-the-throttle-setting-actually-change-what-the-detector-does,-not-just-what-control-json-says?@cref}{{[section][13][]13}{[1][54][]54}}
+\@writefile{toc}{\contentsline {subsection}{Question~Does the throttle setting actually change what the detector does, not just what control.json says?}{54}{section.13}\protected@file@percent }
+\newlabel{a:Confirmed-on-the-dashboard,-with-one-honest-confound}{{}{55}{}{section.13}{}}
+\newlabel{a:Confirmed-on-the-dashboard,-with-one-honest-confound@cref}{{}{[1][55][]55}}
+\@writefile{toc}{\contentsline {subsection}{Section Summary}{55}{section*.153}\protected@file@percent }
+\newlabel{subsec:Section-Summary}{{}{55}{}{section*.153}{}}
+\newlabel{subsec:Section-Summary@cref}{{}{[1][55][]55}}
+\@writefile{lot}{\contentsline {table}{\numberline {25}{\ignorespaces Advanced Features deliverables completed in this section.}}{55}{table.caption.154}\protected@file@percent }
+\newlabel{tab:advanced-summary}{{25}{55}{Advanced Features deliverables completed in this section}{table.caption.154}{}}
+\newlabel{tab:advanced-summary@cref}{{[table][25][]25}{[1][55][]55}}
 \@setckpt{sections/06_advanced_features}{
-\setcounter{page}{48}
+\setcounter{page}{56}
 \setcounter{equation}{0}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -124,22 +176,22 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{section}{8}
+\setcounter{section}{13}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{34}
-\setcounter{table}{22}
+\setcounter{figure}{57}
+\setcounter{table}{25}
 \setcounter{tcbbreakpart}{1}
 \setcounter{tcblayer}{0}
-\setcounter{tcolorbox@number}{27}
+\setcounter{tcolorbox@number}{35}
 \setcounter{parentequation}{0}
 \setcounter{section@level}{0}
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{79}
-\setcounter{lstnumber}{6}
+\setcounter{bookmark@seq@number}{85}
+\setcounter{lstnumber}{14}
 \setcounter{float@type}{16}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
@@ -150,5 +202,5 @@
 \setcounter{tikztimingtrans}{0}
 \setcounter{tikztimingtranspos}{0}
 \setcounter{tcblisting}{0}
-\setcounter{lstlisting}{11}
+\setcounter{lstlisting}{12}
 }

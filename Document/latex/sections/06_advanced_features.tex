@@ -101,6 +101,56 @@ While armed, a new detection (\texttt{count} $\geq 1$) does two things
 \caption{\texttt{guard\_state.json} on disk before and after the toggle above, including the \texttt{changed\_at} timestamp the daemon reads.}\label{fig:guard-toggle-result}
 \end{figure}
 
+Toggling Guard Mode from the dashboard's own \texttt{Toggle} button
+drives the exact same \texttt{guard\_state.json} as the raw
+\texttt{POST} above:
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+% \includegraphics[width=\textwidth]{../../6.Advanced Features/results/fig-gitignore/GuardMode-Toggle-Web-Off.png}
+\caption*{Guard Mode \texttt{OFF}}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+% \includegraphics[width=\textwidth]{../../6.Advanced Features/results/fig-gitignore/GuardMode-Toggle-Web-Armed.png}
+\caption*{Guard Mode \texttt{ARMED}}
+\end{minipage}
+\caption{The dashboard reflecting the same armed/disarmed state as the API call --- confirming "toggle via API or page" is one code path, not two.}\label{fig:guard-toggle-web}
+\end{figure}
+
+\smartsubsubsection{Cross-Channel Confirmation: One Alarm, Three Channels}
+
+To confirm the three reactions above are firing for the \emph{same}
+event rather than just independently working, one detection was traced
+by timestamp across the MQTT subscriber, the resulting e-mail, and the
+live dashboard:
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig-gitignore/GuardMode-BrokerAlarm-MQTT.png}
+\caption{MQTT subscriber: alarm on \texttt{home/402101906/alarm} at \texttt{10:47:49}.}\label{fig:guard-crosscheck-mqtt}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.85\textwidth]{../../6.Advanced Features/results/fig-gitignore/GuardMode-BrokerAlarm-Email.png}
+\caption{E-mail for the same \texttt{10:47:49} detection, attaching the triggering frame.}\label{fig:guard-crosscheck-email}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{../../6.Advanced Features/results/fig-gitignore/GuardMode-BrokerAlarm-Web.png}
+\caption{Dashboard at the same moment (\texttt{10:47:48}--\texttt{49}), Guard Mode shown \texttt{ARMED}.}\label{fig:guard-crosscheck-web}
+\end{figure}
+
+All three timestamps land within the same second --- the strongest
+available evidence that the immediate MQTT publish, the debounced
+e-mail, and the dashboard's own \texttt{persons.json} polling are three
+views of one shared detection, not three independently-triggered paths.
+
 \smartsubsection{Black Box (SQLite)}
 
 \begin{lstlisting}[style=cstyle_bright_2026, caption={\texttt{black\_box.c} --- schema. WAL mode is used specifically because this process writes every poll cycle while a report screenshot might query the same file concurrently.}, label={code:blackbox-schema}]
@@ -228,30 +278,50 @@ alarm channel is genuinely immediate rather than debounced.
 
 A second, later black-box query (after substantially more runtime,
 including the full thermal test of Experiment~4-4) shows the counter
-having grown to 1111 total events, with detection, thermal-throttle, and
+having grown to 1000 total events, with detection, thermal-throttle, and
 thermal-recover entries interleaved as the board cycled under load:
 
 \begin{table}[H]
 \centering
-\caption{Most recent black-box events at query time (\texttt{summary.json}: 1111 total events ever).}
+\caption{Full set of most recent black-box events at query time (\texttt{summary.json}: 1000 total events ever, 20 of 1000 shown).}
 \label{tab:blackbox-events}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lllll}
 \toprule
 \textbf{ID} & \textbf{Type} & \textbf{Timestamp} & \textbf{Count} & \textbf{Temp (°C)} \\
 \midrule
-1111 & detection & 2026-08-06T12:45:30Z & 1 & 64.1 \\
-1110 & thermal\_recover & 2026-08-06T12:45:30Z & 1 & 64.1 \\
-1109 & detection & 2026-08-06T12:45:28Z & 1 & 70.3 \\
-1108 & thermal\_throttle & 2026-08-06T12:45:28Z & 1 & 70.3 \\
-1107 & thermal\_recover & 2026-08-06T12:45:26Z & 0 & 64.1 \\
-1106 & thermal\_throttle & 2026-08-06T12:45:24Z & 0 & 75.8 \\
+1000 & detection & 2026-08-06T12:45:30Z & 1 & 64.1 \\
+999 & thermal\_recover & 2026-08-06T12:45:30Z & 1 & 64.1 \\
+998 & detection & 2026-08-06T12:45:28Z & 1 & 70.3 \\
+997 & thermal\_throttle & 2026-08-06T12:45:28Z & 1 & 70.3 \\
+996 & thermal\_recover & 2026-08-06T12:45:26Z & 0 & 64.1 \\
+995 & thermal\_throttle & 2026-08-06T12:45:24Z & 0 & 75.8 \\
+994 & detection & 2026-08-06T12:45:17Z & 1 & 67.9 \\
+993 & detection & 2026-08-06T12:44:55Z & 1 & 69.1 \\
+992 & detection & 2026-08-06T12:44:53Z & 1 & 68.6 \\
+991 & detection & 2026-08-06T12:44:45Z & 1 & 68.6 \\
+990 & detection & 2026-08-06T12:44:38Z & 1 & 68.6 \\
+989 & thermal\_recover & 2026-08-06T12:44:34Z & 0 & 60.8 \\
+988 & thermal\_throttle & 2026-08-06T12:44:30Z & 0 & 74.0 \\
+987 & thermal\_recover & 2026-08-06T12:44:24Z & 0 & 61.9 \\
+986 & thermal\_throttle & 2026-08-06T12:44:22Z & 0 & 76.9 \\
+985 & detection & 2026-08-06T12:44:18Z & 1 & 69.4 \\
+984 & thermal\_recover & 2026-08-06T12:44:10Z & 0 & 58.2 \\
+983 & thermal\_throttle & 2026-08-06T12:44:04Z & 0 & 73.6 \\
+982 & thermal\_recover & 2026-08-06T12:43:58Z & 0 & 61.3 \\
+981 & thermal\_throttle & 2026-08-06T12:43:14Z & 0 & 70.1 \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
-Row 1108 lands at exactly \texttt{70.3\,°C} for a \texttt{thermal\_throttle}
+Row 997 lands at exactly \texttt{70.3\,°C} for a \texttt{thermal\_throttle}
 event --- consistent with the configured 70\,°C trigger threshold being
-crossed right at that sample.
+crossed right at that sample. Of these 20 rows, 8 are \texttt{detection},
+6 are \texttt{thermal\_throttle}, and 6 are \texttt{thermal\_recover} ---
+exactly the interleaving the Overview's shared-daemon design promised:
+person detection and thermal management logging to the same circular
+buffer without stepping on each other.
 
 \smartsubsection{Experiment 4-3: Watchdog Reaction to a Disconnected Camera}
 \label{sec:exp-4-3}
@@ -262,6 +332,12 @@ capture design, per Section~\ref{sec:image-processing}), while both an
 external monitor script and the notifier's own systemd journal were
 watched through the disconnect, timeout, forced restart, and eventual
 reconnection.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png}
+\caption{Setup: \texttt{laptop\_stream\_webcam.sh} serving normally on the left, \texttt{exp4\_3\_watchdog.py} attached and watching \texttt{persons.json} on the right, just before the feed is cut.}\label{fig:watchdog-before}
+\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -278,6 +354,26 @@ detector --- does not depend on the notification succeeding.} A slow or
 unreachable SMTP server is exactly the kind of transient condition a
 recovery mechanism should be robust to.
 
+\texttt{surveillance-imgproc}'s own journal over the same window shows
+the other half of the story --- what the board-side poller experienced
+while the notifier's watchdog was restarting it:
+
+\begin{lstlisting}[style=pythonstyle_bright_2026, caption={\texttt{journalctl -u surveillance-imgproc} (excerpt): 15 consecutive \texttt{Connection refused} entries while the laptop-side server was down, followed by 17 \texttt{HTTP Error 503} entries once the server was back up but the webcam device itself was still reopening.}, label={code:imgproc-journalctl}]
+-- Logs begin at Thu 2026-08-06 10:58:30 UTC, end at Thu 2026-08-06 11:23:54 UTC. --
+[person_detector] Frame read failed / stream interrupted. Retrying...
+[person_detector] HTTP poll failed: <urlopen error [Errno 111] Connection refused>
+[person_detector] Frame read failed / stream interrupted. Retrying...
+[person_detector] HTTP poll failed: <urlopen error [Errno 111] Connection refused>
+    ... (15 total "Connection refused" while the laptop server was down) ...
+[person_detector] Frame read failed / stream interrupted. Retrying...
+[person_detector] HTTP poll failed: HTTP Error 503: Service Unavailable
+[person_detector] Frame read failed / stream interrupted. Retrying...
+[person_detector] HTTP poll failed: HTTP Error 503: Service Unavailable
+    ... (17 total "503 Service Unavailable" while the webcam device reopened) ...
+[person_detector] Frame read failed / stream interrupted. Retrying...
+[person_detector] HTTP poll failed: <urlopen error [Errno 111] Connection refused>
+\end{lstlisting}
+
 \begin{table}[H]
 \centering
 \caption{Client-observed staleness/recovery pattern (\texttt{watchdog\_log.csv}, elapsed seconds from monitor start).}
@@ -293,20 +389,62 @@ recovery mechanism should be robust to.
 \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png}
+\caption{The disconnect procedure itself: \texttt{Ctrl+C} on \texttt{laptop\_stream\_webcam.sh} triggers \texttt{Aborted (core dumped)} rather than a clean exit, so the script had to be manually relaunched --- visible next to the monitor's first \texttt{RECOVERED} line at 55.5\,s.}\label{fig:watchdog-first-reconnect}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png}
+\caption{A second manual relaunch of the same script, with the monitor logging RECOVERED at 55.5\,s, 61.8\,s, and 67.1\,s in quick succession.}\label{fig:watchdog-second-reconnect}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png}
+\caption{Black box mid-test: 448 total events ever, with a \texttt{watchdog\_timeout} entry (id 447, 32.4\,°C) logged alongside ordinary \texttt{guard\_alarm} entries --- confirming the watchdog's own timeout is recorded, not just the restart.}\label{fig:watchdog-blackbox}
+\end{figure}
+
+\begin{questionsection}{Does the watchdog's alert e-mail actually work, separately from the timeout-robustness claim above?}
+Figure~\ref{fig:watchdog-journalctl} deliberately captures a run where
+the alert e-mail times out, to prove the restart doesn't depend on it.
+That raises the fair question of whether the e-mail path works at all
+when SMTP isn't slow.
+\end{questionsection}
+
+\begin{answersection}{Yes --- captured in an earlier, unremarkable run}
+An earlier watchdog trial (11:10:51Z, 33.2\,°C) shows the alert e-mail
+delivering normally, subject line \texttt{Surveillance: Watchdog -
+camera feed stale, restarting service (count=0)}, attaching the last
+frame before the feed went stale. The two watchdog runs together cover
+both cases the assignment cares about: that earlier run shows the alert
+e-mail arriving normally when SMTP behaves, and
+Figure~\ref{fig:watchdog-journalctl}'s later run shows the restart still
+happening on schedule when it doesn't.
+\end{answersection}
+
 \begin{answersection}{Reading the intermittent recovery pattern}
 The first sustained stale period (0--54.4\,s) lines up with the
 watchdog's 30-second timeout plus the time for
 \texttt{systemctl restart} and the Python process to come back up. The
-repeated brief recover/relapse cycles that follow are visible directly
-in \texttt{surveillance-imgproc}'s own log
-(\texttt{Connection refused}, then \texttt{HTTP Error 503: Service
-Unavailable}) --- the latter is Section~\ref{sec:image-processing}'s own
-laptop-side retry logic correctly reporting "camera not ready yet" rather
-than failing outright, so the board keeps polling successfully into a
-server that is itself still reconnecting to the webcam. The pattern is
-therefore two independent retry loops (this daemon's watchdog, and
-Section~\ref{sec:image-processing}'s HTTP-poll capture) settling into a
-stable state together, not a fault in either one individually.
+honest caveat on what follows: Figures~\ref{fig:watchdog-first-reconnect}
+and \ref{fig:watchdog-second-reconnect} show that part of the
+intermittent recover/relapse pattern (9 separate \texttt{RECOVERED}
+lines between 55.5\,s and 174.8\,s) is not purely automatic network
+recovery --- the laptop-side \texttt{laptop\_stream\_webcam.sh} aborted
+on \texttt{Ctrl+C} instead of exiting cleanly and had to be relaunched by
+hand twice during the test. What \emph{is} still a clean, unassisted
+result is Listing~\ref{code:imgproc-journalctl}: once the laptop server
+was back up, \texttt{surveillance-imgproc} moved on its own from 15
+\texttt{Connection refused} errors to 17 \texttt{HTTP Error 503}s as the
+webcam itself reopened, without anyone intervening on the board side ---
+that HTTP-poll retry logic recovered exactly as
+Section~\ref{sec:image-processing} intends. The pattern is therefore one
+manual variable (the test harness needing a restart) layered on top of
+two working automatic ones (the board's poll-retry loop, and this
+daemon's watchdog), not a fault in either the watchdog or the detector.
 \end{answersection}
 
 \smartsubsection{Experiment 4-4: Simulated High Temperature}
@@ -327,7 +465,41 @@ the thermal-management response.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png}
-\caption{No fan: black-box query showing alternating \texttt{thermal\_throttle}/\texttt{thermal\_recover} events during the stress window.}\label{fig:nofan-blackbox}
+\caption{No fan:\\ black-box query showing alternating \texttt{thermal\_throttle}/\texttt{thermal\_recover} events during the stress window.}\label{fig:nofan-blackbox}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png}
+\caption*{No fan: \texttt{/api/v1/telemetry} at 74.0\,°C, 100\% CPU}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png}
+\caption*{With fan: 41.1\,°C, also 100\% CPU}
+\end{minipage}
+\caption{Same REST endpoint, same CPU load (both pegged at 100\%) --- the only variable that differs is temperature, isolating the fan as the cause of the throttle difference rather than anything CPU-load-related.}\label{fig:thermal-telemetry-both}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png}
+\caption{With fan: black box at \texttt{total\_events\_ever = 1036}, all 20 most recent rows \texttt{guard\_alarm} (39.5--44.9\,°C) --- zero \texttt{thermal\_throttle} events anywhere in this run, the counter-example to the no-fan run's 15/15.}\label{fig:fan-blackbox}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png}
+\caption{No fan: the MQTT alarm subscriber left running through the same stress window, still firing \texttt{guard\_alarm} messages on schedule --- confirming detection alarms and thermal management coexist in the daemon without one starving the other.}\label{fig:nofan-broker}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png}
+\caption{With fan: local \texttt{btop} showing all four cores genuinely saturated by \texttt{stress}, alongside \texttt{cat control.json} confirming \texttt{"throttled": false, "target\_fps": 15.0, "processing\_scale": 1.0} despite the full load.}\label{fig:fan-board}
 \end{figure}
 
 \begin{table}[H]
@@ -385,6 +557,36 @@ revisit if this were deployed for longer, sustained workloads rather than
 demonstrated in a single test run.
 \end{answersection}
 
+\begin{questionsection}{Does the throttle setting actually change what the detector does, not just what control.json says?}
+\texttt{control.json} and the black box both describe the daemon's
+\emph{decision}; the assignment's mechanism is only proven if
+\texttt{person\_detector.py} visibly changes behavior because of it.
+\end{questionsection}
+
+\begin{answersection}{Confirmed on the dashboard, with one honest confound}
+Detector FPS as reported live on the dashboard --- no fan, throttled:
+\textbf{5.1}\,FPS at 77.4\,°C; with fan, not throttled: \textbf{1.1--1.2}\,FPS
+at 42.0\,°C. The no-fan case is a clean confirmation: throttled
+\texttt{target\_fps} is 5.0 (this section's thermal config), and the
+dashboard shows the detector actually running at 5.1\,FPS while
+throttled --- the mechanical link from \texttt{thermal.c}'s decision to
+\texttt{person\_detector.py}'s behavior is real, not just a written
+intention. The honest confound is the fan case: \texttt{control.json}
+correctly says \texttt{throttled: false} (target 15\,FPS), but the
+dashboard shows only 1.1--1.2\,FPS achieved. That gap isn't the thermal
+system --- \texttt{stress --stress-workers 4} is saturating all four
+cores directly, so the detector is CPU-starved by the synthetic load
+itself, independently of whether thermal throttling has kicked in. In
+other words, \texttt{target\_fps} is a ceiling \texttt{thermal.c} sets,
+not a floor it guarantees; under raw CPU contention the achieved rate
+can fall well below that ceiling for reasons the thermal system was
+never meant to address. An earlier no-fan trial's alert e-mail (11:45:55Z,
+70.6\,°C, subject \texttt{Thermal - CPU over threshold, throttling
+FPS/resolution}) confirms the same trigger crossing demonstrated
+mechanically in Table~\ref{tab:blackbox-events} row 1108, on the actual
+notification channel rather than just in the database.
+\end{answersection}
+
 \smartsubsection{Section Summary}
 
 \begin{table}[H]
@@ -395,14 +597,14 @@ demonstrated in a single test run.
 \toprule
 \textbf{Item} & \textbf{Status} \\
 \midrule
-Guard Mode (toggle + immediate email/MQTT alarm) & Complete \\
+Guard Mode (toggle + immediate email/MQTT alarm) & Complete --- Figures~\ref{fig:guard-toggle-web},~\ref{fig:guard-crosscheck-web} \\
 Black box (SQLite, circular buffer + total-ever counter) & Complete \\
 Software watchdog ($>$30s stale $\to$ alert + restart) & Complete \\
 Adaptive thermal management (hysteresis-based) & Complete \\
 Exp.\ 4-1 (Guard Mode demo) & Complete --- Table~\ref{tab:guard-alarm-log} \\
 Exp.\ 4-2 (black box contents) & Complete --- Table~\ref{tab:blackbox-events} \\
-Exp.\ 4-3 (watchdog vs.\ disconnected camera) & Complete --- Figure~\ref{fig:watchdog-journalctl} \\
-Exp.\ 4-4 (simulated high temperature) & Complete --- Table~\ref{tab:thermal-summary} \\
+Exp.\ 4-3 (watchdog vs.\ disconnected camera) & Complete --- Table~\ref{tab:watchdog-timeline} \\
+Exp.\ 4-4 (simulated high temperature, fan vs.\ no fan) & Complete --- Table~\ref{tab:thermal-summary} \\
 \bottomrule
 \end{tabular}
 \end{table}

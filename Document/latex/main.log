@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.11)  6 AUG 2026 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.11)  10 AUG 2026 00:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -817,6 +817,24 @@ LaTeX Warning: Label `subsec:Overview' multiply defined.
 LaTeX Warning: Label `subsec:Overview@cref' multiply defined.
 
 
+LaTeX Warning: Label `a:Analysis' multiply defined.
+
+
+LaTeX Warning: Label `a:Analysis@cref' multiply defined.
+
+
+LaTeX Warning: Label `a:Analysis' multiply defined.
+
+
+LaTeX Warning: Label `a:Analysis@cref' multiply defined.
+
+
+LaTeX Warning: Label `a:Analysis' multiply defined.
+
+
+LaTeX Warning: Label `a:Analysis@cref' multiply defined.
+
+
 LaTeX Warning: Label `subsec:Section-Summary' multiply defined.
 
 
@@ -936,7 +954,7 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks56
 \inpenc@posthook=\toks57
 ) (./sections/titlepage.tex
-<university_logo.png, id=326, 113.97581pt x 113.97581pt>
+<university_logo.png, id=350, 113.97581pt x 113.97581pt>
 File: university_logo.png Graphic file (type png)
 <use university_logo.png>
 Package pdftex.def Info: university_logo.png  used on input line 6.
@@ -966,7 +984,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 ...: HTTP to HTTPS Redirect}{23}{section*.56}
+l.33 ...: HTTP to HTTPS Redirect}{22}{section*.64}
                                                   % [1]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1026,7 +1044,7 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 6
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-<../../1.Foundation & Security/results/fig/orangepi_setup.png, id=442, 1098.1025pt x 890.32625pt>
+<../../1.Foundation & Security/results/fig/orangepi_setup.png, id=476, 1098.1025pt x 890.32625pt>
 File: ../../1.Foundation & Security/results/fig/orangepi_setup.png Graphic file (type png)
 <use ../../1.Foundation & Security/results/fig/orangepi_setup.png>
 Package pdftex.def Info: ../../1.Foundation & Security/results/fig/orangepi_setup.png  used on input line 85.
@@ -1040,12 +1058,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
 [5 <../../1.Foundation & Security/results/fig/orangepi_setup.png>]
-<../../1.Foundation & Security/results/fig/client_setup.png, id=465, 850.17625pt x 683.55376pt>
+<../../1.Foundation & Security/results/fig/client_setup.png, id=500, 850.17625pt x 683.55376pt>
 File: ../../1.Foundation & Security/results/fig/client_setup.png Graphic file (type png)
 <use ../../1.Foundation & Security/results/fig/client_setup.png>
 Package pdftex.def Info: ../../1.Foundation & Security/results/fig/client_setup.png  used on input line 99.
 (pdftex.def)             Requested size: 385.02547pt x 309.56766pt.
-<../../1.Foundation & Security/results/fig/orangepi_secret.png, id=468, 505.89pt x 127.47626pt>
+<../../1.Foundation & Security/results/fig/orangepi_secret.png, id=503, 505.89pt x 127.47626pt>
 File: ../../1.Foundation & Security/results/fig/orangepi_secret.png Graphic file (type png)
 <use ../../1.Foundation & Security/results/fig/orangepi_secret.png>
 Package pdftex.def Info: ../../1.Foundation & Security/results/fig/orangepi_secret.png  used on input line 115.
@@ -1059,12 +1077,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
 [6 <../../1.Foundation & Security/results/fig/client_setup.png>]
-<../../1.Foundation & Security/results/fig/client_secret.png, id=478, 845.1575pt x 281.05pt>
+<../../1.Foundation & Security/results/fig/client_secret.png, id=513, 845.1575pt x 281.05pt>
 File: ../../1.Foundation & Security/results/fig/client_secret.png Graphic file (type png)
 <use ../../1.Foundation & Security/results/fig/client_secret.png>
 Package pdftex.def Info: ../../1.Foundation & Security/results/fig/client_secret.png  used on input line 121.
 (pdftex.def)             Requested size: 385.02547pt x 128.0409pt.
-<../../1.Foundation & Security/results/fig/mqtt_test.png, id=479, 898.35625pt x 146.5475pt>
+<../../1.Foundation & Security/results/fig/mqtt_test.png, id=514, 898.35625pt x 146.5475pt>
 File: ../../1.Foundation & Security/results/fig/mqtt_test.png Graphic file (type png)
 <use ../../1.Foundation & Security/results/fig/mqtt_test.png>
 Package pdftex.def Info: ../../1.Foundation & Security/results/fig/mqtt_test.png  used on input line 149.
@@ -1078,7 +1096,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
 [7 <../../1.Foundation & Security/results/fig/orangepi_secret.png> <../../1.Foundation & Security/results/fig/client_secret.png>]
-<../../1.Foundation & Security/results/fig/ssh_test.png, id=488, 1302.8675pt x 365.365pt>
+<../../1.Foundation & Security/results/fig/ssh_test.png, id=523, 1302.8675pt x 365.365pt>
 File: ../../1.Foundation & Security/results/fig/ssh_test.png Graphic file (type png)
 <use ../../1.Foundation & Security/results/fig/ssh_test.png>
 Package pdftex.def Info: ../../1.Foundation & Security/results/fig/ssh_test.png  used on input line 168.
@@ -1087,7 +1105,7 @@ Package pdftex.def Info: ../../1.Foundation & Security/results/fig/ssh_test.png 
 
 Package hyperref Warning: Suppressing empty link on input line 179.
 
-<../../1.Foundation & Security/results/fig/orangepi_ssl.png, id=490, 534.99875pt x 806.01125pt>
+<../../1.Foundation & Security/results/fig/orangepi_ssl.png, id=525, 534.99875pt x 806.01125pt>
 File: ../../1.Foundation & Security/results/fig/orangepi_ssl.png Graphic file (type png)
 <use ../../1.Foundation & Security/results/fig/orangepi_ssl.png>
 Package pdftex.def Info: ../../1.Foundation & Security/results/fig/orangepi_ssl.png  used on input line 183.
@@ -1126,17 +1144,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Package hyperref Warning: Suppressing empty link on input line 9.
 
 
-Overfull \hbox (215.20073pt too wide) in paragraph at lines 17--25
-\OT1/cmr/m/n/12 The pri-mary de-tec-tor is OpenCV's built-in []\OT1/cmr/bx/n/12 HOG+SVM per-son de-tec-tor[] \OT1/cmr/m/n/12 (\OT1/cmtt/m/n/12 cv2.HOGDescriptor[]getDefaultPeopleDetector()\OT1/cmr/m/n/12 ).
+Overfull \hbox (1.17169pt too wide) in paragraph at lines 20--27
+[]\OT1/cmr/m/n/12 (\OT1/cmtt/m/n/12 cv2.HOGDescriptor[]getDefaultPeopleDetector()\OT1/cmr/m/n/12 ). This was cho-sen de-lib-er-ately over
  []
 
 
-Package hyperref Warning: Suppressing empty link on input line 29.
-
-
-Overfull \hbox (52.9789pt too wide) in paragraph at lines 48--59
-\OT1/cmtt/m/n/12 HttpPollCapture \OT1/cmr/m/n/12 class (a drop-in re-place-ment for \OT1/cmtt/m/n/12 cv2.VideoCapture \OT1/cmr/m/n/12 within \OT1/cmtt/m/n/12 person[]detector.py\OT1/cmr/m/n/12 )
- []
+Package hyperref Warning: Suppressing empty link on input line 31.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1152,16 +1165,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 91.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 91.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 94.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 94.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 91.
+(Font)              for symbol `textbraceleft' on input line 94.
 
 
-Package hyperref Warning: Suppressing empty link on input line 102.
+Package hyperref Warning: Suppressing empty link on input line 105.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1171,21 +1184,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
 [12]
-<../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png, id=535, 338.26375pt x 259.97125pt>
-File: ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png Graphic file (type png)
-<use ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png>
-Package pdftex.def Info: ../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png  used on input line 139.
-(pdftex.def)             Requested size: 181.18439pt x 139.25183pt.
-<../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png, id=538, 338.26375pt x 259.97125pt>
-File: ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png Graphic file (type png)
-<use ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png>
-Package pdftex.def Info: ../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png  used on input line 145.
-(pdftex.def)             Requested size: 181.18439pt x 139.25183pt.
-<../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png, id=540, 338.26375pt x 259.97125pt>
-File: ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png Graphic file (type png)
-<use ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png>
-Package pdftex.def Info: ../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png  used on input line 165.
-(pdftex.def)             Requested size: 181.18439pt x 139.25183pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[13]
+
+Package tcolorbox Warning: Using nobreak failed. Try to enlarge `lines before break' or set page breaks manually on input line 191.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1194,36 +1202,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[13 <../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png> <../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png>]
-<../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png, id=552, 338.26375pt x 259.97125pt>
-File: ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png Graphic file (type png)
-<use ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png>
-Package pdftex.def Info: ../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png  used on input line 171.
-(pdftex.def)             Requested size: 181.18439pt x 139.25183pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 27.08337pt, for example:
-(fancyhdr)                \setlength{\headheight}{27.08337pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
-
-[14 <../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png> <../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png>]
-<../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png, id=565, 1469.49pt x 465.74pt>
-File: ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png Graphic file (type png)
-<use ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png>
-Package pdftex.def Info: ../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png  used on input line 249.
-(pdftex.def)             Requested size: 430.31812pt x 136.38297pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 27.08337pt, for example:
-(fancyhdr)                \setlength{\headheight}{27.08337pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
-
-[15]
-Overfull \hbox (30.07802pt too wide) in paragraph at lines 253--262
+[14]
+Overfull \hbox (30.07802pt too wide) in paragraph at lines 304--313
 []\OT1/cmr/m/n/12 An in-ter-est-ing sec-ondary ob-ser-va-tion is that the \OT1/cmr/m/it/12 op-ti-mized \OT1/cmr/m/n/12 runs show $[]$
  []
 
@@ -1234,7 +1214,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[16 <../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png>])
+[15])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[16]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1270,17 +1258,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-<../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png, id=597, 882.29625pt x 519.9425pt>
-File: ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png Graphic file (type png)
-<use ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png>
-Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png  used on input line 81.
-(pdftex.def)             Requested size: 407.66833pt x 240.23956pt.
-
 
 Package hyperref Warning: Suppressing empty link on input line 82.
 
 
 Package hyperref Warning: Suppressing empty link on input line 82.
+
+
+Package hyperref Warning: Suppressing empty link on input line 111.
+
+
+Package hyperref Warning: Suppressing empty link on input line 126.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1289,60 +1277,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[19 <../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png>]
-
-Package hyperref Warning: Suppressing empty link on input line 109.
-
-
-Overfull \hbox (51.40193pt too wide) in paragraph at lines 105--115
-[]\OT1/cmtt/m/n/12 surveillance-imgproc.service \OT1/cmr/m/n/12 ad-di-tion-ally sets \OT1/cmtt/m/n/12 RestartSec=5 \OT1/cmr/m/n/12 and \OT1/cmtt/m/n/12 StartLimitIntervalSec=0\OT1/cmr/m/n/12 .
- []
-
-
-Overfull \hbox (62.44386pt too wide) in paragraph at lines 105--115
-\OT1/cmr/m/n/12 The ra-tio-nale, spe-cific to this project: the de-tec-tor de-pends on the lap-top's \OT1/cmtt/m/n/12 laptop[]stream[]webcam.sh
- []
-
-
-Package hyperref Warning: Suppressing empty link on input line 124.
-
-
-Overfull \hbox (65.29297pt too wide) in paragraph at lines 137--144
+[19]
+Overfull \hbox (65.29297pt too wide) in paragraph at lines 139--146
 \OT1/cmr/m/n/12 reach \OT1/cmtt/m/n/12 multi-user.target\OT1/cmr/m/n/12 . The sin-gle largest con-trib-u-tor by far was \OT1/cmtt/m/n/12 snapd \OT1/cmr/m/n/12 --- \OT1/cmtt/m/n/12 snapd.seeded.service
  []
 
-<../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png, id=620, 1052.93375pt x 908.39375pt>
+<../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png, id=657, 1052.93375pt x 908.39375pt>
 File: ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png Graphic file (type png)
 <use ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png>
-Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png  used on input line 147.
+Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png  used on input line 149.
 (pdftex.def)             Requested size: 430.31812pt x 371.25182pt.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 27.08337pt, for example:
-(fancyhdr)                \setlength{\headheight}{27.08337pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
-
-[20]
-Overfull \hbox (45.78178pt too wide) in paragraph at lines 151--157
+Overfull \hbox (45.78178pt too wide) in paragraph at lines 153--159
 []\OT1/cmr/m/n/12 Two op-ti-miza-tions were ap-plied: Snap was dis-abled en-tirely (\OT1/cmtt/m/n/12 systemctl disable snapd.service
  []
 
 
-Overfull \hbox (39.88368pt too wide) in paragraph at lines 151--157
+Overfull \hbox (39.88368pt too wide) in paragraph at lines 153--159
 \OT1/cmr/m/n/12 stopped, dis-abled, and masked, along-side set-ting the boot tar-get ex-plic-itly to \OT1/cmtt/m/n/12 multi-user.target
  []
 
-<../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png, id=630, 745.78625pt x 151.56625pt>
-File: ../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png Graphic file (type png)
-<use ../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png>
-Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png  used on input line 160.
-(pdftex.def)             Requested size: 385.02547pt x 78.24828pt.
-<../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png, id=631, 1238.6275pt x 940.51375pt>
-File: ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png Graphic file (type png)
-<use ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png>
-Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png  used on input line 166.
-(pdftex.def)             Requested size: 430.31812pt x 326.74506pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1350,20 +1304,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[21 <../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png> <../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png>]
+[20 <../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Initial.png>]
+<../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png, id=664, 745.78625pt x 151.56625pt>
+File: ../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png Graphic file (type png)
+<use ../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png>
+Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png  used on input line 162.
+(pdftex.def)             Requested size: 385.02547pt x 78.24828pt.
+<../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png, id=665, 1238.6275pt x 940.51375pt>
+File: ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png Graphic file (type png)
+<use ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png>
+Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png  used on input line 168.
+(pdftex.def)             Requested size: 430.31812pt x 326.74506pt.
 
-Package hyperref Warning: Suppressing empty link on input line 190.
+
+Package hyperref Warning: Suppressing empty link on input line 192.
 
 
-Overfull \hbox (47.06213pt too wide) in paragraph at lines 184--192
+Overfull \hbox (47.06213pt too wide) in paragraph at lines 186--194
 \OT1/cmr/m/n/12 the image-processing ser-vice's HTTP-poll retry logic in ac-tion --- \OT1/cmtt/m/n/12 surveillance-imgproc.service
  []
 
-<../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png, id=641, 940.51375pt x 413.545pt>
-File: ../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png Graphic file (type png)
-<use ../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png>
-Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png  used on input line 201.
-(pdftex.def)             Requested size: 430.31812pt x 189.21075pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1371,24 +1331,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[22 <../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png>]
-Overfull \hbox (4.84523pt too wide) in paragraph at lines 216--220
+[21 <../../3.Web Server, SSL & systemd/results/fig/disable-systemd-bluetooth.png> <../../3.Web Server, SSL & systemd/results/fig/systemd-analysis_Optimized.png>]
+<../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png, id=676, 940.51375pt x 413.545pt>
+File: ../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png Graphic file (type png)
+<use ../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png>
+Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png  used on input line 203.
+(pdftex.def)             Requested size: 430.31812pt x 189.21075pt.
+
+Overfull \hbox (4.84523pt too wide) in paragraph at lines 218--222
 \OT1/cmr/m/n/12 A plain \OT1/cmtt/m/n/12 curl -I \OT1/cmr/m/n/12 re-quest against port 80 re-turns \OT1/cmtt/m/n/12 301 Moved Permanently \OT1/cmr/m/n/12 with a \OT1/cmtt/m/n/12 Location
  []
 
-<../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png, id=649, 725.71124pt x 138.5175pt>
+<../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png, id=677, 725.71124pt x 138.5175pt>
 File: ../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png Graphic file (type png)
 <use ../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png>
-Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png  used on input line 223.
+Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png  used on input line 225.
 (pdftex.def)             Requested size: 339.72592pt x 64.84537pt.
-
-Package hyperref Warning: Suppressing empty link on input line 232.
-
-<../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png, id=650, 1402.23875pt x 934.49126pt>
-File: ../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png Graphic file (type png)
-<use ../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png>
-Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png  used on input line 236.
-(pdftex.def)             Requested size: 385.02547pt x 256.59377pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1396,11 +1354,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[23 <../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png> <../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png>]
-Overfull \hbox (38.84338pt too wide) in paragraph at lines 252--272
- [][] 
- []
+[22 <../../3.Web Server, SSL & systemd/results/fig/auto-restart_webservice.png>]
 
+Package hyperref Warning: Suppressing empty link on input line 234.
+
+<../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png, id=684, 1402.23875pt x 934.49126pt>
+File: ../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png Graphic file (type png)
+<use ../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png>
+Package pdftex.def Info: ../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png  used on input line 238.
+(pdftex.def)             Requested size: 385.02547pt x 256.59377pt.
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1409,14 +1371,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[24 <../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png>]
+[23 <../../3.Web Server, SSL & systemd/results/fig/redirect-http-to-https.png> <../../3.Web Server, SSL & systemd/results/fig/webpage-CN-402101906.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[24]
 \openout2 = `sections/04_rest_api_swagger.aux'.
 
  (./sections/04_rest_api_swagger.tex
-Overfull \hbox (58.55612pt too wide) in paragraph at lines 26--31
-\OT1/cmr/m/n/12 Beyond the five end-points the as-sign-ment re-quires, two more were added (\OT1/cmtt/m/n/12 /api/v1/history/summary
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1430,22 +1396,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 
-Package hyperref Warning: Suppressing empty link on input line 92.
+Package hyperref Warning: Suppressing empty link on input line 93.
 
-<../../4.REST API & Swagger/results/fig/api-requests.png, id=684, 1409.265pt x 708.6475pt>
+<../../4.REST API & Swagger/results/fig/api-requests.png, id=716, 1409.265pt x 708.6475pt>
 File: ../../4.REST API & Swagger/results/fig/api-requests.png Graphic file (type png)
 <use ../../4.REST API & Swagger/results/fig/api-requests.png>
-Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/api-requests.png  used on input line 99.
+Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/api-requests.png  used on input line 100.
 (pdftex.def)             Requested size: 430.31812pt x 216.38046pt.
 
-Overfull \hbox (81.02151pt too wide) in paragraph at lines 105--108
+Overfull \hbox (81.02151pt too wide) in paragraph at lines 106--109
 \OT1/cmr/m/n/12 To con-firm the re-fusal above is a gen-uine safety gate and not merely cos-metic, \OT1/cmtt/m/n/12 allow[]dangerous[]commands
  []
 
-<../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-config.png, id=685, 1925.1925pt x 941.5175pt>
+<../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-config.png, id=717, 1925.1925pt x 941.5175pt>
 File: ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-config.png Graphic file (type png)
 <use ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-config.png>
-Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-config.png  used on input line 111.
+Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-config.png  used on input line 112.
 (pdftex.def)             Requested size: 430.31812pt x 210.43875pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1455,20 +1421,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
 [26 <../../4.REST API & Swagger/results/fig/api-requests.png>]
-<../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png, id=698, 1925.1925pt x 941.5175pt>
+<../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png, id=731, 1925.1925pt x 941.5175pt>
 File: ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png Graphic file (type png)
 <use ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png>
-Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png  used on input line 117.
+Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png  used on input line 118.
 (pdftex.def)             Requested size: 430.31812pt x 210.43875pt.
-
-Overfull \hbox (0.41417pt too wide) in paragraph at lines 134--138
-[]\OT1/cmr/bx/n/12 Pending: this ex-per-i-ment's raw sam-ples (\OT1/cmtt/m/n/12 code/experiments/results/2-1/\OT1/cmr/bx/n/12 ) were
- []
-
-
-Overfull \hbox (50.33905pt too wide) in paragraph at lines 134--138
-\OT1/cmr/bx/n/12 not avail-able when this sec-tion was drafted.[] \OT1/cmr/m/n/12 The ex-per-i-ment script (\OT1/cmtt/m/n/12 exp2[]1[]temperature.py\OT1/cmr/m/n/12 )
- []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1478,27 +1435,50 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
 [27 <../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-config.png> <../../4.REST API & Swagger/results/fig/api-reboot-allowed-test-during.png>]
-Overfull \hbox (0.41417pt too wide) in paragraph at lines 148--152
-[]\OT1/cmr/bx/n/12 Pending: this ex-per-i-ment's raw sam-ples (\OT1/cmtt/m/n/12 code/experiments/results/2-2/\OT1/cmr/bx/n/12 ) were
- []
+<../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png, id=741, 558.888pt x 338.7054pt>
+File: ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png Graphic file (type png)
+<use ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png>
+Package pdftex.def Info: ../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png  used on input line 140.
+(pdftex.def)             Requested size: 362.37569pt x 219.61324pt.
 
 
-Overfull \hbox (19.46404pt too wide) in paragraph at lines 148--152
-\OT1/cmr/bx/n/12 not avail-able when this sec-tion was drafted.[] \OT1/cmr/m/n/12 The ex-per-i-ment script (\OT1/cmtt/m/n/12 exp2[]2[]memory.py\OT1/cmr/m/n/12 )
- []
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
+[28 <../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png>]
+<../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png, id=754, 574.3056pt x 338.7054pt>
+File: ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png Graphic file (type png)
+<use ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png>
+Package pdftex.def Info: ../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png  used on input line 190.
+(pdftex.def)             Requested size: 362.37569pt x 213.72147pt.
 
-Overfull \hbox (6.88782pt too wide) in paragraph at lines 160--164
+pdfTeX warning (ext4): destination with the same identifier (name{a:Analysis}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.216 \begin{answersection}{Analysis}
+                                     
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[29 <../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png>]
+Overfull \hbox (6.88782pt too wide) in paragraph at lines 231--235
 \OT1/cmr/m/n/12 Fifty con-cur-rent re-quests were fired at \OT1/cmtt/m/n/12 /api/v1/telemetry \OT1/cmr/m/n/12 us-ing \OT1/cmtt/m/n/12 exp2[]3[]concurrency.py\OT1/cmr/m/n/12 ,
  []
 
-<../../4.REST API & Swagger/results/fig/50-concurrency-test.png, id=708, 1349.04pt x 385.44pt>
+<../../4.REST API & Swagger/results/fig/50-concurrency-test.png, id=767, 1349.04pt x 385.44pt>
 File: ../../4.REST API & Swagger/results/fig/50-concurrency-test.png Graphic file (type png)
 <use ../../4.REST API & Swagger/results/fig/50-concurrency-test.png>
-Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/50-concurrency-test.png  used on input line 167.
+Package pdftex.def Info: ../../4.REST API & Swagger/results/fig/50-concurrency-test.png  used on input line 238.
 (pdftex.def)             Requested size: 430.31812pt x 122.94339pt.
 
-Overfull \hbox (8.82188pt too wide) in paragraph at lines 175--191
+Overfull \hbox (8.82188pt too wide) in paragraph at lines 246--262
  [][] 
  []
 
@@ -1509,21 +1489,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[28 <../../4.REST API & Swagger/results/fig/50-concurrency-test.png>]
+[30 <../../4.REST API & Swagger/results/fig/50-concurrency-test.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{a:Analysis}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.269 \begin{answersection}{Analysis}
+                                     
 
-Package hyperref Warning: Suppressing empty link on input line 201.
+Package hyperref Warning: Suppressing empty link on input line 272.
 
+<../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png, id=779, 664.4022pt x 227.4096pt>
+File: ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png Graphic file (type png)
+<use ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png>
+Package pdftex.def Info: ../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png  used on input line 298.
+(pdftex.def)             Requested size: 362.37569pt x 124.03467pt.
 
-Overfull \hbox (0.41417pt too wide) in paragraph at lines 221--226
-[]\OT1/cmr/bx/n/12 Pending: this ex-per-i-ment's raw sam-ples (\OT1/cmtt/m/n/12 code/experiments/results/2-4/\OT1/cmr/bx/n/12 ) were
+Overfull \hbox (39.88675pt too wide) in paragraph at lines 306--320
+ [][] 
  []
 
-
-Overfull \hbox (79.48506pt too wide) in paragraph at lines 221--226
-\OT1/cmr/bx/n/12 not avail-able when this sec-tion was drafted.[] \OT1/cmr/m/n/12 The ex-per-i-ment script (\OT1/cmtt/m/n/12 exp2[]4[]network[]recovery.py\OT1/cmr/m/n/12 )
- []
-
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1531,7 +1515,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[29]
+[31 <../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{a:Analysis}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.327 \begin{answersection}{Analysis}
+                                     )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1539,7 +1528,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[30]
+[32]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[33]
 \openout2 = `sections/05_mqtt_email.aux'.
 
  (./sections/05_mqtt_email.tex
@@ -1561,7 +1558,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[31
+[34
 
 
 
@@ -1569,11 +1566,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Warning: Suppressing empty link on input line 82.
 
-<../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png, id=743, 1602.98875pt x 525.965pt>
-File: ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png Graphic file (type png)
-<use ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png>
-Package pdftex.def Info: ../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png  used on input line 120.
-(pdftex.def)             Requested size: 271.7835pt x 89.17209pt.
 
 Package hyperref Warning: Suppressing empty link on input line 121.
 
@@ -1587,7 +1579,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[32]
+[35]
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 149.
 
@@ -1602,18 +1594,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[33 <../../5.MQTT & Email/results/fig-gitignore/email-notifier_email.png>]
+[36]
 
 Package hyperref Warning: Suppressing empty link on input line 196.
 
 
 Package hyperref Warning: Suppressing empty link on input line 199.
 
-<../../5.MQTT & Email/results/fig/mqtt-3min-outage_before.png, id=769, 1407.2575pt x 886.31125pt>
+<../../5.MQTT & Email/results/fig/mqtt-3min-outage_before.png, id=841, 1407.2575pt x 886.31125pt>
 File: ../../5.MQTT & Email/results/fig/mqtt-3min-outage_before.png Graphic file (type png)
 <use ../../5.MQTT & Email/results/fig/mqtt-3min-outage_before.png>
 Package pdftex.def Info: ../../5.MQTT & Email/results/fig/mqtt-3min-outage_before.png  used on input line 213.
 (pdftex.def)             Requested size: 430.31812pt x 271.02103pt.
+<../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png, id=842, 1407.2575pt x 434.62375pt>
+File: ../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png Graphic file (type png)
+<use ../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png>
+Package pdftex.def Info: ../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png  used on input line 219.
+(pdftex.def)             Requested size: 430.31812pt x 132.90158pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1621,13 +1618,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[34]
-<../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png, id=774, 1407.2575pt x 434.62375pt>
-File: ../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png Graphic file (type png)
-<use ../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png>
-Package pdftex.def Info: ../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png  used on input line 219.
-(pdftex.def)             Requested size: 430.31812pt x 132.90158pt.
-
+[37 <../../5.MQTT & Email/results/fig/mqtt-3min-outage_before.png>]
 Overfull \hbox (97.11743pt too wide) in paragraph at lines 227--239
  [][] 
  []
@@ -1639,13 +1630,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[35 <../../5.MQTT & Email/results/fig/mqtt-3min-outage_before.png> <../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png>]
+[38 <../../5.MQTT & Email/results/fig/mqtt-3min-outage_after.png>]
 
 Package hyperref Warning: Suppressing empty link on input line 295.
 
 
 Package hyperref Warning: Suppressing empty link on input line 309.
 
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1653,7 +1645,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[36])
+[39]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1661,7 +1653,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[37]
+[40]
 \openout2 = `sections/06_advanced_features.aux'.
 
  (./sections/06_advanced_features.tex
@@ -1695,7 +1687,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[38
+[41
 
 
 
@@ -1703,12 +1695,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Warning: Suppressing empty link on input line 73.
 
-<../../6.Advanced Features/results/fig/GuardMode-Toggle-API.png, id=819, 1401.235pt x 144.54pt>
+<../../6.Advanced Features/results/fig/GuardMode-Toggle-API.png, id=890, 1401.235pt x 144.54pt>
 File: ../../6.Advanced Features/results/fig/GuardMode-Toggle-API.png Graphic file (type png)
 <use ../../6.Advanced Features/results/fig/GuardMode-Toggle-API.png>
 Package pdftex.def Info: ../../6.Advanced Features/results/fig/GuardMode-Toggle-API.png  used on input line 94.
 (pdftex.def)             Requested size: 407.66833pt x 42.05005pt.
-<../../6.Advanced Features/results/fig/GuardMode-Toggle-Result.png, id=820, 908.39375pt x 112.42pt>
+<../../6.Advanced Features/results/fig/GuardMode-Toggle-Result.png, id=891, 908.39375pt x 112.42pt>
 File: ../../6.Advanced Features/results/fig/GuardMode-Toggle-Result.png Graphic file (type png)
 <use ../../6.Advanced Features/results/fig/GuardMode-Toggle-Result.png>
 Package pdftex.def Info: ../../6.Advanced Features/results/fig/GuardMode-Toggle-Result.png  used on input line 100.
@@ -1720,15 +1712,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[39 <../../6.Advanced Features/results/fig/GuardMode-Toggle-API.png> <../../6.Advanced Features/results/fig/GuardMode-Toggle-Result.png>]
-<../../6.Advanced Features/results/fig/GuardMode-Blockbox.png, id=839, 1249.66875pt x 504.88625pt>
+[42 <../../6.Advanced Features/results/fig/GuardMode-Toggle-API.png> <../../6.Advanced Features/results/fig/GuardMode-Toggle-Result.png>]
+<../../6.Advanced Features/results/fig/GuardMode-Blockbox.png, id=902, 1249.66875pt x 504.88625pt>
 File: ../../6.Advanced Features/results/fig/GuardMode-Blockbox.png Graphic file (type png)
 <use ../../6.Advanced Features/results/fig/GuardMode-Blockbox.png>
-Package pdftex.def Info: ../../6.Advanced Features/results/fig/GuardMode-Blockbox.png  used on input line 133.
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/GuardMode-Blockbox.png  used on input line 183.
 (pdftex.def)             Requested size: 430.31812pt x 173.85466pt.
-
-
-Package hyperref Warning: Suppressing empty link on input line 157.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1737,17 +1726,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[40 <../../6.Advanced Features/results/fig/GuardMode-Blockbox.png>]
+[43]
 
-Package hyperref Warning: Suppressing empty link on input line 181.
+Package hyperref Warning: Suppressing empty link on input line 207.
 
 
-Overfull \hbox (48.52151pt too wide) in paragraph at lines 189--196
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[44 <../../6.Advanced Features/results/fig/GuardMode-Blockbox.png>]
+
+Package hyperref Warning: Suppressing empty link on input line 231.
+
+
+Overfull \hbox (48.52151pt too wide) in paragraph at lines 239--246
 []\OT1/cmr/m/n/12 On throt-tle: \OT1/cmtt/m/n/12 control.json \OT1/cmr/m/n/12 is rewrit-ten with \OT1/cmtt/m/n/12 thermal[]throttled[]fps\OT1/cmr/m/n/12 /\OT1/cmtt/m/n/12 thermal[]throttled[]scale\OT1/cmr/m/n/12 ,
  []
 
 
-Package hyperref Warning: Suppressing empty link on input line 221.
+Package hyperref Warning: Suppressing empty link on input line 271.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1756,15 +1756,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[41]
+[45]
 
-Package hyperref Warning: Suppressing empty link on input line 261.
+Package hyperref Warning: Suppressing empty link on input line 331.
 
-<../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png, id=876, 1304.875pt x 904.37875pt>
+<../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png, id=956, 1447.4075pt x 837.1275pt>
+File: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png  used on input line 338.
+(pdftex.def)             Requested size: 430.31812pt x 248.87927pt.
+
+Underfull \hbox (badness 4441) in paragraph at lines 339--339
+[]\OT1/cmr/m/n/12 Figure 45: |Setup: \OT1/cmtt/m/n/12 laptop[]stream[]webcam.sh \OT1/cmr/m/n/12 serv-ing nor-mally on the left,
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[46]
+<../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png, id=963, 1304.875pt x 904.37875pt>
 File: ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png Graphic file (type png)
 <use ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png>
-Package pdftex.def Info: ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png  used on input line 268.
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png  used on input line 344.
 (pdftex.def)             Requested size: 430.31812pt x 298.23892pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1772,16 +1791,39 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[42]
-Overfull \hbox (16.1797pt too wide) in paragraph at lines 285--294
+[47 <../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-Before.png> <../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png>]
+Underfull \hbox (badness 4981) in paragraph at lines 361--361
+[]\OT1/cmr/m/n/12 Listing 12: |\OT1/cmtt/m/n/12 journalctl -u surveillance-imgproc \OT1/cmr/m/n/12 (ex-cerpt): 15 con-sec-u-tive
+ []
+
+
+Overfull \hbox (16.1797pt too wide) in paragraph at lines 381--390
  [][] 
  []
 
+<../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png, id=972, 1447.4075pt x 837.1275pt>
+File: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png  used on input line 394.
+(pdftex.def)             Requested size: 430.31812pt x 248.87927pt.
 
-Package hyperref Warning: Suppressing empty link on input line 303.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-
-Package hyperref Warning: Suppressing empty link on input line 308.
+[48]
+<../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png, id=993, 1447.4075pt x 837.1275pt>
+File: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png  used on input line 400.
+(pdftex.def)             Requested size: 430.31812pt x 248.87927pt.
+<../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png, id=994, 1435.3625pt x 208.78pt>
+File: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png  used on input line 406.
+(pdftex.def)             Requested size: 430.31812pt x 62.58987pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1790,20 +1832,65 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[43 <../../6.Advanced Features/results/fig/GuardMode-DisconnectCamera-JournalCTL.png>]
-<../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png, id=894, 1916.15875pt x 947.54pt>
+[49 <../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-firstReconnect.png> <../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-SecondReconnect.png>]
+
+Package hyperref Warning: Suppressing empty link on input line 444.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[50 <../../6.Advanced Features/results/fig/GaurdMode-DisconnectCamera-BlackBox.png>]
+<../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png, id=1023, 1916.15875pt x 947.54pt>
 File: ../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png Graphic file (type png)
 <use ../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png>
-Package pdftex.def Info: ../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png  used on input line 323.
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png  used on input line 461.
 (pdftex.def)             Requested size: 430.31812pt x 212.78246pt.
-<../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png, id=895, 1222.5675pt x 486.81876pt>
+<../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png, id=1024, 1222.5675pt x 486.81876pt>
 File: ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png Graphic file (type png)
 <use ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png>
-Package pdftex.def Info: ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png  used on input line 329.
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png  used on input line 467.
 (pdftex.def)             Requested size: 430.31812pt x 171.34735pt.
+<../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png, id=1025, 1291.82625pt x 656.4525pt>
+File: ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png  used on input line 475.
+(pdftex.def)             Requested size: 217.42265pt x 110.4836pt.
+<../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png, id=1026, 797.98125pt x 611.28375pt>
+File: ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png  used on input line 481.
+(pdftex.def)             Requested size: 217.42265pt x 166.55052pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--330
-[]\OT1/cmr/m/n/12 Figure 32: |No fan: black-box query show-ing al-ter-nat-ing
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.08337pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.08337pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
+
+[51 <../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png> <../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png>]
+<../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png, id=1035, 1324.95pt x 467.7475pt>
+File: ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png  used on input line 489.
+(pdftex.def)             Requested size: 430.31812pt x 151.9162pt.
+<../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png, id=1036, 1433.355pt x 252.945pt>
+File: ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png  used on input line 495.
+(pdftex.def)             Requested size: 430.31812pt x 75.93811pt.
+<../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png, id=1037, 1920.17375pt x 956.57375pt>
+File: ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png Graphic file (type png)
+<use ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png>
+Package pdftex.def Info: ../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png  used on input line 501.
+(pdftex.def)             Requested size: 430.31812pt x 214.35863pt.
+
+Underfull \hbox (badness 4673) in paragraph at lines 502--502
+[]\OT1/cmr/m/n/12 Figure 55: |With fan: lo-cal \OT1/cmtt/m/n/12 btop \OT1/cmr/m/n/12 show-ing all four cores gen-uinely sat-u-
  []
 
 
@@ -1813,16 +1900,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[44 <../../6.Advanced Features/results/fig/NoFan-Throttled-Board.png>]
-<../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png, id=902, 786.7794pt x 356.532pt>
+[52 <../../6.Advanced Features/results/fig/NoFan-Throttled-API-Telemetry.png> <../../6.Advanced Features/results/fig/Fan-NotThrottled-API-Telemetry.png> <../../6.Advanced Features/results/fig/Fan-NotThrottled-BlackBox.png> <../../6.Advanced Features/results/fig/NoFan-Throttled-Broker.png>]
+<../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png, id=1049, 786.7794pt x 356.532pt>
 File: ../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png Graphic file (type png)
 <use ../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png>
-Package pdftex.def Info: ../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png  used on input line 349.
+Package pdftex.def Info: ../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png  used on input line 521.
 (pdftex.def)             Requested size: 407.66833pt x 184.73943pt.
-<../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png, id=903, 786.7794pt x 356.532pt>
+<../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png, id=1050, 786.7794pt x 356.532pt>
 File: ../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png Graphic file (type png)
 <use ../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png>
-Package pdftex.def Info: ../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png  used on input line 355.
+Package pdftex.def Info: ../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png  used on input line 527.
 (pdftex.def)             Requested size: 407.66833pt x 184.73943pt.
 
 
@@ -1832,7 +1919,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[45 <../../6.Advanced Features/results/fig/NoFan-Throttled-BlackBox.png> <../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png>])
+[53 <../../6.Advanced Features/results/fig/Fan-NotThrottled-Board.png> <../../6.Advanced Features/code/experiments/results/4-4/NoFan-exp4_4_thermal.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1840,7 +1927,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[46 <../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png>]
+[54 <../../6.Advanced Features/code/experiments/results/4-4/Fan-exp4_4_thermal.png>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 27.08337pt, for example:
@@ -1848,7 +1935,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-15.08337pt}.
 
-[47] (./main.aux (./sections/01_foundation_security.aux) (./sections/02_image_processing.aux) (./sections/03_web_server_ssl_systemd.aux) (./sections/04_rest_api_swagger.aux) (./sections/05_mqtt_email.aux) (./sections/06_advanced_features.aux))
+[55] (./main.aux (./sections/01_foundation_security.aux) (./sections/02_image_processing.aux) (./sections/03_web_server_ssl_systemd.aux) (./sections/04_rest_api_swagger.aux) (./sections/05_mqtt_email.aux) (./sections/06_advanced_features.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1864,18 +1951,24 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 87287D9747DB953DBA5027B4763A42B0;18231.
+(rerunfilecheck)             Checksum: 3306592C075C988B683A567196D49D40;21538.
  ) 
 Here is how much of TeX's memory you used:
- 37395 strings out of 474222
- 765347 string characters out of 5748733
- 2015975 words of memory out of 5000000
- 58680 multiletter control sequences out of 15000+600000
+ 37671 strings out of 474222
+ 774047 string characters out of 5748733
+ 2113975 words of memory out of 5000000
+ 58890 multiletter control sequences out of 15000+600000
  571560 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,12n,115p,779b,2287s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 106i,12n,115p,849b,2287s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{a:Does-the-throttle-setting-actually-change-what-the-detector-does,-not-just-what-control-json-says?} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{a:Does-the-adaptive-thermal-response-actually-behave-as-designed-under-real,-sustained-load?} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{a:Does-the-watchdog's-alert-e-mail-actually-work,-separately-from-the-timeout-robustness-claim-above?} has been referenced but does not exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{a:Why-use-two-different-thresholds-instead-of-one?} has been referenced but does not exist, replaced by a fixed one
@@ -1890,7 +1983,16 @@ pdfTeX warning (dest): name{a:What-does-this-latency-measurement-actually-captur
 pdfTeX warning (dest): name{a:Why-a-separate-daemon-rather-than-folding-this-into-the-existing-web-server?} has been referenced but does not exist, replaced by a fixed one
 
 
+pdfTeX warning (dest): name{a:What-happens-to-the-stream-and-the-server-when-the-network-drops-mid-session,-and-does-the-service-need-to-restart?} has been referenced but does not exist, replaced by a fixed one
+
+
 pdfTeX warning (dest): name{a:What-happens-to-latency-and-system-load-under-50-concurrent-requests?} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{a:Does-memory-usage-grow-over-a-sustained-streaming-session?} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{a:How-does-CPU-temperature-change-across-idle,-streaming,-and-streaming+detection?} has been referenced but does not exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{a:Why-does-image-processing-have-to-start-before-the-web-server?} has been referenced but does not exist, replaced by a fixed one
@@ -1899,10 +2001,10 @@ pdfTeX warning (dest): name{a:Why-does-image-processing-have-to-start-before-the
 pdfTeX warning (dest): name{a:Can-a-printed-photo-or-phone/tablet-screen-fool-the-detector?} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (48 pages, 4001051 bytes).
+Output written on main.pdf (56 pages, 3800006 bytes).
 PDF statistics:
- 1082 PDF objects out of 1200 (max. 8388607)
- 914 compressed objects within 10 object streams
- 306 named destinations out of 1000 (max. 500000)
- 826 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1252 PDF objects out of 1440 (max. 8388607)
+ 1064 compressed objects within 11 object streams
+ 372 named destinations out of 1000 (max. 500000)
+ 899 words of extra memory for PDF output out of 10000 (max. 10000000)
 

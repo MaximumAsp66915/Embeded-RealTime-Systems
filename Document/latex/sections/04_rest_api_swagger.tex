@@ -24,6 +24,7 @@ no state.
 \smartsubsection{API Surface}
 
 Beyond the five endpoints the assignment requires, two more were added
+
 (\texttt{/api/v1/history/summary} and \texttt{/api/v1/services*}) since
 they turned out to be useful for exercising and debugging the running
 system during development, and cost little given the routing
@@ -129,30 +130,100 @@ returned.
 \smartsubsection{Experiment 2-1: Temperature Under Three Conditions}
 \label{sec:exp-2-1}
 
-\alert{Pending: this experiment's raw samples
-(\texttt{code/experiments/results/2-1/}) were not available when this
-section was drafted.} The experiment script (\texttt{exp2\_1\_temperature.py})
-samples CPU temperature every 30\,s for 5 minutes under three conditions
---- idle, streaming only, and streaming with active detection --- and
-produces a three-curve comparison plot plus a min/max summary table.
+CPU temperature was sampled every 30\,s for 5 minutes under three
+conditions using \texttt{exp2\_1\_temperature.py}: idle (nothing but the
+C server running), streaming-only, and streaming with active person
+detection.
 
-% NOTE for future-you: once results/2-1/{idle,streaming,streaming_detection}.csv
-% and exp2_1_temperature.png are available, replace this paragraph with the
-% actual figure + table, following the pattern used for Experiment 2-3 below.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../../4.REST API & Swagger/code/experiments/results/2-1/exp2_1_temperature.png}
+\caption{CPU temperature over 5 minutes under idle, streaming-only, and streaming+detection conditions.}\label{fig:temp-3curve}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Experiment 2-1 results: temperature by condition (11 samples each, 0 failed).}
+\label{tab:temp-results}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Condition} & \textbf{Min (°C)} & \textbf{Max (°C)} & \textbf{Avg (°C)} \\
+\midrule
+Idle & 28.3 & 32.6 & 30.3 \\
+Streaming only & 31.6 & 35.9 & 33.8 \\
+Streaming + detection & 43.3 & \highlight{51.9} & 46.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{questionsection}{How does CPU temperature change across idle, streaming, and streaming+detection?}
+The assignment asks for a graph comparing all three conditions and a
+min/max summary table.
+\end{questionsection}
+
+\begin{answersection}{Analysis}
+Idle and streaming-only both settle quickly and stay flat for the full
+5 minutes, with streaming adding a modest $\sim$3.5\,°C over idle
+(30.3\,°C~$\rightarrow$~33.8\,°C average) --- consistent with the
+extra CPU cost of JPEG encoding and TLS in \texttt{https\_server.c}
+alone. Streaming with detection enabled is a different story: it starts
+$\sim$12.6\,°C above the streaming-only average and, unlike the other
+two conditions, does not plateau --- it climbs steadily from 43.3\,°C
+at $t{=}0$ to 51.9\,°C at $t{=}301$s, i.e.\ still rising at the end of
+the 5-minute window. This suggests person-detection inference is
+CPU-bound enough that 5 minutes is too short to see the board reach
+thermal steady state under that load; a longer run would be needed to
+confirm whether it plateaus below the SoC's throttling point or keeps
+climbing.
+\end{answersection}
 
 \smartsubsection{Experiment 2-2: Memory Usage Over 5 Minutes of Streaming}
 \label{sec:exp-2-2}
 
-\alert{Pending: this experiment's raw samples
-(\texttt{code/experiments/results/2-2/}) were not available when this
-section was drafted.} The experiment script (\texttt{exp2\_2\_memory.py})
-samples the web server process's memory usage every 5\,s over a
-continuous 5-minute streaming session and performs a basic leak analysis
-(fitting a trend line to usage over time).
+The web server process's memory usage was sampled every 5\,s over a
+continuous 5-minute streaming session (61 samples) using
+\texttt{exp2\_2\_memory.py}, with a linear trend fit to used memory over
+time as a basic leak screen.
 
-% NOTE for future-you: once results/2-2/memory_samples.csv,
-% exp2_2_memory.png, and exp2_2_leak_analysis.txt are available, replace
-% this paragraph with the actual figure + leak-analysis conclusion.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../../4.REST API & Swagger/code/experiments/results/2-2/exp2_2_memory.png}
+\caption{Memory used over 5 minutes of continuous MJPEG streaming.}\label{fig:memory-5min}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Experiment 2-2 leak-screen results.}
+\label{tab:memory-results}
+\begin{tabular}{lc}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+First sample used & 262.4\,MB \\
+Last sample used & 263.1\,MB \\
+Peak used & 263.5\,MB \\
+Net change & +0.7\,MB \\
+Linear trend slope & +0.137\,MB/min \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{questionsection}{Does memory usage grow over a sustained streaming session?}
+The assignment asks for a graph of memory usage over the 5-minute
+window and a basic leak analysis.
+\end{questionsection}
+
+\begin{answersection}{Analysis}
+Used memory stayed within a $\sim$1.4\,MB band across the full 5
+minutes (net change +0.7\,MB, peak 263.5\,MB), and the fitted trend of
++0.137\,MB/min extrapolates to well under 10\,MB/hour --- \stable{no
+meaningful upward trend}, consistent with no leak over this window. As
+the script's own output notes, this slope is a screening heuristic
+over a short window, not proof of leak-free operation; the honest
+conclusion is "no leak detected in 5 minutes of streaming," not "leak
+free," and a 30--60 minute run would be the appropriate follow-up if
+this were headed to production rather than coursework.
+\end{answersection}
 
 \smartsubsection{Experiment 2-3: 50 Concurrent Requests}
 \label{sec:exp-2-3}
@@ -216,20 +287,62 @@ lingering thread pileup from the concurrent load.
 \smartsubsection{Experiment 2-4: Network Disconnect / Reconnect}
 \label{sec:exp-2-4}
 
-\alert{Pending: this experiment's raw samples
-(\texttt{code/experiments/results/2-4/}) were not available when this
-section was drafted.} The experiment script
-(\texttt{exp2\_4\_network\_recovery.py}) disconnects the network mid-stream
-and reconnects after 2 minutes, logging both the client-observed stream
-behavior and the server-side \texttt{journalctl} output to characterize
-the recovery.
+\texttt{exp2\_4\_network\_recovery.py} watched the MJPEG stream client
+and polled the server's health while the network link was cut mid-stream
+and restored, and captured \texttt{journalctl} output for
+\texttt{surveillance-web} over the same window to check whether the
+service itself needed to restart.
 
-% NOTE for future-you: once results/2-4/{monitor_log.csv,
-% stream_watch_log.csv, surveillance-web_journalctl.txt} and
-% exp2_4_recovery_timeline.png are available, replace this paragraph with
-% the actual recovery timeline and an explanation of the observed
-% behavior (does the MJPEG stream client reconnect on its own, does the
-% systemd service need to restart, etc.)
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../../4.REST API & Swagger/code/experiments/results/2-4/exp2_4_recovery_timeline.png}
+\caption{Client-observed stream health and reconnect timeline across the network outage.}\label{fig:network-recovery}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Experiment 2-4 results: network disconnect/reconnect.}
+\label{tab:network-results}
+\begin{tabular}{lc}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Stream connected (initial) & $t{=}0.06$\,s \\
+Connection lost (stream client) & $t{=}228.9$\,s \\
+Connection lost (health monitor, first timeout) & $t{=}223.3$\,s \\
+Reconnect attempts during outage & 52 (retried every $\sim$3\,s) \\
+Stream reconnected & $t{=}391.8$\,s \\
+Health monitor confirmed \texttt{up} again & $t{=}392.7$\,s, latency back to 62.5\,ms \\
+Total observed outage & \highlight{$\sim$163--169\,s ($\sim$2.7--2.8\,min)} \\
+\texttt{journalctl} entries for \texttt{surveillance-web} during outage & \stable{none} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{questionsection}{What happens to the stream and the server when the network drops mid-session, and does the service need to restart?}
+The assignment asks for the client-observed stream behavior, the
+server-side log behavior, and a characterization of the recovery.
+\end{questionsection}
+
+\begin{answersection}{Analysis}
+Once the link was cut, the stream client detected the loss within
+$\sim$5.6\,s (via a read timeout) and immediately began retrying every
+$\sim$3\,s, logging 52 consecutive \texttt{ConnectionError}/
+\texttt{ConnectTimeout} attempts before the network came back --- the
+retry loop never gave up or backed off further, it just kept trying at
+a fixed interval for the whole $\sim$2.7-minute outage. As soon as the
+link was physically restored, the very next attempt succeeded
+(reconnected at $t{=}391.8$\,s) and latency dropped straight back to its
+pre-outage baseline ($\sim$50--90\,ms) with no warm-up period, after
+which streaming continued to completion. Critically,
+\texttt{journalctl} shows \emph{zero} log entries for
+\texttt{surveillance-web} across the entire outage window --- the
+server process never crashed, never restarted, and never even logged
+the dropped connection; from the service's point of view nothing
+happened. This confirms the recovery is entirely client-driven: the
+systemd service does not need to restart after a network blip, because
+the C server was never the thing that went away.
+\end{answersection}
 
 \smartsubsection{Section Summary}
 
@@ -247,10 +360,10 @@ the recovery.
 \texttt{POST /api/v1/command} (extensible, safety-gated) & Complete \\
 \texttt{GET /api/v1/history} (5-slot circular buffer) & Complete \\
 Swagger UI (FastAPI thin gateway) & Complete \\
-Exp.\ 2-1 (temperature, 3 conditions) & \alert{Pending raw data} \\
-Exp.\ 2-2 (memory over 5 min) & \alert{Pending raw data} \\
+Exp.\ 2-1 (temperature, 3 conditions) & Complete --- Table~\ref{tab:temp-results} \\
+Exp.\ 2-2 (memory over 5 min) & Complete --- Table~\ref{tab:memory-results} \\
 Exp.\ 2-3 (50 concurrent requests) & Complete --- Table~\ref{tab:concurrency-results} \\
-Exp.\ 2-4 (network disconnect/reconnect) & \alert{Pending raw data} \\
+Exp.\ 2-4 (network disconnect/reconnect) & Complete --- Table~\ref{tab:network-results} \\
 \bottomrule
 \end{tabular}
 \end{table}

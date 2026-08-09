@@ -78,7 +78,7 @@ CPU temperature, free memory, CPU usage).
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png}
+% \includegraphics[width=0.9\textwidth]{../../3.Web Server, SSL & systemd/results/fig-gitignore/webpage-demo.png}
 \caption{The live dashboard: embedded MJPEG stream alongside live person count and system telemetry, refreshing automatically. \alert{Redacted before any public release} --- see the note in Section~\ref{sec:foundation-security-notes}.}\label{fig:webpage-demo}
 \end{figure}
 
@@ -103,7 +103,9 @@ RestartSec=2
 \end{lstlisting}
 
 \texttt{surveillance-imgproc.service} additionally sets
-\texttt{RestartSec=5} and \texttt{StartLimitIntervalSec=0}. The rationale,
+\texttt{RestartSec=5} and 
+
+\texttt{StartLimitIntervalSec=0}. The rationale,
 specific to this project: the detector depends on the laptop's
 \texttt{laptop\_stream\_webcam.sh} being reachable over the network
 (Section~\ref{sec:image-processing}), and systemd's \emph{default}
@@ -249,6 +251,7 @@ display the student's name and ID, sourced directly from
 \centering
 \caption{Web Server, SSL \& systemd deliverables completed in this section.}
 \label{tab:webserver-summary}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{ll}
 \toprule
 \textbf{Item} & \textbf{Status} \\
@@ -268,5 +271,6 @@ Exp.\ 1-4 (HTTP redirect) & Complete \\
 Exp.\ 1-5 (certificate CN) & Complete \\
 Exp.\ 1-6 (page shows student ID) & Complete \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}

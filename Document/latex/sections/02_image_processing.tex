@@ -15,7 +15,9 @@ own.
 \smartsubsubsection{Detector}
 
 The primary detector is OpenCV's built-in \keyterm{HOG+SVM person
-detector} (\texttt{cv2.HOGDescriptor\_getDefaultPeopleDetector()}). This
+detector} 
+
+(\texttt{cv2.HOGDescriptor\_getDefaultPeopleDetector()}). This
 was chosen deliberately over a deep-learning alternative: it ships with
 OpenCV (no model file to download or manage), runs entirely on the CPU,
 and is light enough to be workable on the board's Cortex-A53 cores without
@@ -53,6 +55,7 @@ a small HTTP server (\texttt{laptop\_camera\_server.py}) that always
 serves whatever the most recently captured JPEG frame is at
 \texttt{GET /latest.jpg}; the board's \texttt{HttpPollCapture} class
 (a drop-in replacement for \texttt{cv2.VideoCapture} within
+
 \texttt{person\_detector.py}) simply issues a fresh HTTP GET for every
 frame it needs. There is no persistent stream, no protocol state, and
 therefore nothing to get stuck — each request is independent.
@@ -123,7 +126,7 @@ distances, poses, and backgrounds (see the raw logs in
 Daylight & 10 & 11 & \stable{90.9\%} \\
 Artificial light & 8 & 10 & \stable{80.0\%} \\
 Low light & 6 & 11 & \highlight{54.5\%} \\
-Backlight & 3 & 8 & \alert{37.5\%} \\
+Backlight & 3 & 8 & \highlight{37.5\%} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -136,14 +139,44 @@ descriptor relies on. Two representative frames illustrate this:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_low-light.png}
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_artificial-light.png}
+\caption{An artificial light frame in which the subject is detected nicely (good aligned) bounding box.}\label{fig:artificial-light}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png}
+\caption{A backlit frame in which the subject is reduced to a silhouette; the detector nonetheless produced a (loosely aligned) bounding box, illustrating both the difficulty of this condition and the detector's partial robustness to it.}\label{fig:back-light-hit}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_0_1_low-light.png}
 \caption{A low-light frame where the detector produced no bounding box despite a clear, close frontal view — one of the accuracy failures in Table~\ref{tab:lighting-accuracy}.}\label{fig:low-light-miss}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_back-light.png}
-\caption{A strongly backlit frame in which the subject is reduced to a silhouette; the detector nonetheless produced a (loosely aligned) bounding box, illustrating both the difficulty of this condition and the detector's partial robustness to it.}\label{fig:back-light-hit}
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_extreme-low-light.png}
+\caption{An extreme-low-light frame where the detector could detect the subject clearly and box it nicely.}\label{fig:extreme-low-light}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_farther.png}
+\caption{A farther subject detection went smoothly and the box was closely aligned with the subject.}\label{fig:farther}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_hand-test.png}
+\caption{On this test we changed the subject to a body part (in this case a hand) which was successfully detected using our cascade model and the box alignment was not bad.}\label{fig:hand-test}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_2_1_back-light.png}
+\caption{A strongly backlit frame where the detector failed to produce bounding box around the subject due to the high backlight — one of the accuracy failures in Table~\ref{tab:lighting-accuracy}.}\label{fig:back-light-miss}
 \end{figure}
 
 \smartsubsection{Experiment 3-2: Spoof Test}
@@ -153,7 +186,7 @@ The assignment requires testing the detector against a static image of a
 person (printed or displayed on a screen) rather than a live subject, and
 asking whether it fools the system. \textit{Guidance:} consider what
 information the detector actually uses to decide "person" versus
-"not person," and whether that information distinguishes a live subject
+"not person" and whether that information distinguishes a live subject
 from a flat image of one.
 \end{questionsection}
 
@@ -162,13 +195,13 @@ test subject in front of the camera at several angles.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png}
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320_0_0_spoof-test.png}
 \caption{Tablet held facing the camera, straight-on: the detector correctly reports zero persons.}\label{fig:spoof-miss}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png}
+% \includegraphics[width=0.4\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_0_1_spoof-test.png}
 \caption{Same tablet, slightly different angle/framing: the detector now reports one person and draws a bounding box over the displayed photo.}\label{fig:spoof-hit}
 \end{figure}
 
@@ -246,7 +279,25 @@ $1280\times720$, optimized & \highlight{1.00} & 50.4 & 54.1 & 119.6 \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png}
+% \includegraphics[width=0.95\textwidth]{../../2.Image Processing/results/fig-gitignore/320p_1_1_result.png}
+\caption{$240\times320$, optimized configuration: annotated frame (left) alongside the live \texttt{resolution\_bench.py} output (right), FPS climbing toward and stabilizing around 1.4.}\label{fig:320p-result}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.95\textwidth]{../../2.Image Processing/results/fig-gitignore/480p_1_1_result.png}
+\caption{$640\times480$, unoptimized configuration: annotated frame (left) alongside the live \texttt{resolution\_bench.py} output (right), FPS climbing toward and stabilizing around 0.35.}\label{fig:480p-result}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.95\textwidth]{../../2.Image Processing/results/fig-gitignore/720p_0_7_unoptimized.png}
+\caption{$1280\times720$, unoptimized configuration, as we can see the model is overthinking the situation which caused a huge hallucination of the model and costed to count 7 objects while there were no subjects.}\label{fig:720p-unoptimized}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.95\textwidth]{../../2.Image Processing/results/fig-gitignore/720p_1_1_result.png}
 \caption{$1280\times720$, optimized configuration: annotated frame (left) alongside the live \texttt{resolution\_bench.py} output (right), FPS climbing toward and stabilizing around 1.0.}\label{fig:720p-result}
 \end{figure}
 
@@ -304,7 +355,7 @@ baseline) while running at the \stable{lowest average temperature} of the
 five configurations. $1280\times720$ optimized remains usable
 (1.00~FPS) and would be preferable only if higher spatial detail in the
 saved frames is specifically required, at the cost of noticeably higher
-memory use and a modest FPS penalty.
+memory use and a modest FPS penalty but the fact was that the $320\times240$ was more accurate across the tests, So we decided to go with this one as our best choice.
 
 \smartsubsection{Section Summary}
 

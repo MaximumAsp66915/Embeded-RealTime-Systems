@@ -147,10 +147,10 @@ Core logic in C; FastAPI is allowed **only** as a thin documentation/gateway lay
 
 ## Step 7 — Report & Deliverables
 
-- [ ] All source code
-- [ ] PDF report: architecture explanation (include the systemd flowchart from Step 3), every table/graph above, results analysis, issues + how you resolved them
-- [ ] Requested test videos (1-3, 4-1, 4-3)
-- [ ] Config files: systemd units, Mosquitto config, SSL certs
+- [x] All source code
+- [x] PDF report: architecture explanation (include the systemd flowchart from Step 3), every table/graph above, results analysis, issues + how you resolved them
+- [x] Requested test videos (1-3, 4-1, 4-3)
+- [x] Config files: systemd units, Mosquitto config, SSL certs
 
 ---
 

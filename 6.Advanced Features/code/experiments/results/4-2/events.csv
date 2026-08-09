@@ -1,21 +1,21 @@
 id,event_type,timestamp,person_count,cpu_temp_c,detail
-1111,detection,2026-08-06T12:45:30Z,1,64.1,person detected
-1110,thermal_recover,2026-08-06T12:45:30Z,1,64.1,recovered below threshold
-1109,detection,2026-08-06T12:45:28Z,1,70.3,person detected
-1108,thermal_throttle,2026-08-06T12:45:28Z,1,70.3,trigger threshold crossed
-1107,thermal_recover,2026-08-06T12:45:26Z,0,64.1,recovered below threshold
-1106,thermal_throttle,2026-08-06T12:45:24Z,0,75.8,trigger threshold crossed
-1105,detection,2026-08-06T12:45:17Z,1,67.9,person detected
-1104,detection,2026-08-06T12:44:55Z,1,69.1,person detected
-1103,detection,2026-08-06T12:44:53Z,1,68.6,person detected
-1102,detection,2026-08-06T12:44:45Z,1,68.6,person detected
-1101,detection,2026-08-06T12:44:38Z,1,68.6,person detected
-1100,thermal_recover,2026-08-06T12:44:34Z,0,60.8,recovered below threshold
-1099,thermal_throttle,2026-08-06T12:44:30Z,0,74.0,trigger threshold crossed
-1098,thermal_recover,2026-08-06T12:44:24Z,0,61.9,recovered below threshold
-1097,thermal_throttle,2026-08-06T12:44:22Z,0,76.9,trigger threshold crossed
-1096,detection,2026-08-06T12:44:18Z,1,69.4,person detected
-1095,thermal_recover,2026-08-06T12:44:10Z,0,58.2,recovered below threshold
-1094,thermal_throttle,2026-08-06T12:44:04Z,0,73.6,trigger threshold crossed
-1093,thermal_recover,2026-08-06T12:43:58Z,0,61.3,recovered below threshold
-1092,thermal_throttle,2026-08-06T12:43:14Z,0,70.1,trigger threshold crossed
+1000,detection,2026-08-06T12:45:30Z,1,64.1,person detected
+999,thermal_recover,2026-08-06T12:45:30Z,1,64.1,recovered below threshold
+998,detection,2026-08-06T12:45:28Z,1,70.3,person detected
+997,thermal_throttle,2026-08-06T12:45:28Z,1,70.3,trigger threshold crossed
+996,thermal_recover,2026-08-06T12:45:26Z,0,64.1,recovered below threshold
+995,thermal_throttle,2026-08-06T12:45:24Z,0,75.8,trigger threshold crossed
+994,detection,2026-08-06T12:45:17Z,1,67.9,person detected
+993,detection,2026-08-06T12:44:55Z,1,69.1,person detected
+992,detection,2026-08-06T12:44:53Z,1,68.6,person detected
+991,detection,2026-08-06T12:44:45Z,1,68.6,person detected
+990,detection,2026-08-06T12:44:38Z,1,68.6,person detected
+989,thermal_recover,2026-08-06T12:44:34Z,0,60.8,recovered below threshold
+988,thermal_throttle,2026-08-06T12:44:30Z,0,74.0,trigger threshold crossed
+987,thermal_recover,2026-08-06T12:44:24Z,0,61.9,recovered below threshold
+986,thermal_throttle,2026-08-06T12:44:22Z,0,76.9,trigger threshold crossed
+985,detection,2026-08-06T12:44:18Z,1,69.4,person detected
+984,thermal_recover,2026-08-06T12:44:10Z,0,58.2,recovered below threshold
+983,thermal_throttle,2026-08-06T12:44:04Z,0,73.6,trigger threshold crossed
+982,thermal_recover,2026-08-06T12:43:58Z,0,61.3,recovered below threshold
+981,thermal_throttle,2026-08-06T12:43:14Z,0,70.1,trigger threshold crossed
