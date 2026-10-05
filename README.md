@@ -139,7 +139,7 @@ report data).
 │                                     and experiment analysis referenced above.
 │
 ├── PreProvided/
-│   ├── Final_Proj_Embedded.pdf          <- original assignment brief, as given
+│   └── Final_Proj_Embedded.pdf          <- original assignment brief, as given
 │
 └── README.md                        This file.
 ```
