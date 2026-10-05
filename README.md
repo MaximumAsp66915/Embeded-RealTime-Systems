@@ -140,7 +140,6 @@ report data).
 │
 ├── PreProvided/
 │   ├── Final_Proj_Embedded.pdf          <- original assignment brief, as given
-│   └── Humanized-project-Claude_sonnet5.md  <- build plan / checklist derived from the brief
 │
 └── README.md                        This file.
 ```
